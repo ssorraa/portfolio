@@ -1,98 +1,75 @@
-﻿<!DOCTYPE html >
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />	
-	<title> ex3 step5 </title>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css" />	
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/prefixfree.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOGUE</title>
+  <!-- 외부스타일시트 -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_res.css">
+  <script src="https://use.fontawesome.com/29f84cf8f7.js"></script> 
+  <!-- 제이쿼리연결 -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- 외부스크립트 연결 -->
+  <script src="js/js.js"></script>
+  <!-- 학습내용
+  1. transform (3D변형)
+  2. 제이쿼리 시작
+  3. 반복 애니메이션 구현
+  4. 입체구조와 회전구조 작업(깊이감 생성)
+  -->
 </head>
 <body>
-
-<div class="wrap">
-
-	<!-- nav 영역을 호출할 버튼  -->
-	<a class="btnMenu" href="#"><i class="fa fa-navicon"></i> </a>
-	
-	<!-- 실제 카테고리 메뉴가 들어갈 nav 영역 -->
-	<nav>
-		<h1><img src="img/logo.png" /></h1>
-		<ul id="gnb">
-			<li><a href="#">Homme</a></li>
-			<li><a href="#">Girl</a></li>
-			<li><a href="#">Kids</a></li>
-		</ul>
-	</nav>
-	
-	<!-- 3개의 컨텐츠 박스가 들어갈 section 영역 -->
-	<section>
-		<div class="box1 on">  
-			<p><strong>Vogue Homme</strong></p>
-			<p></p>
-			<p>
-				<em><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></em>
-				<em><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></em>
-				<em><a href=""><i class="fa fa-envelope" aria-hidden="true"></i></a></em>
-			</p>
-			<p></p>
-			<p></p>
-			<p><span>Travis Crown</span></p>
-			<p>
-				<video autoplay loop>
-					<source src="img/vid.mp4" type="video/mp4">
-				</video>
-			</p>
-			<p></p>
-			<p><span>Best Qualified Goods</span></p>
-			<p></p>
-			<p><span>Sports</span></p>
-		</div>
-		<div class="box2">      
-			<p><span>tremendous</span></p>
-			<p></p>
-			<p><strong>Vogue Girl</strong></p>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p><span>Accessories</span></p>
-			<p></p>
-			<p><span>Jewelry</span></p>
-			<p></p>
-			<p></p>
-		</div>      
-		<div class="box3">      
-			<p></p>
-			<p><span>Play & Dolls</span></p>
-			<p></p>
-			<p><strong>Vogue Kids</strong></p>
-			<p></p>
-			<p><span>Clothes</span></p>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
-		</div>
-	</section>
-
-	
-</div>
-
+  <div id="wrap">
+    <span class="btnMenu">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </span>
+    <nav>
+      <h1><img src="img/logo.png" alt="보그로고"></h1>
+      <ul id="gnb">
+        <li><a href="#">Homme</a></li>
+        <li><a href="#">Girl</a></li>
+        <li><a href="#">Kids</a></li>
+      </ul>
+    </nav>
+    <section>
+      <div class="box1 on">
+        <p>Vogue Homme</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="box2">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="box3">
+        <p><img src="img/k1.jpg" alt=""></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
