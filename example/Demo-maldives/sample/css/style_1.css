@@ -1,0 +1,499 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+/*전체설정*/
+* {margin: 0;
+	padding: 0}
+ol,ul {list-style: none;}
+a {color: #333;
+	text-decoration: none}
+img {border: none}	
+
+body {font-family: 'Poiret One', cursive;}
+
+
+
+/*레이아웃*/
+header { position:fixed; width:15%; height:100%;
+ background:#fff; top:0px; left:0px;}
+nav { width:85%; height:35px; background:#212121; 
+	margin-left:15%;}
+section { width:85%; margin-left:15%;
+		position: relative;
+	}
+article { float:left; height:260px;
+top: 0;
+left: 0;
+transition: all 0.5s;
+animation: ani 2s 2;
+}
+article:nth-child(1) { width:60%; height:520px; background:#ddd;}
+article:nth-child(2) { width:40%; background:#ccc;}
+article:nth-child(3) { width:20%; background:#bbb;}
+article:nth-child(4) { width:20%; background:#aaa;}
+article:nth-child(5) { width:20%; background:#999;}
+article:nth-child(6) { width:40%; background:#888;}
+article:nth-child(7) { width:20%; background:#777;}
+article:nth-child(8) { width:20%; background:#666;}
+article:nth-child(9) { width:40%; background:#555;}
+article:nth-child(10) { width:20%;	background:#444;}
+article:nth-child(11) { width:20%; background:#333;}
+article:nth-child(12) { width:20%;	background:#222;}
+
+
+/*animation 설정*/
+
+/*작성법 
+@keyframes 이름제작 {
+	0%{} <-시작점
+	100%{} <- 끝나는지점 
+	}*/
+
+	@keyframes ani{
+		0% {transform: scale(0);}
+		100% {transform: scale(1);}
+	}
+
+
+
+
+/*header콘텐츠*/
+
+
+header h1 {background: url(../img/logo1.png);
+			width: 180px;
+			height: 136px;
+			text-indent: -9999px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: 70px;
+			left: 50%;
+			margin-left: -90px;
+
+			}
+#gnb {position: absolute;
+		top: 300px;
+		right: 57px;/*임시*/
+}
+#gnb a {display: block;
+		padding: 8px 30px;
+		font-size: 17px;
+		font-weight: bold;
+		color: #555;
+		line-height: 1.8;
+		text-align: left;
+
+		}
+#gnb a:hover {color: skyblue}
+
+#gnb i {margin-right: 13px;}
+
+
+.snsSet {position: absolute;
+		bottom:70px; 
+		width: 90px;
+		right: 50%;
+		margin-right: -45px;
+}
+.snsSet a{float: left;}
+.snsSet img {}
+
+
+/*nav*/
+
+nav {position: relative;}
+nav a {position: absolute;}
+nav a:nth-child(1) {top: 5px;
+					left: 10px}
+nav a:nth-child(2) {top: 5px;
+					left: 150px}
+nav a:nth-child(3) {top: 5px;
+					right:96px }
+nav a:nth-child(4) {top: 5px;
+					right:10px }
+
+/*article*/
+/*CSS 호버값을 부드럽게 설정하겠다. 
+설정방법 : transition: 속성명 전환시간 가속도설정 지연시간 */
+article>div  {width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;}
+.bg {
+	background-repeat: no-repeat;
+	background-size: cover;}
+
+.bg1 {background-image: url(../img/pic1.jpg);}
+.bg2 {background-image: url(../img/pic2.jpg);}
+.bg3 {background-image: url(../img/pic3.jpg);}
+.bg4 {background-image: url(../img/pic4.jpg);}
+.bg5 {background-image: url(../img/pic5.jpg);}
+.bg6 {background-image: url(../img/pic6.jpg);}
+.bg7 {background-image: url(../img/pic7.jpg);}
+
+
+.bg span {font-size: 60px;
+			position: absolute;
+			bottom: 0px;
+			right: 0;
+			color: #fff;
+			transform: scale(10);
+			opacity: 0;
+			transition: all 0.6s}
+.bg1 span {font-size: 170px;
+			bottom: -50px;
+			right: -15px;
+			transform: scale(1);
+			opacity: 1}	
+.bg:hover span {transform: scale(1);
+				opacity: 1}
+
+/*박스1에 마우스를 올렸을때 span이 바뀌어라.*/	
+.bg1:hover span {color: #222;
+				}	
+
+
+/*article text 박스설정*/
+
+article .text {background: #fff;
+				color: #666;
+				transition: all 1s}
+article:nth-child(3) .text {background: #bff7fa}
+article:nth-child(11) .text {background: #e3f1fb}	
+article .text i {font-size: 220px;
+				position: absolute;
+					bottom: 0;
+					right: -200px;
+					opacity: 0;
+					transition: all 0.7s}
+.text strong {font-weight: normal;
+			font-size: 30px;
+			display: block;
+			margin: 10px 0;
+			color: #333}
+
+
+
+article:nth-child(3) .text i {right: 0;
+							opacity: 0.7}
+
+
+
+article:hover .text {background: #6ce2fb;
+					color: #fff}
+article:hover .text i {right: 0;
+					opacity: 1}
+
+
+
+
+
+
+/*미디어쿼리설정####################*/
+
+/*479px이하 ####################*/
+@media(max-width: 479px){
+
+	/*레이아웃*/
+
+
+	header { position:relative; width:100%; height:40px;
+		background-color: transparent;/*임시*/
+		z-index: 100;
+		}	
+	nav { display:none;}
+	section { width:100%; margin-left:0px;
+			z-index:1}
+	article { height:150px;
+				display: none}		
+	article:nth-child(1) { width:100%; height:100%;
+							position: fixed;
+							display: block;
+							
+							}
+
+	/*header 콘텐츠*/
+header h1 {position: relative;
+
+	top: 20px;
+			left: 00px;
+			margin-left: auto;
+			margin-right: auto;
+			
+		
+			background-size: contain;
+}	
+
+#gnb {top: 200px;
+	right:50%;
+	width: 70%;
+
+	margin-right: -35%;
+	/*display: flex;*/}
+#gnb li {
+		/*flex: 1*/}
+#gnb li a {padding: 10px 10px;
+			width:100%;
+			background: #000;
+			color: #fff;
+			margin: 8px 0;
+			border-radius: 10px;
+			box-sizing: border-box;}
+.snsSet {right: 80px;
+	bottom: 20px;
+display: none}
+
+
+		.bg1 span {font-size: 50px;
+			bottom: -10px;
+			right: -15px;
+			display: none;
+			}	
+
+					
+
+
+
+}
+
+/*480px~ 639px ####################*/
+
+
+@media(min-width: 480px) and (max-width: 639px){
+
+	/*레이아웃*/
+	header { position:relative; width:100%; height:130px;}	
+	nav { display:none;}
+	section { width:100%; margin-left:0px;}
+	article { height:150px;}		
+	article:nth-child(1) { width:100%; height:300px;}		
+	article:nth-child(2) { width:100%;}	
+	article:nth-child(3) { width:33.3333%; display:none;}	
+	article:nth-child(4) { width:100%;	display:none;}	
+	article:nth-child(5) { width:50%;}	
+	article:nth-child(6) { width:50%;}	
+	article:nth-child(7) { width:66.6666%; display:none;}	
+	article:nth-child(8) { width:50%;}	
+	article:nth-child(9) { width:50%;}	
+	article:nth-child(10) { width:66.6666%; display:none;}	
+	article:nth-child(11) { width:50%;}	
+	article:nth-child(12) { width:50%;}	
+
+
+
+	/*header 콘텐츠*/
+header h1 {position: relative;
+
+	top: 20px;
+			left: 00px;
+			margin-left: auto;
+			margin-right: auto;
+			background: url(../img/logo2.png);
+			width:200px;
+			height: 40px;
+			background-size: contain;
+}	
+
+#gnb {top: 80px;
+	right:00px;
+	width: 100%;
+	/*display: flex;*/}
+#gnb li {float: left;
+		width: 25%;
+		/*flex: 1*/}
+#gnb li a {padding: 10px 10px}
+.snsSet {right: 80px;
+	bottom: 20px;
+display: none}
+
+
+
+
+		.bg1 span {font-size: 50px;
+			bottom: -10px;
+			right: -15px;
+			}	
+
+article .text i {font-size: 50px;}						
+
+
+	
+}
+
+
+/*640px~ 779px ####################*/
+@media(min-width: 640px) and (max-width: 779px){
+
+/*레이아웃*/
+	header { position:relative; width:100%; height:80px;}
+	nav { width:100%; margin-left:0%;}		
+	section { width:100%; margin-left:0px;}		
+	article:nth-child(1) { width:100%;	height:400px;}
+	article:nth-child(2) { width:100%;}	
+	article:nth-child(3) { width:33.3333%; display:none;}	
+	article:nth-child(4) { width:100%;	display:none;}	
+	article:nth-child(5) { width:50%;}	
+	article:nth-child(6) { width:50%;}	
+	article:nth-child(7) { width:66.6666%; display:none;}	
+	article:nth-child(8) { width:50%;}	
+	article:nth-child(9) { width:50%;}	
+	article:nth-child(10) { width:66.6666%; display:none;}	
+	article:nth-child(11) { width:50%;}	
+	article:nth-child(12) { width:50%;}	
+
+
+
+
+
+	/*header 콘텐츠*/
+header h1 {top: 20px;
+			left: 20px;
+			margin-left: 0px;
+			background: url(../img/logo2.png);
+			width:200px;
+			height: 40px;
+			background-size: contain;
+}	
+
+#gnb {top: 20px;
+	right: 10px;
+	}
+#gnb li {float: left;}
+#gnb li a {padding: 10px 10px}
+.snsSet {right: 80px;
+	bottom: 20px;
+display: none}
+
+
+.bg1 span {font-size: 80px;
+			bottom: -10px;
+			right: -15px;
+			}	
+
+article .text i {font-size: 80px;}	
+
+}
+/*780px~ 1023px ####################*/
+
+@media(min-width: 780px) and (max-width: 1023px) {
+
+/*레이아웃*/
+	header { position:relative; width:100%; height:80px;}
+	nav { width:100%; margin-left:0%;}		
+	section { width:100%; margin-left:0px;}		
+	article:nth-child(1) { width:100%;	height:400px;}	
+	article:nth-child(2) { width:66.6666%;}	
+	article:nth-child(3) { width:33.3333%;}	
+	article:nth-child(4) { width:33.3333%; display:none;}	
+	article:nth-child(5) { width:33.3333%;}	
+	article:nth-child(6) { width:66.6666%;}	
+	article:nth-child(7) { width:66.6666%; display:none;}	
+	article:nth-child(8) { width:33.3333%;}	
+	article:nth-child(9) { width:33.3333%;}	
+	article:nth-child(10) { width:66.6666%; display:none;}	
+	article:nth-child(11) { width:33.3333%;}	
+	article:nth-child(12) { width:33.3333%; display:none;}
+/*header 콘텐츠*/
+header h1 {top: 20px;
+			left: 20px;
+			margin-left: 0px;
+			background: url(../img/logo2.png);
+			width:200px;
+			height: 40px;
+			background-size: contain;
+}	
+
+#gnb {top: 20px;
+	right: 10px;
+	}
+#gnb li {float: left;}
+#gnb li a {padding: 10px 10px}
+.snsSet {right: 80px;
+	bottom: 20px;
+display: none}
+
+
+article .text i {font-size: 120px;}	
+
+
+}
+/*1024px~ 1279px ####################*/
+
+@media(min-width: 1024px) and (max-width: 1279px){
+/*레이아웃*/
+	header { position:relative; width:100%; height:80px;}
+	nav { width:100%; margin-left:0%;}		
+	section { width:100%; margin-left:0px;}		
+	article:nth-child(1) { width:75%;}	
+	article:nth-child(2) { width:25%;}	
+	article:nth-child(3) { width:25%;}	
+	article:nth-child(4) { width:25%;}	
+	article:nth-child(5) { width:25%;}	
+	article:nth-child(6) { width:50%;}	
+	article:nth-child(7) { width:50%;}	
+	article:nth-child(8) { width:25%;}	
+	article:nth-child(9) { width:25%;}	
+	article:nth-child(10) { width:50%;}	
+	article:nth-child(11) { width:25%;}	
+	article:nth-child(12) { width:25%;}
+	
+
+/*header 콘텐츠*/
+header h1 {top: 20px;
+			left: 20px;
+			margin-left: 0px;
+			background: url(../img/logo2.png);
+			width:250px;
+			height: 50px;
+
+}	
+
+#gnb {top: 20px;
+	right: 30px;
+	}
+#gnb li {float: left;}
+
+.snsSet {right: 80px;
+	bottom: 20px;
+display: none}
+
+
+.bg1 span {font-size: 120px;
+			bottom: -10px;
+			right: -15px;
+			}	
+
+article .text i {font-size: 120px;}	
+
+}
+/*1280px~ 1599px ####################*/
+
+@media(min-width: 1280px) and (max-width: 1599px){
+/*레이아웃*/
+	header { position:relative; width:100%; height:80px;}
+	nav { width:100%; margin-left:0%;}		
+	section { width:100%; margin-left:0px;}	
+
+
+/*header 콘텐츠*/
+header h1 {top: 20px;
+			left: 20px;
+			margin-left: 0px;
+			background: url(../img/logo2.png);
+			width:250px;
+			height: 50px;
+}	
+
+#gnb {top: 20px;
+	right: 200px;
+	}
+#gnb li {float: left;}
+
+.snsSet {right: 80px;
+	bottom: 20px}
+
+article .text i {font-size: 180px;}	
+
+}

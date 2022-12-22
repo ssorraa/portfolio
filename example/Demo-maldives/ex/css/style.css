@@ -1,0 +1,251 @@
+@charset 'utf-8';
+
+/* 전체설정 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 기본설정 */
+.header {
+  background-color: cornflowerblue;
+  position: fixed;
+  width: 15%;
+  height: 100%;
+}
+
+nav {
+  margin-left: 15%;
+  width: 85%;
+  height: 50px;
+  background-color: royalblue;
+}
+
+section {
+  background-color: powderblue;
+  margin-left: 15%;
+  width: 85%;
+  height: auto;
+}
+
+article {
+  height: 300px;
+  width: 20%;
+  float: left;
+}
+
+article:nth-child(1) {
+  background-color: #ddd;
+  height: 600px;
+  width: 60%;
+}
+
+article:nth-child(2) {
+  background-color: #ccc;
+  width: 40%;
+}
+
+article:nth-child(3) {
+  background-color: #bbb;
+}
+
+article:nth-child(4) {
+  background-color: #aaa;
+}
+
+article:nth-child(5) {
+  background-color: #999;
+}
+
+article:nth-child(6) {
+  background-color: #888;
+  width: 40%;
+}
+
+article:nth-child(7) {
+  background-color: #777;
+}
+
+article:nth-child(8) {
+  background-color: #666;
+}
+
+article:nth-child(9) {
+  background-color: #555;
+  width: 40%;
+}
+
+article:nth-child(10) {
+  background-color: #444;
+}
+
+article:nth-child(11) {
+  background-color: #333;
+}
+
+article:nth-child(12) {
+  background-color: #222;
+}
+
+/* 미디어쿼리구간 */
+/* 1599px이하 구간 */
+@media (max-width: 1599px) {
+  .header {
+    position: static;
+    width: 100%;
+    height: 120px
+  }
+  
+  nav {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  section {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+/* 1279px이하구간 */
+@media (max-width: 1279px) {
+  article {
+    width: 25%;
+  }
+  
+  article:nth-child(1) {
+    width: 75%;
+  }
+  
+  article:nth-child(2) {
+    width: 25%;
+  }
+  article:nth-child(6) {
+    width: 50%;
+  }
+  
+  article:nth-child(7) {
+    width: 50%;
+  }
+  article:nth-child(9) {
+    width: 25%;
+  }
+  
+  article:nth-child(10) {
+    width: 50%;
+  }
+}
+/* 1023px이하구간 */
+@media (max-width: 1023px) {
+  article {
+    width: 33.3333%;
+    height: 200px;
+  }
+  
+  article:nth-child(1) {
+    width: 100%;
+    height: 400px;
+  }
+  
+  article:nth-child(2) {
+    width: 66.6666%;
+  }
+  
+  article:nth-child(4) {
+    display: none;
+  }
+  
+  article:nth-child(6) {
+    width: 66.6666%;
+  }
+  
+  article:nth-child(7) {
+    display: none;
+  }
+  
+  article:nth-child(9) {
+    width: 33.3333%;
+  }
+  
+  article:nth-child(10) {
+    display: none;
+  }
+  
+  article:nth-child(12) {
+    display: none;
+  }
+}
+/* 779px이하구간 */
+@media (max-width: 779px) {
+  article {
+    width: 50%;
+  }
+  
+  article:nth-child(1) {
+    width: 100%;
+  }
+  
+  article:nth-child(2) {
+    width: 100%;
+  }
+  
+  article:nth-child(3) {
+    display: none;
+  }
+  
+  article:nth-child(4) {
+    display: none;
+  }
+  
+  article:nth-child(6) {
+    width: 50%;
+  }
+  
+  article:nth-child(7) {
+    display: none;
+  }
+  
+  article:nth-child(9) {
+    width: 50%;
+  }
+  
+  article:nth-child(10) {
+    display: none;
+  }
+  article:nth-child(12) {
+    display: block;
+  }
+}
+/* 639px이하구간 */
+@media (max-width: 639px) {
+  nav {
+    display: none;
+  }
+  article {
+    height: 150px;
+  }
+  article:nth-child(1) {
+    height: 300px;
+  }
+}
+/* 479px이하구간 */
+@media (max-width: 479px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
