@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리예제</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+  <h1>this문</h1>
+  <p>이벤트가 일어난 주체를 바로 선택해 주는 기능</p>
+  <ul id="menu1">
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+    <li>list4</li>
+    <li>list5</li>
+  </ul>
+  <div class="wrapper">
+    <ul id="menu2">
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+      <li>list5</li>
+    </ul>
+    <div class="box">
+      <p>The snow glows white on the mountain tonight<br>
+        Not a footprint to be seen<br>
+        A kingdom of isolation and it looks like I'm the queen
+      </p>
+      <p>
+        The wind is howling like this swirling storm inside<br>
+        Couldn't keep it in, heaven knows I've tried<br>
+        Don't let them in, don't let them see
+      </p>
+      <p>
+        Be the good girl you always have to be<br>
+        Conceal, don't feel, don't let them know<br>
+        Well, now they know
+      </p>
+      <p>
+        Let it go, let it go<br>
+        Can't hold it back anymore<br>
+        Let it go, let it go<br>
+        Turn away and slam the door
+      </p>
+      <p>
+        I don't care what they're going to say<br>
+        Let the storm rage on<br>
+        The cold never bothered me anyway
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .box {
+      width: 60%;
+      position: relative;
+    }
+    .box p {
+      position: absolute;
+      display: none;
+    }
+    .box p:nth-child(1) {
+      display: block;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      // menu1 안에 있는 리스트를 클릭했을 때 내 자신의 색깔이 바뀌어라.
+      $('#menu1 li:nth-child(1)').click(function () {
+        $(this).css({
+          'color': 'red'
+        })
+      });
+      $('#menu1 li').click(function () {
+        $(this).css({
+          'color': 'red'
+        })
+        let i = $(this).index()
+        console.log(i)
+      });
+      // 메뉴2 안에 있는 li를 클릭했을 때 순번을 찾아라.
+      // box안에 p의 순번을 li의 순번과 동일하게 보여라.
+      // 클릭한 li자신의 스타일을 바꾸어라.
+      $('#menu2 li').click(function () {
+        let ab = $(this).index()
+        $('.box p').css({
+        'display' : 'none'
+        })
+        $('.box p').eq(ab).css({
+          'display': 'block'
+        })
+        $('#menu2 li').css({
+          'color' : 'black'
+        })
+        $(this).css({
+          'color': 'red'
+        })
+      })
+    })
+  </script>
+
+</body>
+
+</html>

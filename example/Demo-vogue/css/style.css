@@ -19,6 +19,7 @@ a {
 img {
   border: none;
   vertical-align: bottom;
+  
 }
 
 /* 기본설정 */
@@ -154,8 +155,23 @@ section>div.on {
 section>div.on>p {
   transform: rotateY(0deg);
 }
+/* 텍스트설정 */
+section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+section strong {
+  font-size: 50px;
+}
+section span {
+  font-size: 20px;
+}
 
-
+/* 박스1 내부설정 */
+/* 박스2 내부설정 */
+/* 박스3 내부설정 */
 /* 박스1설정 */
 .box1>p {
   float: left;
@@ -169,7 +185,10 @@ section>div.on>p {
 }
 
 .box1>p:nth-child(2) {
-  background-color: #ccc;
+  background-image: url(../img/m1.jpg);
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 
 .box1>p:nth-child(3) {
@@ -181,11 +200,19 @@ section>div.on>p {
   float: right;
   width: 50%;
   height: 50%;
+  background-image: url(../img/m2.jpg);
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
 }
 
 .box1>p:nth-child(5) {
-  background-color: #999;
+  background-color: #fff;
+  background-image: url(../img/m3.jpg);
   float: right;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
 }
 
 .box1>p:nth-child(6) {
@@ -201,6 +228,10 @@ section>div.on>p {
 .box1>p:nth-child(8) {
   background-color: #666;
   float: right;
+  background-image: url(../img/m4.jpg);
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
 .box1>p:nth-child(9) {
@@ -210,6 +241,10 @@ section>div.on>p {
 .box1>p:nth-child(10) {
   background-color: #444;
   width: 50%;
+  background-image: url(../img/m5.jpg);
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
 }
 
 .box1>p:nth-child(11) {
@@ -229,7 +264,11 @@ section>div.on>p {
 }
 
 .box2>p:nth-child(2) {
-  background-color: #ccc;
+  background-color: #fff;
+  background-image: url(../img/w1.jpg);
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
 }
 
 .box2>p:nth-child(3) {
@@ -239,18 +278,29 @@ section>div.on>p {
 
 .box2>p:nth-child(4) {
   background-color: #aaa;
-
   height: 50%;
+  background-image: url(../img/w2.jpg);
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 
 .box2>p:nth-child(5) {
   background-color: #999;
   width: 50%;
   height: 50%;
+  background-image: url(../img/w3.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .box2>p:nth-child(6) {
-  background-color: #888;
+  background-color: #fff;
+  background-image: url(../img/w4.jpg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .box2>p:nth-child(7) {
@@ -259,6 +309,10 @@ section>div.on>p {
 
 .box2>p:nth-child(8) {
   background-color: #666;
+  background-image: url(../img/w5.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .box2>p:nth-child(9) {
@@ -267,10 +321,18 @@ section>div.on>p {
 
 .box2>p:nth-child(10) {
   background-color: #444;
+  background-image: url(../img/w6.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .box2>p:nth-child(11) {
   background-color: #333;
+  background-image: url(../img/w7.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* 박스3설정 */
@@ -283,6 +345,10 @@ section>div.on>p {
   background-color: #ddd;
   width: 50%;
   height: 100%;
+  background-image: url(../img/k1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .box3>p:nth-child(2) {
@@ -295,6 +361,10 @@ section>div.on>p {
   background-color: #bbb;
   width: 25%;
   height: 25%;
+  background-image: url(../img/k2.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .box3>p:nth-child(4) {
@@ -307,6 +377,10 @@ section>div.on>p {
   background-color: #111;
   width: 25%;
   height: 50%;
+  background-image: url(../img/k3.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 
 .box3>p:nth-child(6) {
@@ -319,4 +393,8 @@ section>div.on>p {
   background-color: #333;
   width: 25%;
   height: 25%;
+  background-image: url(../img/k4.jpg);
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
 }

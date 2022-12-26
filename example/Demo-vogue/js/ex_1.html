@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>갤러리 예시 직접 만들기</title>
+  <script src="https://use.fontawesome.com/29f84cf8f7.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="list">
+      <ul>
+        <li class="on"><img src="https://picsum.photos/id/20/400/300" alt="책상위에 노트북, 공책, 스마트폰, 필기구 등이 놓여있는 사진"></li>
+        <li><img src="https://picsum.photos/id/25/400/300" alt="앙상한 가지 너머 해가 비치는 사진"></li>
+        <li><img src="https://picsum.photos/id/30/400/300" alt="머그컵 사진"></li>
+        <li><img src="https://picsum.photos/id/40/400/300" alt="고양이 인중 사진"></li>
+        <li><img src="https://picsum.photos/id/156/400/300" alt="모래사장 위로 사람의 발바닥 모양이 찍힌 사진"></li>
+        <li><img src="https://picsum.photos/id/197/400/300" alt="기찻길 중앙에서 찍은 사진"></li>
+        <li><img src="https://picsum.photos/id/230/400/300" alt="호수에 있는 배 정차장에서 안개가 낀 사진"></li>
+      </ul>
+    </div>
+    <div class="show">
+      <ul>
+        <li class="on"><img src="https://picsum.photos/id/20/400/300" alt="책상위에 노트북, 공책, 스마트폰, 필기구 등이 놓여있는 사진"></li>
+        <li><img src="https://picsum.photos/id/25/400/300" alt="앙상한 가지 너머 해가 비치는 사진"></li>
+        <li><img src="https://picsum.photos/id/30/400/300" alt="머그컵 사진"></li>
+        <li><img src="https://picsum.photos/id/40/400/300" alt="고양이 인중 사진"></li>
+        <li><img src="https://picsum.photos/id/156/400/300" alt="모래사장 위로 사람의 발바닥 모양이 찍힌 사진"></li>
+        <li><img src="https://picsum.photos/id/197/400/300" alt="기찻길 중앙에서 찍은 사진"></li>
+        <li><img src="https://picsum.photos/id/230/400/300" alt="호수에 있는 배 정차장에서 안개가 낀 사진"></li>
+      </ul>
+    </div>
+  </div>
+  <style>
+    /* 전체 설정 */
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    img {
+      vertical-align: bottom;
+      border: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* 설정 */
+    .wrap::after {
+      /* background-color: rgb(53, 56, 70); */
+    }
+
+    .wrap>span {
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .list {
+      position: inherit;
+      width: 30%;
+    }
+
+    .show {
+      float: right;
+      width: 60%;
+    }
+
+    .list li {
+      padding: 20px;
+    }
+
+    .list li img {
+      width: 100px;
+      cursor: pointer;
+    }
+
+    .show li {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      margin-top: -150px;
+
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      $('.list li').click(function () {})
+    })
+  </script>
+</body>
+
+</html>

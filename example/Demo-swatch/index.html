@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swatch</title>
+  <!-- 외부스타일시트 연결 -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 제이쿼리 연결 -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- 스크립트 연결 -->
+  <script src="js/js.js"></script>
+  <!-- 학습내용
+    1. 브라우저의 높이값과 가로값 찾아내기
+    2. 화면 리사이즈하기 이벤트
+    3. 스크롤거리 찾아내기
+    4. 마우스 움직임 이벤트
+    5. 마우스 휠 이벤트
+    6. 문서 상단 위치값 찾아내기
+    7. 조건문 만들기
+    8. 코드를 간결하게 하기위한 반복문 만들기
+  -->
+</head>
+
+<body>
+  <h1><img src="img/logo.png" alt=""></h1>
+  <ul id="gnb">
+    <li><a href="#">Full Blossom</a></li>
+    <li><a href="#">Be Colorful</a></li>
+    <li><a href="#">Time on Board</a></li>
+    <li><a href="#">Shiny Addict</a></li>
+  </ul>
+  <div id="wrap">
+    <section>
+      <img src="img/obj11.png" alt="" class="p11">
+      <img src="img/obj12.png" alt="" class="p12">
+      <img src="img/obj13.png" alt="" class="p13">
+    </section>
+    <section>
+      <img src="img/obj21.png" alt="" class="p21">
+      <img src="img/obj22.png" alt="" class="p22">
+    </section>
+    <section>
+      <img src="img/obj31.png" alt="" class="p31">
+      <img src="img/obj32.png" alt="" class="p32">
+      <img src="img/obj33.png" alt="" class="p33">
+    </section>
+    <section>
+      <img src="img/obj41.png" alt="" class="p41">
+      <img src="img/obj42.png" alt="" class="p42">
+    </section>
+  </div>
+<div class="box">
+    <h2>x값</h2>
+    <h2>y값</h2>
+    <style>
+      .box {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        display: flex;
+      }
+      h2:first-child {
+        margin-right: 20px;
+      }
+    </style>
+</div>
+</body>
+
+</html>
