@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스움직임이펙트</title>
+</head>
+
+<body>
+  <div class="count">
+    <p>X좌표: <em>000</em></p>
+    <p>Y좌표: <em>000</em></p>
+  </div>
+
+  <div class="box">
+    <div class="mainImg">
+      <img src="../img/bg4-1.jpg" alt="">
+    </div>
+    <p>
+      Lorem ipsum <span class="style1">dolor sit</span> amet consectetur <span class="style2">adipisicing</span> elit.
+      <br>
+      <span class="style3">Debitis</span>, nulla esse nam distinctio ducimus assumendaaliquam <span
+        class="style4">at</span> aut <span class="style5">deserunt</span>.
+    </p>
+  </div>
+
+  <div class="cursor"></div>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    body {
+      background-color: blueviolet;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      perspective: 800px;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .box {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .box p {
+      font-size: 28px;
+      text-align: center;
+      line-height: 2;
+      position: absolute;
+      width: 110%;
+      height: 110%;
+    }
+
+    .box p span {
+      border-bottom: dashed 3px #fff;
+      display: inline-block;
+      padding-bottom: 3px;
+    }
+
+    .cursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 9999px;
+      pointer-events: none;
+      background-color: white;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    .mainImg {
+      width: 50%;
+      height: 60%;
+      background-color: #ccc;
+      position: relative;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .mainImg img {
+      position: absolute;
+      left: -5%;
+      top: -5%;
+      width: 110%;
+      height: 110%;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.84);
+      transform: translate(10px, 0);
+    }
+
+    .count {
+      font-size: 30px;
+      font-weight: bold;
+      position: fixed;
+      right: 150px;
+      top: 50px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 마우스가 윈도우에서 움직일 때, 커서가 나를 따라다녀라
+      // $(window).mousemove(function(e){
+      //   let x = e.pageX;
+      //   let y = e.pageY;
+      //   $('.cursor').css({
+      //     'left': x-10,
+      //     'top': y-10
+      //   })
+      // })
+
+      // mainImg에서 마우스가 움직이면 나를 따라다녀라.
+      $('.mainImg').mousemove(function (e) {
+        let x = e.pageX;
+        let y = e.pageY;
+        $('.cursor').css({
+          'left': x - 10,
+          'top': y - 10
+        })
+        let reX = ($(window).width() - x) / 10,
+          reY = ($(window).height() - y) / 10;
+        $('.mainImg img').css({
+          'transform': 'translate(' + reX + 'px,' + reY +'px)'})
+      })
+
+
+
+    })
+  </script>
+
+</body>
+
+</html>

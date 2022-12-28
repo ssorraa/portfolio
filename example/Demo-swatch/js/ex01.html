@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스움직임이펙트</title>
+</head>
+
+<body>
+  <div class="box">
+    <p>
+      Lorem ipsum <span class="style1">dolor sit</span> amet consectetur <span class="style2">adipisicing</span> elit.
+      <br>
+      <span class="style3">Debitis</span>, nulla esse nam distinctio ducimus assumendaaliquam <span
+        class="style4">at</span> aut <span class="style5">deserunt</span>.
+    </p>
+  </div>
+  <div class="count">
+    <p>X좌표: <em>000</em></p>
+    <p>Y좌표: <em>000</em></p>
+  </div>
+  <div class="cursor"></div>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      cursor: none;
+    }
+
+    body {
+      background-color: blueviolet;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    .box {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box p {
+      font-size: 28px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .box p span {
+      border-bottom: dashed 3px #fff;
+      display: inline-block;
+      padding-bottom: 3px;
+    }
+
+    .count {
+      font-size: 30px;
+      font-weight: bold;
+      position: fixed;
+      right: 150px;
+      top: 50px;
+    }
+
+    .cursor {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.25);
+      border: 3px solid #fff;
+      left: 0;
+      top: 0;
+      transition:
+        background-color 0.5s,
+        border-color 0.5s,
+        border-radius 0.7s,
+        transform 1s;
+      z-index: 3;
+      pointer-events: none;
+      /* .cursor의 커서에 대한 이벤트를 없애겠다 */
+    }
+
+    .cursor.style1 {
+      background-color: rgba(255, 165, 0, 0.25);
+      border-color: orange;
+      opacity: 1;
+    }
+
+    .cursor.style2 {
+      border-radius: 0;
+      transform: rotate(360deg);
+      border-color: rgb(255, 243, 245);
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 커서가 마우스를 따라다녀라
+      $(window).mousemove(function (e) {
+        let x = e.pageX,
+          y = e.pageY;
+        $('.count p').eq(0).children('em') //= .count p:nth-child(1) em
+          .text(x)
+        $('.count p').eq(1).children('em') //= .count p:nth-child(2) em
+          .text(y)
+        $('.cursor').css({
+          'left': x - 25,
+          'top': y - 25,
+        })
+      })
+      // span중 style1번 안으로 들어갔을 때 cursor에 style1 클래스 특징을 더해라
+      $('.style1').mouseenter(function () {
+        $('.cursor').addClass('style1');
+      })
+      $('.style1').mouseleave(function () {
+        $('.cursor').removeClass('style1');
+      })
+      $('.style2').mouseenter(function () {
+        $('.cursor').addClass('style2');
+      })
+      $('.style2').mouseleave(function () {
+        $('.cursor').removeClass('style2');
+      })
+    })
+  </script>
+
+
+</body>
+
+</html>
