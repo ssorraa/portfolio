@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box1">
+    <div class="point"></div>
+    <div class="boxb"></div>
+    <div class="boxy"></div>
+    <div class="boxg"></div>
+  </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box1 {
+      background-color: antiquewhite;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    .boxb {
+      height: 300px;
+      width: 300px;
+      background-color: blue;
+      /* 글자 잘 보이게 설정 */
+      color: #fff;
+      text-align: center;
+      font-size: 60px;
+    }
+
+    .boxy {
+      height: 300px;
+      width: 300px;
+      background-color: yellow;
+      /* 글자 잘 보이게 설정 */
+      color: #fff;
+      text-align: center;
+      font-size: 60px;
+    }
+
+    .boxg {
+      height: 300px;
+      width: 300px;
+      background-color: green;
+      /* 글자 잘 보이게 설정 */
+      color: #fff;
+      text-align: center;
+      font-size: 60px;
+    }
+
+    .point {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      left: 0;
+      top: 0;
+      /* 홀로그램처럼 인식하지 못하게 만들기
+      ex) 마치 케이크가 유리진열장 안에 있을 때는 닿지 못하지만
+      유리진열장이 홀로그램이라면 안에서 케이크를 꺼내 먹을 수 있다!
+      */
+      pointer-events: none;
+      /* 마우스 위에 좌표 잘 보이게 하기 */
+      color: #fff;
+      text-align: center;
+    }
+    .point.on1 {
+      height: 200px;
+      width: 100px;
+      background-color: blueviolet;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+    $(document).ready(function (e) {
+      $('.boxb').mousemove(function () {
+        $('.boxb').text('마우스가 인식되고 있어요')
+      })
+      // 마우스가 인식되지 않을 때 안보이게
+      $('.boxb').mouseout(function () {
+        $('.boxb').text('')
+      })
+      // 마우스의 좌표값X,Y 찾기
+      // 변수의 이름은 상관없습니다
+      // function(e)->실시간으로 해당 정보 받아오기
+      $('.boxb').mousemove(function (e) {
+        let a = e.pageX,
+          b = e.pageY;
+        $('.point').text('X:' + a + ' Y:' + b);
+        // 좌표값에 25씩 빼는 이유:
+        // 원의 크기가 50인데, 25를 빼면 마우스 중앙에 가기 때문
+        // 나중에 한번 -25를 없애보거나 값을 변경해서 확인해보세요!
+        $('.point').css({
+          'left': a - 25,
+          'top': b - 25
+        })
+        $('.point').css({
+          'width':'100',
+          'height':'100'
+        })
+      })
+      $('boxb').mouseleave(function() {
+        $('.point').css({
+          'width':'20',
+          'height':'20'
+        })
+      })
+      $('.boxy').mousemove(function (e) {
+        $('.boxy').text('마우스가 인식되고 있어요')
+        let a = e.pageX,
+          b = e.pageY;
+          $('.point').text('X:' + a + ' Y:' + b);
+          $('.point').css({
+          'left': a - 25,
+          'top': b - 25,
+          'width':'30',
+          'height':'30'
+        })
+        })
+      $('.boxy').mouseout(function () {
+        $('.boxy').text('')
+      })
+      $('.boxg').mousemove(function (e) {
+        $('.boxg').text('마우스가 인식되고 있어요')
+        let a = e.pageX,
+          b = e.pageY;
+          $('.point').addClass('on1')
+          // 처음부터 .boxg에 들어가고, 다른 박스에 안 들어간다면
+          // .on1이 붙으면서 정상적으로 크기가 변경되지만,
+          // 자바스크립트에서 .boxy하고 .boxb에 들어가거나 나가면 width하고 height를 바꾸라고 설정해놨기때문에
+          // 자바스크립트로 width하고 height가 고정됐기 때문에 .on1을 줘도 width하고 height는 바뀐다
+          // 확실하게 보일 수 있게 커서의 색깔이 바뀌도록 설정해놨습니다
+          $('.point').text('X:' + a + ' Y:' + b);
+          $('.point').css({
+          'left': a - 25,
+          'top': b - 25,
+        })
+        })
+      $('.boxg').mouseout(function () {
+        $('.boxg').text('')
+        $('.point').removeClass('on1')
+      })
+
+
+
+
+
+      // 모든 박스에서 움직일 때 원이 움직여라
+      // $(window).mousemove(function (e) {
+      //   let a = e.pageX,
+      //     b = e.pageY;
+      //   $('.point').css({
+      //     'left': a - 25,
+      //     'top': b - 25
+      //   })
+      // })
+    })
+  </script>
+</body>
+
+</html>
