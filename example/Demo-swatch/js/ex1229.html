@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <header id="header">
+    <nav>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </nav>
+  </header>
+  <div class="swrap">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+    <section>6</section>
+    <section>7</section>
+    <section>8</section>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: 'Rubik Bubbles', cursive;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    #header {
+      position: fixed;
+      width: 100%;
+      height: 100px;
+    }
+
+    nav {
+      width: 100%;
+      height: 100%;
+    }
+
+    nav::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    nav>div {
+      display: block;
+      width: 12.5%;
+      height: 100%;
+      float: left;
+      cursor: pointer;
+      border-radius: 0 0 50% 50%;
+      border: 10px solid rgba(0, 0, 0, 0.2);
+      border-top: none;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    nav>div:nth-child(1) {
+      background-color: rgb(250, 128, 114);
+    }
+
+    nav>div:nth-child(2) {
+      background-color: rgb(250, 98, 71);
+    }
+
+    nav>div:nth-child(3) {
+      background-color: rgb(255, 165, 0);
+    }
+
+    nav>div:nth-child(4) {
+      background-color: rgb(238, 238, 0);
+    }
+
+    nav>div:nth-child(5) {
+      background-color: rgb(125, 255, 86);
+    }
+
+    nav>div:nth-child(6) {
+      background-color: rgb(43, 255, 174);
+    }
+
+    nav>div:nth-child(7) {
+      background-color: rgb(94, 223, 255);
+    }
+
+    nav>div:nth-child(8) {
+      background-color: rgb(136, 177, 255);
+    }
+
+    .swrap {
+      background: linear-gradient(to top, #c6ffdd, #fbd786, #f7797d);
+    }
+    section {
+      width: 100%;
+      height: 500px;
+      border: 20px solid rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      font-size: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="jquery.mousewheel.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      let ht = $(window).height(),
+      i;
+      
+      $('section').css({
+        'height': ht
+      })
+      $(window).resize(function () {
+        ht = $(window).height()
+        $('section').css({
+        'height': ht
+      })
+      })
+      $('#header nav div').click(function () {
+        i = $(this).index();
+        $('html,body').stop().animate({
+          'scrollTop': ht * i
+        }, 1000, 'easeInBounce')
+      })
+      
+
+      // 마우스에서 휠을 움직였을 때, 움직인다
+      $('section').mousewheel(function(event,delta){
+        if(delta>0) {
+          // $('section').text('마우스를 올렸습니다.')
+          // 이전 섹션으로 이동
+          let prev = $(this).prev().offset().top;
+          console.log('me')
+          $('html,body').stop().animate({
+            'scrollTop': prev}, 1000
+          )
+        }
+        else if(delta<0) {
+          // $('section').text('마우스를 내렸습니다.')
+          // 다음 섹션으로 이동
+          
+          let next = $(this).next().offset().top
+          $('html,body').stop().animate({
+            'scrollTop': next}, 1000
+          )
+        }
+      })
+    })
+  </script>
+  <!-- 추후 찾아볼것!
+  wait만들기
+  마우스휠 잠시 비활성화
+  -->
+
+
+</body>
+
+</html>
