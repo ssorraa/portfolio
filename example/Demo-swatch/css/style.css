@@ -75,6 +75,27 @@ h1 img {
   color: #005a89;
   border-color: #005a89;
 }
+/* class값 부여 */
+#gnb li.on a {
+  font-size: 24px;
+  opacity: 1;
+}
+#gnb li:nth-child(1).on a {
+  color: #d4164c;
+  border-color: #d4164c;
+}
+#gnb li:nth-child(2).on a {
+  color: #fff;
+  border-color: #fff;
+}
+#gnb li:nth-child(3).on a {
+  color: #ffec6a;
+  border-color: #ffec6a;
+}
+#gnb li:nth-child(4).on a {
+  color: #005a89;
+  border-color: #005a89;
+}
 /* wrap 설정 */
 #wrap {}
 #wrap section {

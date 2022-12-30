@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- 제이쿼리 연결 -->
   <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mousewheel.js"></script>
   <!-- 스크립트 연결 -->
   <script src="js/js.js"></script>
 </head>
@@ -17,7 +19,10 @@
 <body>
   <h1><img src="img/logo.png" alt=""></h1>
   <ul id="gnb">
-    <li><a href="#">Full Blossom</a></li>
+    <!-- 실험결과: 스크롤이 0이면
+      처음 열린 상태와 달라진 것이 없기 때문에
+      자바스크립트 scroll이 작동하지 않음 -->
+    <li class="on"><a href="#">Full Blossom</a></li>
     <li><a href="#">Be Colorful</a></li>
     <li><a href="#">Time on Board</a></li>
     <li><a href="#">Shiny Addict</a></li>
@@ -42,7 +47,7 @@
       <img src="img/obj42.png" alt="" class="p42">
     </section>
   </div>
-<div class="box">
+<!-- <div class="box">
     <h2>x값</h2>
     <h2>y값</h2>
     <style>
@@ -56,7 +61,7 @@
         margin-right: 20px;
       }
     </style>
-</div>
+</div> -->
 </body>
 
 </html>
