@@ -1,58 +1,311 @@
 @charset 'utf-8';
-section {
-  width: 100%;
-  height: 800px;
+
+* {
+  margin: 0;
+  padding: 0;
 }
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*  화면크기설정 */
 header {
   background-color: #fff;
-  height: 200px;
   width: 100%;
+  height: 200px;
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 9999;
+}
+
+section {
+  width: 100%;
+  height: 600px;
+  position: relative;
 }
 
 section:nth-child(1) {
-  background-color: #111;
+  background-color: #ccc;
 }
+
 section:nth-child(2) {
-  background-color: #222;
+  background-color: #bbb;
 }
+
 section:nth-child(3) {
-  background-color: #333;
+  background-color: #aaa;
 }
+
 section:nth-child(4) {
-  background-color: #444;
+  background-color: #999;
 }
+
 section:nth-child(5) {
-  background-color: #555;
+  background-color: #888;
 }
+
 section:nth-child(6) {
-  background-color: #666;
-}
-section:nth-child(7) {
   background-color: #777;
 }
+
+section:nth-child(7) {
+  background-color: #666;
+}
+
 section:nth-child(8) {
-  background-color: #888;
+  background-color: #555;
+}
+
+section:nth-child(9) {
+  background-color: #444;
 }
 
 #wrapper {
   width: 1280px;
   height: 100%;
-  margin: 0 auto 0 auto;
-  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.5);/*삭제예정*/
+  position: relative;
 }
 
-section:nth-child(4) div div:nth-child(1) {
+/* section:nth-child(4) .con01 {
   width: 50%;
   height: 100%;
-  background-color: aqua;
-  float: left;
+  background-color: red;
+  position: absolute;
+  left: -200%;
+  transition: all 0.8s;
+
 }
-section:nth-child(4) div div:nth-child(2) {
+
+section:nth-child(4) .con02 {
   width: 50%;
   height: 100%;
-  background-color: aquamarine;
-  float: left;
+  background-color: blue;
+  position: absolute;
+  right: -200%;
+  transition: all 0.8s;
+
+} */
+
+
+/* section:nth-child(4):hover .con01 {
+  left: 0;
 }
+
+section:nth-child(4):hover .con02 {
+  right: 0;
+} */
+/* header상세설정 */
+header {
+  background-color: #f6f5ef;
+  height: 120px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header #wrapper {
+  display: flex;
+  align-items: center;
+}
+header h1 {
+width: 10%;
+}
+header img {}
+
+nav {
+  width: 90%;
+}
+nav .util {
+  display: flex;
+  justify-content: flex-end;
+}
+nav .util ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav .util li {}
+nav .util li a {
+  display: block;
+  padding: 10px;
+}
+.util .search {
+  background-color: #fff;
+  border: solid #666 1px;
+  position: relative;
+  width: 35px;
+  border-radius: 4px;
+  transition: all 0.8s;
+}
+/* 서치를 클릭했을때 값 */
+.util .search input {
+  border: none;
+  width: 120px;
+  margin-top: 6px;
+  padding: 3px 10px;
+  font-size: 14px;
+  opacity: 0;
+}
+.util .search a {
+  position: absolute;
+  right: 7px;
+  top: 5px;
+
+  height: auto;
+}
+.util .search a img {}
+
+nav .gnb {
+  display: flex;
+  justify-content: flex-end;
+}
+nav .gnb>li {}
+nav .gnb>li>a {
+  display: block;
+  padding: 10px 20px;
+}
+/* 서브메뉴 */
+.sub_menu {
+  width: 100%;
+  position: relative;
+}
+.sub_menu>div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 20px 0;
+  background-color: #000;
+  width: 100%;
+  color: #ddd;
+  display: none;
+}
+.sub_menu #wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.sub_menu>div ul {
+  width: 20%;
+}
+.sub_menu>div li {}
+.sub_menu>div li:first-child {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+/* 컨텐츠 1번 설정 */
+.con1 {
+  margin-top: 120px;
+  width: 100%;
+  height: 600px;
+  background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_newyear_top_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.con1 #wrapper {
+  display: flex;
+}
+.con1 .luck1 {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 100px;
+  opacity: 0;
+}
+.con1 .luck1 img{
+  max-width: 100%;
+}
+.con1 .luck1 .more {
+  margin-top: 80px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px 5px;
+  font-size: 12px;
+}
+.con1 .img_g {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.con1 .img_g>div {
+  width: 30%;
+}
+.con1 .img_g img {
+  max-width: 100%;
+  height: auto;
+}
+.tea1 {
+  opacity: 0;
+  position: absolute;
+  left: 5%;
+  top: 20%;
+}
+.tea2 {
+  opacity: 0;
+  position: absolute;
+  left: 25%;
+  top: 35%;
+}
+.tea3 {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
+/* 컨텐츠2번 설정 */
+.con2 {
+  height: 300px;
+}
+/* 컨텐츠3번 설정 */
+.con3 {
+  background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_newyear_promotion_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.con3 #wrapper {
+  position: relative;
+}
+.con3>div {
+}
+.promotion_img {
+  width: 50%;
+  padding-top: 150px;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  left: -100%;
+}
+.promotion_img  img {
+}
+.promotion_txt {
+  width: 50%;
+  padding-top: 150px;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  right: -100%;
+}
+.promotion_txt img{}
+
+.con3>p {}
