@@ -1,0 +1,122 @@
+@charset 'utf-8';
+
+/* 전체 설정 */
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  vertical-align: bottom;
+  border: none;
+}
+body {
+  width: 100%;
+  height: 4000px;
+}
+/* 로고설정 */
+h1 {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+/* gnb설정 */
+.gnb {
+  position: fixed;
+  left: 60px;
+  top: 50%;
+  margin-top: -260px;
+  display: flex;
+}
+.gnb li {
+  margin-right: 30px;
+  transition: color 0.5s;
+}
+
+/* txt설정 */
+.txt {
+  position: fixed;
+  width: 300px;
+  right: 20px;
+  top: 50%;
+  margin-top: -100px;
+}
+/* 섹션설정 */
+section {
+  position: fixed;
+  width: 4000px;
+  top: 50%;
+  left: 0;
+  margin-top: -210px;
+}
+section article {
+width: 180px;
+height: 400px;
+float: left;
+margin: 10px;
+background-color: #fff;
+position: relative;
+box-shadow: 3px 3px 3px #bbb;
+overflow: hidden;
+transition: all 0.7s;
+}
+article h2 {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  background-color: #111;
+  opacity: 0.4;
+  width: 100%;
+  height: 50px;
+  transition: all 0.5s;
+}
+
+article h2 a {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  line-height: 3.5;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+article strong {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  opacity: 0.4;
+  text-align: center;
+  transition: all 0.5s;
+}
+article:hover h2 {
+  opacity: 0.8;
+}
+article:hover strong {
+  opacity: 1;
+}
+article strong img {}
+article p {}
+article p img {}
+article em {
+  position: absolute;
+  bottom: 50px;
+  right: 190px;/* 변환할 예정 */
+  transition: all 1s;
+}
+article span {
+  position: absolute;
+  right: 190px;/* 변환할 예정 */
+  top: 110px;
+  font-size: 20px;
+  color: #fff;
+}

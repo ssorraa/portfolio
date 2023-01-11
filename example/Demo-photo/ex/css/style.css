@@ -1,0 +1,140 @@
+@charset 'utf-8';
+
+/* 전체 설정 */
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  vertical-align: bottom;
+  border: none;
+}
+body {
+  width: 100%;
+  height: 4000px;
+  background-color: rgb(154, 131, 161);
+}
+/* 로고설정 */
+h1 {
+  position: fixed;
+  width: 202px;
+  height: 172px;
+  right: 20px;
+  top: 20px;
+  background-image: url(../../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/* gnb설정 */
+.gnb {
+  position: fixed;
+  left: 60px;
+  top: 50%;
+  margin-top: -260px;
+  display: flex;
+}
+.gnb li {
+  margin-right: 30px;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.gnb li:hover {
+  color: #fff;
+}
+.gnb li.on {
+  color: #fff;
+}
+/* txt설정 */
+.txt {
+  position: fixed;
+  width: 300px;
+  right: 20px;
+  top: 50%;
+  margin-top: -100px;
+}
+/* 섹션설정 */
+section {
+  position: fixed;
+  width: 4000px;
+  top: 50%;
+  left: 0;
+  margin-top: -210px;
+}
+section article {
+  width: 180px;
+height: 400px;
+float: left;
+margin: 10px;
+cursor: pointer;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+article:nth-child(1) {
+  background-image: url(../../img/pic1.jpg);
+}
+article:nth-child(2) {
+  background-image: url(../../img/pic2.jpg);
+}
+article:nth-child(3) {
+  background-image: url(../../img/pic3.jpg);
+}
+article:nth-child(4) {
+  background-image: url(../../img/pic4.jpg);
+}
+article:nth-child(5) {
+  background-image: url(../../img/pic5.jpg);
+}
+article:nth-child(6) {
+  background-image: url(../../img/pic6.jpg);
+}
+article:nth-child(7) {
+  background-image: url(../../img/pic7.jpg);
+}
+article:nth-child(8) {
+  background-image: url(../../img/pic8.jpg);
+}
+article:nth-child(9) {
+  background-image: url(../../img/pic9.jpg);
+}
+article:nth-child(10) {
+  background-image: url(../../img/pic10.jpg);
+}
+article:nth-child(11) {
+  background-image: url(../../img/pic11.jpg);
+}
+article:nth-child(12) {
+  background-image: url(../../img/pic12.jpg);
+}
+article:nth-child(13) {
+  background-image: url(../../img/pic13.jpg);
+}
+article:nth-child(14) {
+  background-image: url(../../img/pic14.jpg);
+}
+article:nth-child(15) {
+  background-image: url(../../img/pic15.jpg);
+}
+article:nth-child(16) {
+  background-image: url(../../img/pic16.jpg);
+}
+article:nth-child(17) {
+  background-image: url(../../img/pic17.jpg);
+}
+article:nth-child(18) {
+  background-image: url(../../img/pic18.jpg);
+}
+article:nth-child(19) {
+  background-image: url(../../img/pic19.jpg);
+}
+article:nth-child(20) {
+  background-image: url(../../img/pic20.jpg);
+}

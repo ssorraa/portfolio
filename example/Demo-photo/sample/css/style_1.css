@@ -1,0 +1,172 @@
+@charset"utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+/*전체설정*/
+* {margin: 0;
+padding: 0}
+ul {list-style: none;}
+a {text-decoration: none;
+	color: #555}
+img {border: none;}
+body {font-family: 'Poiret One', cursive;
+	background: #ddd;
+	height: 4000px;
+	width: 100%;
+	}
+
+	/*로고설정 */
+	h1 {position: fixed;
+		top: 20px;
+		right: 20px}
+	/*메뉴설정*/
+	#navi {position: fixed;
+			top: 50%;
+			left: 60px;
+			margin-top: -280px;}
+	#navi li {float: left;
+		margin-right: 25px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #fff;
+		cursor: pointer;
+		transition: all 0.5s}
+	#navi li:hover {color: #888}
+
+
+	/*텍스트박스설정*/
+	.txt {position: fixed;	
+		right: 20px;
+		top: 50%;
+		margin-top: -80px;
+		font-size: 100px;
+		text-align: right;
+		color: #fff;
+		line-height: 0.5}
+	.txt span {color: #aaa}
+	.txt em {font-size: 18px;
+		font-family: arial;
+		font-style: normal;color: #888}	
+
+		/*포폴레이아웃*/
+	section{position: fixed;
+			top: 50%;
+			left: 0;
+		width: 4600px;}
+	article {width: 180px;
+			height: 400px;
+			background: #fff;
+			float: left;
+			margin: 10px;
+			margin-top: -200px;
+			border-radius: 5px;
+			box-shadow: 3px 3px 3px #bbb;
+			position: relative;
+			overflow: hidden;}	
+
+	/*포폴제목*/
+ article h2 {position: absolute;
+ 	top: 300px;
+ 	right: 0px;
+ 	width: 100%;
+ 	height: 50px;
+ 	background: #111;
+ 	padding-left: 20px; 
+ 	box-sizing: border-box;opacity: 0.4;
+ 	cursor: pointer;
+ 	transition: all 0.5s;
+ 	z-index: 2}			
+ article h2 a{font-size: 14px;
+ 			font-weight: bold;
+ 			color: #fff;
+ 			letter-spacing: 2px;}	
+ article h2:hover {opacity: 0.8}
+
+/*포폴썸네일*/
+article strong {position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 300px;
+overflow: hidden;
+text-align: center;
+display: block;
+opacity: 0.4;
+transition: all 0.5s}
+ article:hover strong {opacity: 1}
+
+ article strong img {
+ 	height: 300px;
+ 	width: auto;
+ }
+
+ /*포폴이미지*/
+
+ article p {position: absolute;
+ 	top: 50%;
+ 	right: 0;
+ 	z-index: 1;
+ 	background: #fff;
+ 	text-align: center;
+ 	transition: all 0.8s;
+ 	width: 100%;
+ 	height:0;
+ 	overflow: hidden;
+ 	opacity: 0}
+  article p img {width: 100%;
+  height: 100%}	
+
+ /*포폴설명*/
+ article em {position: absolute;
+ 			bottom: 50px;
+ 			right: -300px;
+ 			background: #000;
+ 			color: #fff;
+ 			display: inline-block;
+ 			padding: 10px 20px;
+ 			box-sizing: border-box;
+ 			opacity: 0.8;
+ 			transition: all 1s;
+ 			z-index: 2;
+ 		}
+
+ 	/*닫기버튼*/
+ 	article span {position: absolute;
+ 				top: 110px;
+ 				right:-300px;
+ 				color: #fff;
+ 				text-align: center;
+ 				font-size: 20px;
+ 				letter-spacing: 4px;
+ 				z-index: 3;
+ 				cursor: pointer;}
+
+
+ 	/*클릭시 변형된 모습*/
+ 	article.on {width: 780px;
+ 		height: 500px;
+ 		margin-top: -250px}
+ 	article.on h2 {top: 100px;
+ 	height: 100px;
+ 	background: #111;
+ 	opacity: 0.3}	
+ 	article.on h2 a {font-size: 30px;
+ 		color: #fff}
+ 	article.on strong {opacity: 0}
+ 	article.on p {opacity: 1;
+ 				height: 500px;
+ 				margin-top: -250px;
+ 			}
+ 	article.on em {right: 20px;
+ 	}
+ 	article.on span {right: 20px}						
+
+	/*카피라이트설정*/
+	.copyright {position: fixed;
+				right: 20px;
+				bottom: 20px;
+				font-size: 12px;
+				font-family: arial;
+				letter-spacing: 4px;
+				color: #999;
+				}	
+

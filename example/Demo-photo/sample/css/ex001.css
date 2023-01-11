@@ -1,0 +1,181 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+
+
+
+/*전체설정*/
+* {margin: 0;
+	padding: 0}
+ol,ul {list-style: none;}
+a {text-decoration: none;
+	color: #555}
+img {border: none;}	
+body {font-family: 'Poiret One', cursive;
+	background: #ddd;
+	height: 4000px;
+	width: 100%;
+	min-width: 1400px}
+
+	/*로고*/
+
+	h1	 {position: fixed;
+		right:20px;
+		top: 20px;
+		font-family: arial }
+
+	/*네비설정*/
+	#navi {position: fixed;
+			top: 50%;
+			left: 60px;
+			margin-top: -280px}	
+	#navi li {float: left;
+			margin-right: 25px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #fff;
+			cursor: pointer;
+			transition: all 0.5s}		
+
+	#navi li:hover {color: #888}
+	#navi li.on {color: #888}
+
+
+	/*슬로건*/
+	.txt {position: fixed;
+		top: 50%;
+		right: 20px;
+		font-size: 100px;
+		color: #fff;
+		text-align: right;
+		margin-top: -80px;
+		line-height: 0.5}	
+	.txt span {color: #aaa}
+	.txt em {font-size: 18px;
+			font-style: normal;
+			color: #888;
+			letter-spacing: 1px}
+
+/*레이아웃*/
+section {position: fixed;
+		width:4600px;
+		height: 500px;
+		top: 50%;
+		left: 0;
+		margin-top: -250px;
+		}
+
+article {background: #fff;
+		float: left;
+		height: 400px;
+		width: 180px;	
+		margin: 10px;
+		position: relative;
+		top: 50%;
+		margin-top: -200px;
+		border-radius: 5px;
+		box-shadow: 3px 3px 3px #bbb;
+		overflow: hidden;
+		}	
+
+/*&&&&&&&포폴내용&&&&&&*/
+
+/*포폴제목*/
+article h2 {position: absolute;
+		background: #111;
+		width: 100%;
+		top: 300px;
+		cursor: pointer;
+		padding-left: 20px;
+		box-sizing: border-box;
+		height: 50px;
+		transition: all 0.5s;
+		opacity: 0.4;
+		z-index: 10}
+article h2 a {color: #fff;
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 3.5;
+				letter-spacing: 2px;
+				transition: all 0.5s;}
+article:hover h2{opacity: 0.8}				
+
+/*포폴썸네일*/
+article strong {display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 300px;
+				overflow: hidden;
+				transition: all 0.5s;
+				opacity: 0.4}
+article strong img {height: 300px;
+					width: auto;}
+
+article:hover strong {opacity: 0.8}					
+/*포폴이미지*/
+article p {position: absolute;
+			width: 100%;
+			height:0px;
+			right: 0;
+			top: 50%;
+			z-index: 1;
+			background: #fff;
+			overflow: hidden;
+			transition: all 0.8s;
+			opacity: 0;
+			margin-top: 0px}
+article p img {height: 100%/*500px 동일*/;
+			width:auto;}
+/*포폴 설명*/
+article em {position: absolute;
+			background: #000;
+			color: #fff;
+			z-index: 2;
+			right: ;
+			bottom:50px;
+			right: -300px;
+			display: inline-block;
+			padding: 10px 20px}
+/*닫기버튼*/
+article span {position: absolute;
+			top: 110px;
+			right:-300px;
+			z-index: 100;
+			font-size: 20px;
+			color: #fff;
+			cursor: pointer;}
+
+
+article.on {width: 780px;
+			height: 500px;
+			margin-top:-250px }
+
+article.on h2 {top: 100px;
+	height: 100px;
+	background: #111;
+	opacity: 0.3}
+article.on h2 a{font-size: 30px;
+				color: #fff;}
+
+article.on strong{opacity: 0}
+article.on p {height:500px;
+				opacity: 1;
+				margin-top: -250px}
+article.on em {right: 20px}
+article.on span {right: 20px}
+	/*카피라이트*/
+	
+	.copyright {position: fixed;
+				bottom: 20px;
+				right: 30px;
+				font-size: 12px;
+				letter-spacing: 4px;
+				color:#999;
+				}		
+
+
+
+
+
