@@ -31,7 +31,7 @@ h1 {
   position: fixed;
   left: 60px;
   top: 50%;
-  margin-top: -260px;
+  margin-top: -300px;
   display: flex;
 }
 .gnb li {
@@ -50,10 +50,11 @@ h1 {
 /* 섹션설정 */
 section {
   position: fixed;
-  width: 4000px;
+  width: 4600px;
   top: 50%;
   left: 0;
   margin-top: -210px;
+  height: 400px;
 }
 section article {
 width: 180px;
@@ -65,6 +66,8 @@ position: relative;
 box-shadow: 3px 3px 3px #bbb;
 overflow: hidden;
 transition: all 0.7s;
+top: 50%;
+margin-top: -200px;
 }
 article h2 {
   position: absolute;
@@ -75,6 +78,7 @@ article h2 {
   width: 100%;
   height: 50px;
   transition: all 0.5s;
+  z-index: 5;
 }
 
 article h2 a {
@@ -105,13 +109,24 @@ article:hover strong {
   opacity: 1;
 }
 article strong img {}
-article p {}
+article p {
+  background-color: red;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.8s;
+}
 article p img {}
 article em {
   position: absolute;
   bottom: 50px;
-  right: 190px;/* 변환할 예정 */
+  right: -300px;/* 변환할 예정 */
   transition: all 1s;
+  z-index: 3;
 }
 article span {
   position: absolute;
@@ -119,4 +134,35 @@ article span {
   top: 110px;
   font-size: 20px;
   color: #fff;
+  z-index: 10;
+}
+/* article.on 설정 */
+article.on {
+  width: 780px;
+  height: 500px;
+  margin-top: -250px;
+}
+
+article.on strong {
+  opacity: 0;
+}
+article.on h2 {
+  top: 100px;
+  height: 100px;
+  background-color: #111;
+  opacity: 0.3;
+}
+article.on h2 a {
+  font-size: 30px;
+}
+article.on p {
+  height: 500px;
+  margin-top: -250px;
+  opacity: 1;
+}
+article.on em {
+  right: 20px
+}
+article.on span {
+cursor: pointer;
 }

@@ -1,30 +1,68 @@
 $(document).ready(function(){
-// 화면의 크기가 바뀔 때마다
-$(window).resize(function(){
-// body 높이값과 section의 가로값 통일시키기
-// section가로값 = article의 갯수x가로값
-// 갯수: size
-let a = $('article').size()
-let aWd = $('article').width()
-$('section').width(a*(aWd+20))
-$('body').height(a*(aWd+20))
-})
 
-// 화면에서 스크롤바가 움질일때 상단의 위치값을 찾아라
-$(window).scroll(function(){
-  let sc = $(this).scrollTop()
-  $('section').stop().animate({'left':-sc},600)
+
+  // body 높이값과 section의 가로값 통일시키기 
+  // article갯수를 구하고  article의 가로값을 구해서 두개를 
+  // 곱한값을 section의 가로값으로 변환
+  let a = $('article').size();
+  let aWd= $('article').width()
+
+  $('section').width((a*(aWd+20))+600);
+  $('body').height((a*(aWd+20))+600);
+
+  $(window).resize(function(){
+
+
+
+      //  화면이 리사이즈 될때마다, body 높이값과 section의 가로값 통일시키기 
+  // article갯수를 구하고  article의 가로값을 구해서 두개를 
+  // 곱한값을 section의 가로값으로 변환
+  let a = $('article').size();
+  let aWd= $('article').width()
+
+  $('section').width((a*(aWd+20))+600);
+  $('body').height((a*(aWd+20))+600);
+
+
+  })
+
+
+
+
+
+
+
+
+  // 화면에서 스크롤바가 움직일때 
+  //상단의 위치값을 찾아라.
+
+  $(window).scroll(function(){
+      let sc = $(window).scrollTop();
+      // $('h1').text(sc);
+      $('section').stop().animate({'left':-sc},600)
+
+
+
+  });
+
+
+  $('.gnb li').click(function(){
+
+      let i = $(this).index();
+
+   $('html,body').scrollTop(1000*i)
+  })
+// article을 클릭했을때
+// 모든 article에겐 removeClass를 하고
+// 클릭한 것에게 addClass를 해라
+$('article h2').click(function(e){
+  e.preventDefault();//기존에 있었던 a의 이벤트 값을 없애라
+  $('article').removeClass()
+  $(this).parent().addClass('on')
 })
-$('section article').click(function(){
-  $('section').stop().animate({'width':4400},600)
-  $(this).stop().animate({'width':400},600)
-})
-$('section article').mouseleave(function(){
-  $('section').stop().animate({'width':4000},600)
-  $(this).stop().animate({'width':180},600)
-})
-$('.gnb li').click(function(){
-  let i = $(this).index()
-$('html,body').scrollTop(i*1000)
+// span을 클릭했을 때 
+// article에 removeClass를 해라
+$('article span').click(function(){
+  $(this).parent().removeClass('on')
 })
 })
