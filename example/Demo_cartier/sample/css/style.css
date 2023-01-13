@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+/*    Reset CSS  */
+* { margin:0;  padding:0;}
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none;	color:#bbb;}
+img { border:0;}
+
+
+/* 배경이미지 설정*/
+.wrap {	position:fixed; width:100%; height:100%; min-width:1024px; min-height:768px; 	background:url(../img/bg.jpg) no-repeat center bottom; background-size:cover;}
+
+/* 로고 영역 */
+.wrap h1 { position:fixed; width:300px; top:240px; left:0px;	text-align:center;	line-height:0.8;}
+.wrap h1 strong {	font:bold 16px/1.1 verdana; color:#333;}
+.wrap h1 img {	width:200px; height:auto;}
+.wrap h1 span {font:bold 12px/1.6 arial; color:#444;letter-spacing:5px;}
+
+/* 슬로건 영역*/
+.txt {	position:fixed; top:400px; left:40px;	font:30px/0.8 Raleway; color:#111;	letter-spacing:0px;}
+.txt span {font-size:30px; color:#888;}
+
+/* 웹 아이콘 버튼 모음 */
+.sns { position:fixed; top:30px; right:50px; z-index:10;}
+.sns li { float:left;	margin-left:30px;}
+.sns li a {	color:#555;	font-size:22px;}	
+
+/* section 영역 레이아웃 */
+section {position:fixed; top:0px; right:0px;width:100%; height:100%;}
+article {position:relative;	width:12%; height:100%;background:url(../img/divider.png) no-repeat left center;float:right;	overflow:hidden;}
+
+/* article 제목 */
+article h2 {position:absolute;top:300px;	left:20px;	padding-left:15px;	border-left:3px solid #555;	font:bold 20px Raleway; color:#666;	z-index:3;	transition:all 0.5s;}
+article div {	position:absolute;	left:0px; top:300px;	width:100%; height:0px;	background:#000;	opacity:0.5;	z-index:2;	transition:all 0.5s;}
+
+/* article 제목 호버 효과 */
+article:hover h2 { color:#ccc; border-left:3px solid #ccc;}
+article:hover div { top:270px; height:70px;}
+
+/* article 동영상 */
+article video {	position:absolute;width:auto; height:100%;	margin-top:0px; margin-left:-100px;	opacity:0;	z-index:1;}
+
+/* article 숨겨진 컨텐츠 */
+article h3 {position:absolute;	bottom:210px;	right:-310px;	font: 40px Raleway; color:#fff;	text-align:right;	opacity:1;	z-index:4;	}
+article p {	position:absolute;bottom:50px; right:-310px;	width:300px; height:150px;	font:12px/1.5 arial; color:#fff;	text-align:right;	opacity:0.8;	z-index:5;}
+
+/* footer */
+footer {	position:fixed; 	width:100%; height:40px;	left:0px; bottom:0px;	background:#000;	font:12px/3.3 verdana; color:#fff;	letter-spacing:2px;	opacity:0.4;	z-index:10;}
+footer ul {	position:absolute; 	bottom:0px; left:50px;}
+footer ul li {	float:left;	margin-right:40px;}
+footer span {position:absolute; 	right:50px; bottom:0px;}
+

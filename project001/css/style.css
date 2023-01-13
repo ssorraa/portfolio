@@ -1,10 +1,10 @@
 @charset 'utf-8';
-
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 /* 전체 설정 */
 * {
   margin: 0;
   padding: 0;
-
+  font-family: 'Gowun Dodum', sans-serif;
 }
 img {
   border: none;
@@ -18,25 +18,251 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-color: #f9f5ec;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+
 /* 헤더 */
-.header {}
-.header h1 {}
-.header nav {}
-.util {}
-.util li{}
-.gnb {}
-.gnb li {}
+
+.header {
+  height: 150px;
+}
+.header .wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1 {
+  width: 30%;
+  margin: auto 0;
+}
+.header h1 img {
+  width: 100%;
+  height: auto;
+}
+.header nav {
+  display: flex;
+  flex-direction: column;
+  color: #514d47;
+  margin: 30px 10px 10px 0;
+}
+.util {
+  display: flex;
+  justify-content: end;
+  margin-right: 5px;
+  height: 50px;
+  font-size: 20px;
+}
+.util li{
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.util li:nth-child(3) {
+  width: 48px;
+  height: 48px;
+  outline: solid 1px #514d47;
+  background-color: #514d47;
+  border: solid 1px #f9f5ec;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.util li:nth-child(3) i {
+  color: #f9f5ec;
+  font-size: 30px;
+}
+.util li:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  background-color: #514d47;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.util li:nth-child(4) i {
+  color: #f9f5ec;
+  position: absolute;
+  left: 50%;
+}
+.util li:nth-child(4) i.fa-moon {
+  margin-left: -15px;
+  bottom: -40%;
+  transition: bottom 0.5s;
+  font-size: 40px;
+}
+.util li:nth-child(4):hover i.fa-moon {
+  bottom: 10%;
+}
+.util li:nth-child(4) i.fa-star {
+  margin-left: 1px;
+  font-size: 15px;
+  bottom: 50%;
+  margin-bottom: -5px;
+}
+/*  완료한 뒤에 시간 남으면 만들 것
+.util li:nth-child(4) i.fa-sun {
+  font-size: 36px;
+  left: 50%;
+  margin-left: -18px;
+  bottom: -40%;
+  transition: bottom 0.5s;
+}
+.util li:nth-child(4):hover i.fa-sun {
+  bottom: 50%;
+  margin-bottom: -19px;
+} */
+.util li:nth-child(5) i {
+  font-size: 50px;
+}
+.gnb {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  line-height: 30px;
+  height: 60px;
+}
+.gnb li {
+  margin: 0 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
 
 /* 메인슬라이드 설정 */
-.slide {}
-.slide .imgBox {}
-.slide .iconBox {}
-.slide .donateBox {}
+.slide {
+  width: 100%;
+  padding: 75px 0;
+}
+.slide .imgBox {
+  border-radius: 200px 400px 200px 400px;
+  background-color: #514d47;
+  position: relative;
+  width: 1436px;
+  height: 850px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slide .imgBox>a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.slide .imgBox img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.slide .imgBox>img {
+  z-index: 2;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.7s;
+  pointer-events: none;
+}
+
+.slide .imgBox>img:nth-child(2) {
+  z-index: 2;
+  transform: rotate(180deg);
+  width: auto;
+  left: 100%;
+  margin-left: -396px;
+}
+.slide .imgBox>i {
+  margin: 70px;
+  color: #f9f5ec;
+  font-size: 100px;
+  z-index: 3;
+  top: 50%;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.slide .imgBox>i:last-child {
+  transform: rotate(180deg);
+}
+.slide .imgBox>i:hover {
+  opacity: 0.8;
+}
+
+.slide .donateBox {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 170px;
+  background-color: rgba(191, 174, 153, 0.7);
+  margin-top: -170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.donateBox .txtBox {
+  padding-left: 200px;
+}
+.donateBox .txtBox p {
+  color: #f9f5ec;
+  font-size: 30px;
+}
+.donateBox .txtBox img {
+  margin-top: 25px;
+  width: auto;
+  height: 46px;
+  position: inherit;
+  float: right;
+}
+.donateBox .iconBox {
+  margin-right: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.donateBox .iconBox a {
+  color: #f9f5ec;
+  margin: 0 15px;
+  font-size: 24px;
+}
+.donateBox .iconBox span {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-color: #f9f5ec;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+}
+.donateBox .iconBox i {
+  font-size: 40px;
+  color: #e6933d;
+}
+.donateBox .iconBox a:first-child i {
+  font-size: 55px;
+}
+
 
 /* news 설정 */
-.news {}
+.news {
+  height: 1200px;
+  background-color: yellow;
+}
 .news>h2 {}
-.news .tag {}
+.news .tag {
+  display: flex;
+  justify-content: space-between;
+}
 .news .conBox {}
 .news .conBox article {}
 .news .listBox {}
@@ -50,7 +276,18 @@ a {
 .news .notice ul {}
 .news .notice li {}
 /* bg 설정 */
-.bg {}
+.bg {
+  height: 1200px;
+  background-color: #e6933d;
+  border-radius: 0 300px 300px 300px;
+  position: relative;
+}
+.bg>img:nth-child(1) {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  pointer-events: none;
+}
 .bg .active {}
 .bg .active h2 {}
 .bg .active div {}
@@ -59,11 +296,25 @@ a {
 .bg .site li {}
 .bg .site a {}
 /* info 설정 */
-.info {}
+.info {
+  height: 1400px;
+  background-color: skyblue;
+}
 .info h2 {}
 .info .book {}
 .book ul {}
 .book li {}
 .book li a {}
 /* footer 설정 */
-footer {}
+footer {
+  height: 250px;
+  background-color: violet;
+}
+
+/* 미디어쿼리 */
+@media (min-width:1440px) {
+  .wrap {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}

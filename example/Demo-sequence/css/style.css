@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+/* 전체설정 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+}
+
+
+/* 배경이미지 */
+.bg {
+  background-image: url(../img/bgLine.png);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+}
+
+/* 로고 */
+header {}
+
+header h1 {
+  text-align: center;
+  padding: 50px 0;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* nav */
+
+nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  top: 50%;
+  margin-top: -25px;
+  background-image: url(../img/tr.png);
+}
+
+nav>ul {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+nav>ul>li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  perspective: 700px;
+}
+
+nav>ul>li>a {
+  display: block;
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+nav>ul>li:hover>a {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+/* 서브메뉴설정 */
+
+nav div {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  background-image: url(../img/tr.png);
+  border: 1px solid #000;
+  left: 0;
+  top: -50px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+nav>ul>li:hover div {
+  opacity: 1;
+  top: -100px;
+  transform: rotateY(360deg);
+  pointer-events: unset;
+}
+
+nav div p {
+  width: 100%;
+  height: 90px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+nav div p img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+nav div h2 {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  left: 0;
+  top: 100px;
+}
+
+nav div ul {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav div li {}
+
+nav div li a {
+  display: block;
+  text-align: center;
+  border-top: 1px solid #111;
+  padding: 8px 0;
+  color: #888;
+  font-size: 11px;
+}
+
+
+
+/* 시퀀스설정 */
+section {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 500px;
+  margin-top: -250px;
+  overflow: hidden;
+}
+
+section img {
+  width: 100%;
+  height: auto;
+}

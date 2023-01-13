@@ -1,0 +1,165 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/*전체설정*/
+* {margin: 0;
+padding: 0}
+ol,ul {list-style: none;}
+a {text-decoration: none;
+	color: #bbb}
+img {border: none;}
+
+
+/*배경이미지설정*/
+.wrap {position: fixed;
+		width: 100%;
+		height: 100%;
+		min-width: 1024px;
+		min-height: 768px;
+		background: url(../img/bg.jpg) no-repeat center bottom;
+		background-size: cover;
+	}
+
+/*로고영역*/
+.wrap h1 {position: fixed;
+	top: 240px;
+	text-align: center;
+	line-height: 0.8;
+	width: 300px;
+}
+.wrap strong{font-size: 16px;
+		font-weight: bold;
+		line-height: 1.1;
+		font-family: vardana;
+		color: #333}
+.wrap img {width: 200px;
+			height: auto;}
+.wrap h1 span {font-size: 12px;
+			font-weight: bold;
+			line-height: 1.6;
+			font-family: arial;
+			color: #444;
+			letter-spacing: 5px}
+
+/*슬로건영역*/
+.txt {position: fixed;
+	top:400px;
+	left: 40px;
+	font-size: 30px;
+	 font-family: 'Raleway', sans-serif;
+	 color: #111;
+	line-height: 0.8;
+	letter-spacing:0px}
+.txt span {color: #888 }	
+
+/*sns설정*/
+#sns {position: fixed;
+	top: 30px;
+	right: 50px;
+	z-index: 100}
+#sns li {float: left;
+	margin-right: 30px}
+#sns li a {font-size: 22px;
+		color: #555;
+		display: block;}
+#sns i {}
+#sns span {display: inline-block;
+			text-indent: -99999px}	
+
+/*section 영역설정*/
+section{position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0}
+article {background:url(../img/divider.png) no-repeat left center;
+		width: 12%;
+		float: right;
+		height: 100%;
+		position: relative;
+		overflow: hidden;}
+
+article h2 {position:absolute;
+			left: 20px;
+			top: 300px;
+			border-left: 3px solid #555;
+			padding-left: 15px;
+			font-size: 20px;
+			 font-family: 'Raleway', sans-serif;
+			 font-weight: bold;
+			 color: #666;
+			 z-index:3;
+			 transition: all 0.5s }
+article div {position: absolute;
+			left: 0;
+			top:300px;
+			background: #000;
+			opacity: 0.5;
+			width: 100%;
+			height: 0px;
+			z-index:2;
+			transition: all 0.5s }
+
+article:hover h2 {color: #ccc;
+				border-left: 3px solid #ccc}
+article:hover div {height: 70px;
+					top:270px;}			
+
+
+article video {width: auto;
+				height: 100%;
+				position: absolute;
+				opacity: 0;
+			}	
+
+article h3 {position:absolute; 
+			bottom:210px; 
+			right: -310px;
+			font-size: 40px;
+			 font-family: 'Raleway', sans-serif;
+			 color: #fff;
+			opacity: 1;
+			text-align: right;}
+article p {position: absolute;
+			bottom: 50px;
+			width: 300px;
+			height: 150px;
+			text-align: right;
+			font-size: 12px;
+			font-family: arial;
+			color: #fff;
+			line-height: 1.5;
+			right: -310px;
+			opacity:0.8}						
+
+
+
+
+
+
+
+
+
+/*푸터설정*/
+footer {position: fixed;
+		background: #000;
+		color: #fff;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 40px;
+		opacity: 0.4;
+		font-size: 12px;
+		font-family: vardana;
+		letter-spacing: 2px;
+		line-height: 2.2
+	}
+footer ul {position:absolute;
+		left: 50px; 
+		bottom: 5px}
+footer li {float: left;
+		margin-left: 40px}
+footer li a {}
+footer span {position: absolute;
+			right: 50px;
+			bottom: 5px}
