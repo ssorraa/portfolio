@@ -246,6 +246,15 @@ body>span:hover {
   text-align: left;
   border-radius: 0 0 10px 10px;
   display: none;
+  overflow: hidden;
+}
+.snb::before {
+  content: "▼";
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  font-size: 20px;
+  top: -12px;
 }
 
 .gnb>li:hover .snb {
@@ -309,54 +318,48 @@ body>span:hover {
   width: 100%;
   height: 700px;
   overflow: hidden;
+  /* display: flex; */
+  /* justify-content: space-between;
+  align-items: center; */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .slide .imgBox>a {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  width: 100%;
-  height: auto;
+  /* position: absolute; */
+  /* left: 100%;
+  top: 0; */
+  /* width: 100%; */
+  /* height: auto; */
 }
 
-.slide .imgBox a:nth-child(3) {
+/* .slide .imgBox a:nth-child(3) {
   left: 0;
-}
-
-.slide .imgBox img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-}
+} */
 
 .slide .imgBox>a>img {
-  border-radius: 100px 300px 100px 300px;
+  /* width: 100%; */
 }
 
 .slide .imgBox>img {
-  z-index: 2;
-  width: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: auto;
+  z-index: 2;
   opacity: 0;
   transition: opacity 0.7s;
   pointer-events: none;
 }
 
 .slide .imgBox>img:nth-child(2) {
-  z-index: 2;
   transform: rotate(180deg);
-  width: auto;
-  left: 100%;
-  margin-left: -396px;
 }
 
 .slide .imgBox>i {
-  margin: 70px;
+  top: 50%;
+  margin-top: -50px;
+  position: absolute;
   color: #f9f5ec;
   font-size: 100px;
   z-index: 3;
@@ -364,10 +367,17 @@ body>span:hover {
   cursor: pointer;
   transition: opacity 0.3s;
   text-shadow: 0 0 3px #000;
+  width: fit-content;
 }
 
-.slide .imgBox>i:last-child {
+.slide .imgBox>i:nth-child(8) {
+  left: 0;
+  margin-left: 50px;
+}
+.slide .imgBox>i:nth-child(9) {
   transform: rotate(180deg);
+  right: 0;
+  margin-right: 50px;
 }
 
 .slide .imgBox>i:hover {
@@ -473,7 +483,6 @@ body>span:hover {
 }
 
 .news .conBox {
-  height: 336px;
   margin: 0 121px;
   padding: 55px 0;
   border-top: 2px dashed #e6933d;
@@ -854,40 +863,40 @@ body>span:hover {
   transition: padding-bottom 0.5s;
 }
 
-.book li:nth-child(2) {
+.book li:nth-child(1) {
   left: 8%;
 }
 
-.book li:nth-child(3) {
+.book li:nth-child(2) {
   left: 16%;
 }
 
-.book li:nth-child(4) {
+.book li:nth-child(3) {
   left: 24%;
 }
 
-.book li:nth-child(5) {
+.book li:nth-child(4) {
   left: 32%;
 }
 
-.book li:nth-child(6) {
+.book li:nth-child(5) {
   left: 40%;
 }
 
-.book li:nth-child(7) {
+.book li:nth-child(6) {
   left: 48%;
 }
 
-.book li:nth-child(8) {
+.book li:nth-child(7) {
   left: 56%;
 }
 
-.book li:nth-child(9) {
+.book li:nth-child(8) {
   left: 64%;
 }
 .book i {
   position: absolute;
-  left: 87%;
+  left: 86%;
   font-size: 40px;
   bottom: 20px;
   animation: rainbow 1s infinite linear,  bounce 1.5s infinite linear;
@@ -912,6 +921,7 @@ body>span:hover {
 .book li img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 /* footer 설정 */
