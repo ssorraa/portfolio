@@ -34,5 +34,6 @@ $(document).ready(function(){
     $('.promotion_txt').stop().animate({'right':'-100%'}, 1200)
   }
 })
+
   
 })

@@ -25,6 +25,7 @@ a {
 
 body {
   background-color: #f9f5ec;
+  overflow-x: hidden;
 }
 
 .wrap {
@@ -46,11 +47,13 @@ h2 a {
 h2 img {
   padding-right: 5px;
 }
-body>span {
-  display: block;
+/* Top 버튼 설정 */
+.topBtn {
+  display: none;
+  opacity: 0;
   position: fixed;
-  right:10%;
-  bottom: 10%;
+  right: 7%;
+  bottom: 7%;
   z-index: 15;
   background-color: #514d47;
   width: 60px;
@@ -64,15 +67,15 @@ body>span {
   cursor: pointer;
   font-size: 40px;
 }
-body>span>em {
+.topBtn em {
   font-size: 16px;
   margin-top: -10px;
 }
-body>span>i {
+.topBtn i {
   transform: rotate(90deg);
   margin-top: -5px;
 }
-body>span:hover {
+.topBtn:hover {
   animation: bounce 3s infinite;
 }
 @keyframes bounce {
@@ -365,6 +368,9 @@ body>span:hover {
   left: unset;
   right: 0;
 }
+.slide .imgBox>img.on {
+  opacity: 1;
+}
 
 .slide .imgBox>i {
   margin: 70px;
@@ -484,17 +490,36 @@ body>span:hover {
   color: #e6933d;
   font-size: 18px;
   margin: 15px 121px;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #e6933d;
 }
 
 .news .tag li {
   cursor: pointer;
 }
+.news .tag li.on {
+  font-weight: bold;
+  background-color: #f9f5ec;
+  background-image: url(../image/titlePaw.png);
+  background-blend-mode:color-burn;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.news .tag li:hover {
+  font-weight: bold;
+}
+
 
 .news .conBox {
+  margin: 0 -70%;
+  padding: 30px 0;
+  transition: margin 1s;
+}
+.news .conBox.on {
   margin: 0 121px;
-  padding: 55px 0;
-  border-top: 2px dashed #e6933d;
-  border-bottom: 2px dashed #e6933d;
 }
 
 .news .conBox article {
@@ -507,9 +532,9 @@ body>span:hover {
 }
 
 .news .conBox img {
-  width: 40%;
+  width: 580px;
   height: auto;
-  margin: 0 20px;
+  margin: auto 20px;
   border-radius: 40px;
 }
 
@@ -542,6 +567,9 @@ body>span:hover {
   margin: 10px 5px 35px 5px;
   display: inline-block;
 }
+.news .conBox div span:hover {
+  font-weight: bold;
+}
 
 .news .conBox p {
   color: #514d47;
@@ -550,6 +578,8 @@ body>span:hover {
 }
 
 .news .listBox {
+  border-top: 2px dashed #e6933d;
+  padding: 15px 0;
   margin: 0px 121px;
   display: flex;
   justify-content: space-between;
@@ -701,23 +731,29 @@ body>span:hover {
 }
 
 .bg .active article {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  padding: 50px 0;
+  position: relative;
+  height: 300px;
 }
 
+
 .bg .active article ul {
+  position: absolute;
+  left: -100%;
+  top: 50%;
+  margin-top: -190px;
   display: flex;
   justify-content: center;
-  width: 45%;
-  margin-left: 144px;
+  width: 60%;
+  height: auto;
+  transition: left 1s;
+}
+.bg .active.on article ul {
+left: 0;
 }
 
 .bg .active article li {
   margin-left: -100px;
-  width: 33.333%;
 }
 
 .bg .active:hover article li {
@@ -759,10 +795,18 @@ body>span:hover {
 }
 
 .bg .active article p {
-  width: 50%;
+  position: absolute;
+  right: -100%;
+  top: 50%;
+  margin-top: -162px;
+  width: 45%;
   font-size: 20px;
   line-height: 32px;
   color: #f9f5ec;
+  transition: right 1s;
+}
+.bg .active.on article p {
+right: 0;
 }
 
 .active article p em {
@@ -836,14 +880,14 @@ body>span:hover {
   padding: 100px 0 0px 80px;
 }
 
-.info .book {
+.info .infoBook {
   position: relative;
   width: 100%;
   height: auto;
   margin-left: -30px;
 }
 
-.info .book>img {
+.info .infoBook>img {
   position: absolute;
   left: -0.5%;
   top: 100%;
@@ -852,17 +896,17 @@ body>span:hover {
   margin-top: -24px;
 }
 
-.info .book>img:nth-child(1) {
+.info .infoBook>img:nth-child(1) {
   z-index: -1;
 }
 
-.book ul {
+.infoBook ul {
   width: 100%;
   height: 800px;
   position: relative;
 }
 
-.book li {
+.infoBook li {
   width: 30%;
   height: auto;
   position: absolute;
@@ -871,38 +915,38 @@ body>span:hover {
   transition: padding-bottom 0.5s;
 }
 
-.book li:nth-child(1) {
+.infoBook li:nth-child(1) {
   left: 8%;
 }
 
-.book li:nth-child(2) {
+.infoBook li:nth-child(2) {
   left: 16%;
 }
 
-.book li:nth-child(3) {
+.infoBook li:nth-child(3) {
   left: 24%;
 }
 
-.book li:nth-child(4) {
+.infoBook li:nth-child(4) {
   left: 32%;
 }
 
-.book li:nth-child(5) {
+.infoBook li:nth-child(5) {
   left: 40%;
 }
 
-.book li:nth-child(6) {
+.infoBook li:nth-child(6) {
   left: 48%;
 }
 
-.book li:nth-child(7) {
+.infoBook li:nth-child(7) {
   left: 56%;
 }
 
-.book li:nth-child(8) {
+.infoBook li:nth-child(8) {
   left: 64%;
 }
-.book i {
+.infoBook i {
   position: absolute;
   left: 86%;
   font-size: 40px;
@@ -922,11 +966,11 @@ body>span:hover {
   100%{color:#ff2400;}
 }
 
-.book li:hover {
+.infoBook li:hover {
   padding-bottom: 300px;
 }
 
-.book li img {
+.infoBook li img {
   width: 100%;
   height: auto;
   cursor: pointer;
@@ -964,35 +1008,139 @@ left: 0;
 top: 0;
 width: 100%;
 height: 100%;
-background-color: rgba(81, 77, 71, 0.8);
 z-index: 15;
+display: none;
+}
+.popupBg {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(81, 77, 71, 0.8);
+  transition: left 0.5s;
+}
+.popupBg span i {
+  position: absolute;
+  right: 7%;
+  top: 7%;
+  font-size: 60px;
+  color: #f9f5ec;
+  cursor: pointer;
+}
+.bookPopup:hover .popupBg {
+  left: 0;
 }
 .bookPopup ul {
-  position: relative;
-  background-color: #f6eed6;
-  width: 35%;
-  height: 80%;
-  margin: 5% auto;
-  overflow: auto;
+  position: absolute;
+  left: 150%;
+  top: 50%;
+  margin-left: -338px;
+  margin-top: -432px;
+  width: 676px;
+  height: 865px;
   color: #514d47;
+  transition: left 0.5s;
+}
+.bookPopup:hover ul {
+  left: 55%;
+}
+.bookCover {
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in;
+  transform-origin: left;
+}
+.bookPopup ul li:hover .bookCover {
+  transform: rotateY(180deg);
+}
+.bookFront {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateZ(0.1px);
+  width: 100%;
+  height: auto;
+  z-index: 3;
+}
+.bookBack {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateZ(0px);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.bookPopup ul li:nth-child(1) .bookBack {
+background-color: #f0993d;
+}
+.bookPopup ul li:nth-child(2) .bookBack {
+background-color: #f7c600;
+}
+.bookPopup ul li:nth-child(3) .bookBack {
+background-color: #589f5a;
+}
+.bookPopup ul li:nth-child(4) .bookBack {
+background-color: #3db093;
+}
+.bookPopup ul li:nth-child(5) .bookBack {
+background-color: #3c7faa;
+}
+.bookPopup ul li:nth-child(7) .bookBack {
+background-color: #e289a8;
+}
+.bookPopup ul li:nth-child(8) .bookBack {
+background-color: #e2493a;
 }
 .bookPopup ul li {
   position: absolute;
+  left: 0;
+  top: 0;
   display: none;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
 }
-.bookPopup ul li:nth-child(8) {
+.bookPopup ul li:nth-child(6) {
 display: unset;
 }
 .bookPopup ul li:nth-child(6) {
-  background-color: #000;
+  background-image: url(../image/popupBook6.png);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.bookContent {
+  width: 100%;
+  height: 100%;
+  background-color: #f6eed6;
+  overflow: auto;
+  padding: 0 10px 20px 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.bookPopup ul li:nth-child(6) .bookContent {
+background-color: #000;
 justify-content: center;
 align-items: center;
-/* display: flex;
-추후에 자바스크립트에서 eq(5)는 flex로 줄것 */
-width: 100%;
-height: 100%;
+display: flex;
+width: 641px;
+height: 702px;
+margin: 67px 16px 97px 16px;
 }
-
+.bookPopup ul li:nth-child(3) .bookContent {
+  padding: 0;
+}
+.bookPopup ul li:nth-child(6) .bookContent {
+  padding: 0;
+}
 .bookPopup ul li:nth-child(3) a {
   font-size: 14px;
 }
@@ -1005,7 +1153,7 @@ height: 100%;
 font-size: 32px;
 }
 .bookPopup ul li h4 {
-  font-size: 20px;
+  font-size: 24px;
   }
 .bookPopup ul li em {
   color: dodgerblue;
