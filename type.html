@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>typing</title>
+</head>
+<body>
+<p class="txt">타이핑되는 글자를 씁니다.</p>
+<p class="line"></p>
+<style>
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .txt {
+    display: none;
+  }
+  .line {
+    display: inline-block;
+    animation: line 1s infinite;
+    border-right: 1px solid #ccc;
+  }
+  @keyframes line {
+    0% {
+      border-right: 1px solid #fff;
+    }
+    49% {
+      border-right: 1px solid #fff;
+    }
+    50% {
+      border-right: 1px solid #000;
+    }
+    99% {
+      border-right: 1px solid #000;
+    }
+    100% {
+      border-right: 1px solid #fff;
+    }
+  }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+  $(document).ready(function(){
+    // 텍스트의 글자를 불러와라
+    let txt = $('.txt').text();
+    console.log(txt);
+    // split: 텍스트를 한글자씩 쪼개라
+    let txtN = txt.split('');
+    console.log(txtN);
+    // append: 다음에 와서 붙어라
+    let a = 0
+    setInterval(function(){
+      if (a < txtN.length){
+        $('.line').append(txtN[a])
+      a++}
+    },300)
+  })
+</script>
+</body>
+</html>

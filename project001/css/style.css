@@ -335,6 +335,7 @@ h2 img {
   top: 0;
   width: 100%;
   height: auto;
+  border-radius: 100px 300px 100px 300px;
 }
 
 .slide .imgBox a:nth-child(3) {
@@ -350,7 +351,6 @@ h2 img {
 
 .slide .imgBox>a>img {
   border-radius: 100px 300px 100px 300px;
-  /* 슬라이딩될때 보이면 이상하니까 자바스크립트로 움직일때는 빼기 */
 }
 
 .slide .imgBox>img {
@@ -395,17 +395,11 @@ h2 img {
 .slide .imgBox>i:hover {
   opacity: 0.8;
 }
-.slide .imgBox>.donateBg {
-  position: relative;
-  width: 100%;
-  height: auto;
-  opacity: unset;
-}
 .slide .donateBox {
+  background-color: rgba(191, 174, 153, 0.5);
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -514,33 +508,40 @@ h2 img {
 
 
 .news .conBox {
-  margin: 0 -70%;
+  margin: 0 121px;
   padding: 30px 0;
   transition: margin 1s;
-}
-.news .conBox.on {
-  margin: 0 121px;
+  height: 340px;
 }
 
 .news .conBox article {
   display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .news .conBox article.on {
-  display: flex;
-  justify-content: space-between;
+  display: block;
 }
 
 .news .conBox img {
-  width: 580px;
+  width: 570px;
   height: auto;
   margin: auto 20px;
   border-radius: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .news .conBox div {
   padding-left: 10px;
-  position: relative;
+  position: absolute;
+  width: 50%;
+  right: 0;
+  top: 0;
+
 }
 
 .news .conBox div h3 {
