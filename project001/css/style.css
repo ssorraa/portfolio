@@ -49,8 +49,6 @@ h2 img {
 }
 /* Top 버튼 설정 */
 .topBtn {
-  display: none;
-  opacity: 0;
   position: fixed;
   right: 7%;
   bottom: 7%;
@@ -65,7 +63,9 @@ h2 img {
   align-items: center;
   color: #f9f5ec;
   cursor: pointer;
-  font-size: 40px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
 }
 .topBtn em {
   font-size: 16px;
@@ -73,20 +73,26 @@ h2 img {
 }
 .topBtn i {
   transform: rotate(90deg);
-  margin-top: -5px;
+  margin-top: -5px;  font-size: 40px;
 }
-.topBtn:hover {
+.topBtn.on {
+  display: flex;
+  opacity: 0.7;
+  pointer-events: unset;
+}
+.topBtn.on:hover {
   animation: bounce 3s infinite;
+  opacity: 1;
 }
 @keyframes bounce {
   0%   { transform: translateY(0); }
   10%  { transform: translateY(0); }
-  15%  { transform: translateY(-10px); }
+  15%  { transform: translateY(-20px) scaleY(1.05); }
   20%  { transform: translateY(0); }
-  25%  { transform: translateY(-3px); }
+  25%  { transform: translateY(-3px) scaleX(1.05); }
   27%  { transform: translateY(0); }
   30%  { transform: translateY(-1px); }
-  32%  { transform: translateY(0); }
+  32%  { transform: translateY(0) scaleX(1.025); }
   100% { transform: translateY(0); }
 }
 
@@ -455,6 +461,10 @@ h2 img {
 
 .donateBox .iconBox a i {}
 
+.donateBox .iconBox a:first-child i {
+  font-size: 55px;
+}
+
 .donateBox .iconBox a:hover {
   color: #e6933d;
   text-shadow: 0 0 5px #514d47;
@@ -466,9 +476,7 @@ h2 img {
   background-color: #e6933d;
 }
 
-.donateBox .iconBox a:first-child i {
-  font-size: 55px;
-}
+
 
 
 /* news 설정 */
@@ -509,9 +517,8 @@ h2 img {
 
 .news .conBox {
   margin: 0 121px;
-  padding: 30px 0;
   transition: margin 1s;
-  height: 340px;
+  height: 400px;
 }
 
 .news .conBox article {
@@ -531,7 +538,11 @@ h2 img {
   margin: auto 20px;
   border-radius: 40px;
   position: absolute;
-  top: 0;
+  top: 30px;
+  left: -100%;
+  transition: left 0.7s;
+}
+.news .conBox.on img {
   left: 0;
 }
 
@@ -539,9 +550,12 @@ h2 img {
   padding-left: 10px;
   position: absolute;
   width: 50%;
+  right: -100%;
+  top: 30px;
+  transition: right 0.7s;
+}
+.news .conBox.on article div {
   right: 0;
-  top: 0;
-
 }
 
 .news .conBox div h3 {
@@ -734,7 +748,7 @@ h2 img {
 .bg .active article {
   padding: 50px 0;
   position: relative;
-  height: 300px;
+  height: 400px;
 }
 
 
@@ -757,12 +771,8 @@ left: 0;
   margin-left: -100px;
 }
 
-.bg .active:hover article li {
-  margin-left: -30px;
-}
-
 .bg .active article li:nth-child(1) {
-  transition: transform 0.5s, margin-left 0.5s;
+  transition: transform 0.5s, margin-left 0.5s, margin-top 0.5s;
   z-index: 0;
 }
 
@@ -772,8 +782,12 @@ left: 0;
 }
 
 .bg .active article li:nth-child(3) {
-  transition: transform 0.5s, margin-left 0.5s;
+  transition: transform 0.5s, margin-left 0.5s, margin-top 0.5s;
   z-index: 2;
+}
+
+.bg .active:hover article li {
+  margin-left: -30px;
 }
 
 .bg .active:hover article li:nth-child(1) {
@@ -807,7 +821,7 @@ left: 0;
   transition: right 1s;
 }
 .bg .active.on article p {
-right: 0;
+right: 50px;
 }
 
 .active article p em {
@@ -890,10 +904,8 @@ right: 0;
 
 .info .infoBook>img {
   position: absolute;
-  left: -0.5%;
+  left: 3%;
   top: 100%;
-  width: 105%;
-  height: auto;
   margin-top: -24px;
 }
 
@@ -979,7 +991,7 @@ right: 0;
 
 /* footer 설정 */
 footer {
-  height: 150px;
+  height: 200px;
   background-color: #504336;
   color: #f9f5ec;
   padding-top: 30px;
@@ -1000,7 +1012,7 @@ footer li {
 
 footer em {
   display: block;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 /* 팝업 설정 */
 .bookPopup {
@@ -1189,9 +1201,206 @@ font-size: 32px;
 
 
 /* 미디어쿼리 */
-@media (min-width:1440px) {
+@media (min-width:1441px) {
   .wrap {
     width: 1440px;
     margin: 0 auto;
   }
+}
+@media (max-width:1440px) {
+  .wrap {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  h2 {
+    padding-left: 0;
+  }
+  /* 메인슬라이드 */
+  .donateBox .txtBox {
+    margin-left: 15%;
+  }
+
+  .donateBox .iconBox a {
+    font-size: 18px;
+  }
+  
+  .donateBox .iconBox a span {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+  .donateBox .iconBox a:first-child i {
+    font-size: 45px;
+  }
+
+  /* 뉴스 */
+  .news {}
+
+  .news>.wrap>h2 {
+    padding: 10px 0;
+  }
+  
+  .news .tag {
+    margin: 15px 0;
+  }
+  
+  .news .conBox {
+    margin: 0;
+    height: 400px;
+  }
+  
+  .news .conBox img {
+    width: 450px;
+    top: 50%;
+    margin-top: -139px;
+  }
+  
+  .news .conBox div {
+    width: 53%;
+    top: 15px;
+  }
+  
+  .news .conBox div span {
+    margin: 8px 5px 17px 5px;
+  }
+  
+  .news .listBox {
+    margin: 0;
+  }
+  
+  .listBox i {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    font-size: 60px;
+    margin-top: -30px;
+    cursor: pointer;
+  }
+  
+  /* 공지사항 설정 */
+  
+  .news .notice h2 {
+    width: 30%;
+  }
+  
+  .news .notice ul {
+    margin-right: 0;
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+  }
+  
+/* 활동 설정 */
+.bg .active h2 {
+  padding: 75px 0 20px 0px;
+}
+
+.bg .active article ul {
+  width: 35%;
+}
+
+.bg .active.on article ul {
+  left: 120px;
+  }
+  
+  .bg .active:hover article li:nth-child(1) {
+    margin-top: 45px;
+  }
+  
+  .bg .active:hover article li:nth-child(2) {
+    margin-top: 0px;
+  }
+  
+  .bg .active:hover article li:nth-child(3) {
+    margin-top: 45px;
+  }
+
+.bg .active article p {
+  margin-top: -195px;
+}
+.bg .active.on article p {
+right: 20px;
+}
+
+
+.bg .site ul {
+  margin: 0;
+}
+
+.bg .site li {
+  width: 8%;
+  height: auto;
+}
+
+.bg .site li:hover a i {
+  color: #e6933d;
+}
+
+.bg .site li i {
+  padding: 45% 0;
+  font-size: 30px;
+}
+
+.bg .site li i.fa-arrow-up-right-from-square {
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: -14px;
+}
+
+/* info 설정 */
+.info {
+  margin-bottom: 200px;
+}
+
+.info h2 {
+  padding: 100px 0 0px 0px;
+}
+
+.info .infoBook>img {
+  position: absolute;
+  left: 0%;
+  margin-top: -17px;
+  width: 100%;
+  height: auto;
+}
+.infoBook ul {
+  height: 610px;
+}
+
+.infoBook li:nth-child(1) {
+  left: 5%;
+}
+
+.infoBook li:nth-child(2) {
+  left: 13.5%;
+}
+
+.infoBook li:nth-child(3) {
+  left: 22%;
+}
+
+.infoBook li:nth-child(4) {
+  left: 30.5%;
+}
+
+.infoBook li:nth-child(5) {
+  left: 39%;
+}
+
+.infoBook li:nth-child(6) {
+  left: 47.5%;
+}
+
+.infoBook li:nth-child(7) {
+  left: 56%;
+}
+
+.infoBook li:nth-child(8) {
+  left: 64.5%;
+}
+
+.infoBook li:hover {
+  padding-bottom: 250px;
+}
+
 }
