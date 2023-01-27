@@ -1,9 +1,10 @@
   // 18:41~19:25
   // 21:00~22:53
 $(document).ready(function () {
+  let wd = $(window).width()
   // 중요! 메인슬라이드-높이 지정
-  let ht = $('.slide .imgBox>a>img').height()
-  $('.slide .imgBox').height(ht)
+  let siht = $('.slide .imgBox>a>img').height()
+  $('.slide .imgBox').height(siht)
   // 전체 스크롤 동작
   $(window).scroll(function () {
     let sc = $(this).scrollTop();
@@ -30,6 +31,19 @@ $(document).ready(function () {
       'scrollTop': 0
     }, 600);
   })
+  // 메뉴 버튼 클릭
+  $('.util li').eq(5).click(function(){
+    if($('.header').hasClass('on')) {
+      $('.header').removeClass('on')
+    } else {
+    $('.header').addClass('on')}
+  })
+  // 메뉴 공백 클릭
+  // $('.header').click(function(){
+  //   if(){
+
+  //   }
+  // })
   // 메인슬라이드-호버
   $('.slide .imgBox>i').mouseenter(function(){
     let i = $(this).index();
@@ -76,11 +90,6 @@ $(document).ready(function () {
       });
     };
   });
-  // 메인 슬라이드-높이 변경
-  $(window).resize(function(){
-    ht = $('.slide .imgBox>a>img').height();
-    $('.slide .imgBox').height(ht);
-  })
   // 뉴스-태그목록-클릭
   let newsi = 0;
   $('.news .tag li').click(function(){
@@ -136,4 +145,21 @@ $(document).ready(function () {
 
   // 인포-팝업-클릭
 
+    // 미디어쿼리-메인 슬라이드-높이 변경
+    $(window).resize(function(){
+      siht = $('.slide .imgBox>a>img').height();
+      $('.slide .imgBox').height(siht);
+      wd = $(window).width()
+      if(wd > 1024){
+        $('.util li').eq(2).removeClass('on')
+      }
+    })
+    
+    $('.util li').eq(2).click(function(){
+      if(wd <= 1024 && !$(this).hasClass('on')) {
+        $(this).addClass('on')
+      } else {
+        $(this).removeClass('on')
+      }
+    })
 });
