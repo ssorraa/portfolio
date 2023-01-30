@@ -5,16 +5,18 @@ $(document).ready(function () {
   // 중요! 메인슬라이드-높이 지정
   let siht = $('.slide .imgBox>a>img').height()
   $('.slide .imgBox').height(siht)
+
   // 전체 스크롤 동작
   $(window).scroll(function () {
-    let sc = $(this).scrollTop();
+    let sc = $(this).scrollTop()+$(window).height();
     let nsc = $('.news').offset().top;
-    if (sc >= nsc/4 && sc < $('.news').height()+(nsc/3)) {
-      $('.news .conBox').addClass('on');
+    let bsc = $('.bg').offset().top;
+    if (sc >= nsc+300) {
+      $('.news').addClass('on');
     } else {
-      $('.news .conBox').removeClass('on');
+      $('.news').removeClass('on');
     };
-    if (sc >= 1300 && sc < 2600) {
+    if (sc >= bsc+100) {
       $('.bg .active').addClass('on');
     } else {
       $('.bg .active').removeClass('on');
@@ -25,12 +27,44 @@ $(document).ready(function () {
       $('.topBtn').removeClass('on');
     }
   })
+
   // 상단 버튼 동작
   $('.topBtn').click(function () {
     $('html,body').stop().animate({
       'scrollTop': 0
     }, 600);
   })
+
+  // 메뉴 서브메뉴 슬라이드
+  let gnbClick = 10; 
+  if(wd > 1025) {
+  $('.gnb>li').mouseenter(function(){
+    $(this).children('ul').stop().slideDown()
+      gnbClick = $(this).index();
+  })
+  $('.gnb>li').mouseleave(function(){
+    $(this).children('ul').stop().slideUp()
+    gnbClick = 10;
+  })
+}
+let snbClick = 0;
+$('.gnb>li').children('ul').click(function () {
+  snbClick = 1;
+})
+$('.gnb>li').click(function(){
+  if (gnbClick != $(this).index()) {
+  $('.gnb>li').children('ul').stop().slideUp()
+  $(this).children('ul').stop().slideDown()
+  gnbClick = $(this).index();
+  snbClick = 0;
+  } else if (snbClick == 1) {
+  } else {
+    $(this).children('ul').stop().slideUp()
+    gnbClick = 10;
+  }
+  snbClick = 0;
+})
+
   // 메뉴 버튼 클릭
   $('.util li').eq(5).click(function(){
     if($('.header').hasClass('on')) {
@@ -38,12 +72,19 @@ $(document).ready(function () {
     } else {
     $('.header').addClass('on')}
   })
-  // 메뉴 공백 클릭
-  // $('.header').click(function(){
-  //   if(){
 
-  //   }
-  // })
+  // 메뉴 공백 클릭
+  let hwClick = true;
+  $('.header').click(function(){
+    $('.header .wrap').click(function(){
+      hwClick = true;
+    })
+    if(hwClick != true) {
+      $('.header').removeClass('on');
+    }
+    hwClick = false;
+  })
+
   // 메인슬라이드-호버
   $('.slide .imgBox>i').mouseenter(function(){
     let i = $(this).index();
@@ -53,6 +94,7 @@ $(document).ready(function () {
     let i = $(this).index();
     $('.slide .imgBox>img').eq(i-7).removeClass('on');
   })
+
   // 메인슬라이드-시간
   let a = 0;
   let timer = function(){
@@ -65,6 +107,7 @@ $(document).ready(function () {
   $('.slide .imgBox').mouseleave(function(){
     mainSlide = setInterval(timer,5000);
   });
+
   // 메인슬라이드-아이콘 클릭
   $('.slide .imgBox>i').click(function(){
     $('.slide .imgBox>a>img').css({'border-radius':0});
@@ -74,7 +117,8 @@ $(document).ready(function () {
       $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).animate({'left':0});
       $('.slide .imgBox>a').eq(a).css({'left':0}).animate({'left':'100%'},
       function(){
-        $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});
+        if(wd > 1024) {
+        $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
         $('.slide .imgBox>a').css({'pointer-events':'unset'});
       });
       a--;
@@ -85,11 +129,13 @@ $(document).ready(function () {
       $('.slide .imgBox>a').eq(a-1).css({'left':0}).animate({'left':'-100%'});
       $('.slide .imgBox>a').eq(a).css({'left':'100%'}).animate({'left':0},
       function(){
-        $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});
+        if(wd > 1024) {
+        $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
         $('.slide .imgBox>a').css({'pointer-events':'unset'});
       });
     };
   });
+
   // 뉴스-태그목록-클릭
   let newsi = 0;
   $('.news .tag li').click(function(){
@@ -104,16 +150,19 @@ $(document).ready(function () {
       b = 0;
   };
   })
+
   // 뉴스-뉴스콘텐츠-태그 클릭
   $('.news .conBox article span').click(function(){
     let i = $('.news .tag li').text().indexOf($(this).text());
     $('.news .tag li').eq(i/5).trigger('click');
   });
+
   // 뉴스-뉴스목록-뉴스 클릭
   $('.listBox .box li').click(function(){
     let i = $(this).index();
     $('.news .conBox article').removeClass('on').eq((newsi*8)+i).addClass('on');
   });
+
   // 뉴스-뉴스목록-아이콘 클릭
   let b = 0;
   $('.listBox .left i').click(function(){
@@ -139,6 +188,7 @@ $(document).ready(function () {
       };
     });
   });
+
   // 공지-시간
 
   // 인포-책-클릭
@@ -152,6 +202,8 @@ $(document).ready(function () {
       wd = $(window).width()
       if(wd > 1024){
         $('.util li').eq(2).removeClass('on')
+      } else {
+        $('.slide .imgBox>a>img').css({'border-radius':0});
       }
     })
     
