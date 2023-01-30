@@ -1,109 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		#euro{
-  width: 150px;
-  height: 150px;
-  transform-style: preserve-3d;
-  animation: spin 2.5s linear infinite;
-  font-size: 100px;
-
-}
-
-.back{
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/133687/backeuro.png");
-  width: 150px;
-  height: 150px;
-background-color: aqua;
-}
-
-.middle{
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/133687/faceeuro.png");
-  width: 150px;
-  height: 150px;
-  transform: translateZ(1px);
-  position: absolute;
-  top: 0;
-	left: 0;
-}
-
-.front{
-
-    height: 150px;
-    position: absolute;
-    top: 0;
-		left: 0;
-    transform: translateZ(1px);
-    width: 150px;
-		background-color: red;
-}
-
-/* .middle:nth-child(1){
-  transform: translateZ(1px);
-}
-
-.middle:nth-child(2){
-  transform: translateZ(2px);
-}
-
-.middle:nth-child(3){
-  transform: translateZ(3px);
-}
-
-.middle:nth-child(4){
-  transform: translateZ(4px);
-}
-
-.middle:nth-child(5){
-  transform: translateZ(5px);
-}
-
-.middle:nth-child(6){
-  transform: translateZ(6px);
-}
-
-.middle:nth-child(7){
-  transform: translateZ(7px);
-}
-
-.middle:nth-child(8){
-  transform: translateZ(8px);
-}
-
-.middle:nth-child(9){
-  transform: translateZ(9px);
-} */
-
-@keyframes spin{
-  0% {transform: rotateY(0deg);}
-  100% {transform: rotateY(360deg);}
-}
-	</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #blockAll {
+      /* top: 50%;
+      left: 50%; */
+      transform: rotateY(85deg) rotateZ(-90deg);
+      position: relative;
+      perspective: 5000px;
+      transform-style: preserve-3d;
+    }
+    #blockHead {
+      transform-style: preserve-3d;
+    }
+    #blockHead div {
+      width: 50px;
+      height: 50px;
+      background-color: lightpink;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #blockHead div:nth-child(1) {
+      transform: translateZ(151px);
+    }
+    #blockHead div:nth-child(2) {
+      transform: translateZ(152px);
+    }
+    #blockHead div:nth-child(3) {
+      transform: translateZ(153px);
+    }
+    #blockHead div:nth-child(4) {
+      transform: translateZ(154px);
+    }
+    #blockHead div:nth-child(5) {
+      transform: translateZ(155px);
+    }
+    #blockHead div:nth-child(6) {
+      transform: translateZ(156px);
+    }
+    #blockHead div:nth-child(7) {
+      transform: translateZ(157px);
+    }
+    #blockHead div:nth-child(8) {
+      transform: translateZ(158px);
+    }
+    #blockHead div:nth-child(9) {
+      transform: translateZ(159px);
+    }
+    #blockHead div:last-child {
+      background-color: pink;
+      transform: translateZ(160px);
+    }
+    #blockBody {
+      transform-style: preserve-3d;
+    }
+    #blockBody div {
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #blockBody div:nth-child(1){
+      transform: translateZ(150px);
+      background-color: rgba(255, 100, 100, 0.5);
+    }
+    #blockBody div:nth-child(2){
+      transform: translateZ(-150px);
+      background-color: rgba(0, 100, 255, 0.5);
+    }
+    #blockBody div:nth-child(3){
+      transform: rotateX(90deg) translateZ(150px);
+      background-color: rgba(255, 255, 100, 0.5);
+    }
+    #blockBody div:nth-child(4){
+      transform: rotateX(90deg) translateZ(-150px);
+      background-color: rgba(255, 100, 255, 0.5);
+    }
+    #blockBody div:nth-child(5){
+      transform: rotateY(90deg) translateZ(150px);
+      background-color: rgba(0, 255, 255, 0.5);
+    }
+    #blockBody div:nth-child(6){
+      transform: rotateY(90deg) translateZ(-150px);
+      background-color: rgba(0, 255, 0, 0.5);
+    }
+  </style>
 </head>
 <body>
-	<div id="euro">
-		<article class="back">
-			<!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/133687/faceeuro.png" alt=""> -->
-      3
-		</article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-			<article class="middle"></article>
-		<article class="front">
-      <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/133687/backeuro.png" alt=""> -->
-    4
-  </article>
-	</div>
+  <div id="blockAll">
+    <div id="blockHead">
+      <div>0</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <div id="blockBody">
+      <div>앞</div>
+      <div>뒤</div>
+      <div>상</div>
+      <div>하</div>
+      <div>우</div>
+      <div>좌</div>
+    </div>
+  </div>
 </body>
 </html>
