@@ -311,7 +311,8 @@ h2 img {
 .slide {
   width: 100%;
   height: auto;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  overflow: hidden;
 }
 
 .slide .imgBox {
@@ -319,12 +320,13 @@ h2 img {
   position: relative;
   width: 100%;
   height: auto;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
   display: block;
+  overflow: hidden;
 }
+
 .slide .imgBox>* {
   position: absolute;
 }
@@ -394,6 +396,7 @@ h2 img {
 .slide .imgBox>i:hover {
   opacity: 0.8;
 }
+
 .slide .donateBox {
   background-color: rgba(191, 174, 153, 0.5);
   left: 0;
@@ -741,6 +744,9 @@ h2 img {
   border-radius: 0 300px 300px 300px;
   position: relative;
 }
+.bg .wrap {
+  overflow: hidden;
+}
 
 .bg h2 a {
   color: #f9f5ec;
@@ -785,10 +791,12 @@ h2 img {
   justify-content: center;
   width: 60%;
   height: auto;
-  transition: left 1s;
+  transition: left 1s, opacity 2s;
+  opacity: 0;
 }
 .bg .active.on article ul {
 left: 0;
+opacity: 1;
 }
 
 .bg .active article li {
@@ -842,10 +850,12 @@ left: 0;
   font-size: 20px;
   line-height: 32px;
   color: #f9f5ec;
-  transition: right 1s;
+  opacity: 0;
+  transition: right 1s, opacity 2s;
 }
 .bg .active.on article p {
 right: 50px;
+opacity: 1;
 }
 
 .active article p em {
@@ -1240,6 +1250,21 @@ font-size: 32px;
     padding-left: 0;
   }
   /* 메인슬라이드 */
+  .slide .imgBox {
+    border-radius: 50px 150px 50px 150px;
+  }
+  
+  .slide .imgBox>a {
+    border-radius: 50px 150px 50px 150px;
+  }
+  
+  .slide .imgBox>a>img {
+    border-radius: 50px 150px 50px 150px;
+  }
+  .slide .imgBox>i {
+    font-size: 60px;
+  }
+
   .donateBox .txtBox {
     margin-left: 15%;
   }
@@ -1391,7 +1416,6 @@ right: 20px;
 
 .bg .site li i.fa-arrow-up-right-from-square {
   font-size: 14px;
-  padding: 0;
   margin-bottom: -14px;
 }
 
@@ -1465,8 +1489,8 @@ footer .wrap {
 @media (max-width:1024px) {
   /* Top 버튼 설정 */
 .topBtn {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
 }
 .topBtn em {
   font-size: 14px;
@@ -1482,7 +1506,7 @@ footer .wrap {
 .header {
   width: 100%;
   height: 100%;
-  background-color: rgba(191, 174, 153, 0.5);
+  background-color: rgba(81, 77, 71, 0.7);
   z-index: 30;
 }
 .header.on {
@@ -1628,14 +1652,14 @@ footer .wrap {
 /* 메인슬라이드 설정 */
 .slide {
   margin-top: 100px;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 .slide .wrap {
 }
 
 .slide .imgBox {
   border-radius: 0;
-  overflow: visible;
+  overflow: unset;
 }
 
 .slide .imgBox>a {
@@ -1655,7 +1679,8 @@ footer .wrap {
 .slide .donateBox {
   background-color: rgba(191, 174, 153, 1);
   top: 99%;
-  height: 100px;
+  align-items: unset;
+  height: fit-content;
 }
 
 .donateBox .txtBox {
@@ -1671,6 +1696,7 @@ footer .wrap {
 .donateBox .iconBox {
   width: 35%;
   margin-right: 30px;
+  margin-top: 10px;
 }
 
 .donateBox .iconBox a {
@@ -1786,7 +1812,8 @@ display: none;
 }
 
 .listBox .box li {
-  margin: 30px 0 0 0;
+  margin: 30px 1% 0 1%;
+  width: 23%;
   font-size: 14px;
   letter-spacing: -1.2px;
   color: #514d47;
@@ -1799,6 +1826,8 @@ display: none;
 
 .listBox .box li p {
   margin-top: 10px;
+  height: 20px;
+  overflow-y: hidden;
 }
 
 /* 공지사항 설정 */
@@ -2010,6 +2039,227 @@ footer em {
   body {
     background-color: tomato;
   }
+  /* 헤더설정 */
+
+.header .wrap {
+  display: block;
+}
+
+.header h1 {
+  width: 250px;
+  height: auto;
+  margin: auto 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -125px;
+  margin-top: -31.33px;
+}
+.header.on h1 {
+  display: none;
+}
+
+.header h1 img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.header nav {
+  width: 100%;
+}
+.util li {
+  display: none;
+}
+.header.on .util li {
+  display: flex;
+}
+.util li:nth-child(5) {
+  display: unset;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.util li:nth-child(3) {
+right: 130px;
+}
+.header.on .util li:nth-child(5) {
+  display: none;
+}
+
+.gnb {
+  width: 370px;
+}
+
+.slide {
+  padding-bottom: 185px;
+}
+
+.donateBox {
+  flex-wrap: wrap;
+  height: auto;
+}
+.donateBox .txtBox {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  padding: 0 30px;
+}
+.donateBox .iconBox {
+  margin: auto;
+  width:auto;
+  padding: 0 30px;
+}
+.donateBox .iconBox a {
+  padding: 0 10px;
+}
+
+  /* news 설정 */
+  .news .tag li {
+  width: 33.333%;
+  text-align: center;
+  }
+  .news .conBox div h3 {
+    padding-top: 30px;
+    width: 100%;
+  }
+  .news .conBox div a {
+    margin-top: -10px;
+  }
+  .listBox .box li {
+    margin: 30px 1% 0 1%;
+    width: 48%;
+    max-width: 222px;
+  }
+
+  /* 공지사항 설정 */
+.news .notice {
+  margin: 0 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: margin 2s, opacity 2s;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.news.on .notice {
+  margin: 0 30px;
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.news .notice h2 {
+  width: 30%;
+}
+
+.news .notice ul {
+  margin: 20px 30px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+.news .notice li {
+  position: unset;
+  margin: 20px 0;
+  width: 100%;
+  font-size: 20px;
+  text-align: unset;
+}
+.news .notice li a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news .notice li:nth-child(1) {
+  top: 20%;
+}
+
+.news .notice li span {
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+/* bg 설정 */
+.bg .active article {
+  height: fit-content;
+  padding: 50px 0 0 0;
+}
+.bg .active article ul {
+  position: unset;
+  margin: -50px 0 0 -1000px;
+  width: 100%;
+  transition: margin 1s, opacity 2s;
+}
+.bg .active.on article ul {
+  margin: -50px 0 0 0px;
+}
+.bg .active article li:nth-child(1) {
+  transform: rotate(-10deg);
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+.bg .active:hover article li:nth-child(1) {
+  transform: rotate(-10deg);
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+.bg .active article li:nth-child(2) {
+  margin-top: -20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.bg .active:hover article li:nth-child(2) {
+  margin-top: -20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.bg .active article li:nth-child(3) {
+  transform: rotate(10deg);
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.bg .active:hover article li:nth-child(3) {
+  transform: rotate(10deg);
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.bg .active article li {
+  width: 30%;
+}
+.bg .active article p {
+  position: unset;
+  margin: 30px 30px 30px 1000px;
+  transition: margin 1s, opacity 2s;
+}
+.bg .active.on article p {
+opacity: 1;
+margin: 30px;
+}
+
+.bg .site ul {
+  margin: 0 30px;
+  flex-wrap: wrap;
+}
+.bg .site li {
+  width: 16%;
+  max-width: 80px;
+  margin: 10px 4.5%;
+  font-size: 26px;
+  /* 여기까지 */
+}
+.bg .site li i.fa-arrow-up-right-from-square {
+  font-size: 12px;
+  margin-bottom: -12px;
+}
+
 }
 @media (max-width:425px) {
   body {
