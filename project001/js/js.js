@@ -2,6 +2,7 @@ $(document).ready(function () {
   let wd = $(window).width()
   let nsc = $('.news').offset().top;
   let bsc = $('.bg').offset().top;
+
   // 전체 스크롤 동작
   $(window).scroll(function () {
     let sc = $(this).scrollTop()+$(window).height();
