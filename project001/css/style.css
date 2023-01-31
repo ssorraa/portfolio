@@ -70,6 +70,7 @@ h2 img {
   opacity: 0;
   transition: opacity 0.5s;
   pointer-events: none;
+  box-shadow: 0px 0px 2px var(--dayNight);
 }
 .topBtn em {
   font-size: 16px;
@@ -808,7 +809,7 @@ body.night .bg>img {
 }
 
 .bg h2 a {
-  color: var(--dayNight);
+  color: #f9f5ec;
 }
 
 .bg>img:first-child {
@@ -831,10 +832,6 @@ body.night .bg>img {
 
 .bg .active h2 {
   padding: 75px 0 20px 80px;
-}
-
-body.night .bg h2 a {
-  color: #f9f5ec;
 }
 
 body.night .bg h2 {
@@ -1117,7 +1114,7 @@ footer li {
 
 footer em {
   display: block;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 /* 팝업 설정 */
 .bookPopup {
@@ -1146,7 +1143,7 @@ pointer-events: none;
   right: 7%;
   top: 7%;
   font-size: 60px;
-  color: var(--dayNight);
+  color: #f9f5ec;
   cursor: pointer;
 }
 .bookPopup.on .popupBg {
@@ -2020,15 +2017,9 @@ left: 30px;
 }
 
 .bg .active article p {
-  position: absolute;
-  right: -100%;
   top: 76%;
   margin-top: -162px;
   width: 85%;
-  font-size: 20px;
-  line-height: 32px;
-  color: var(--dayNight);
-  transition: right 1s;
 }
 .bg .active.on article p {
 right: 50px;
@@ -2110,7 +2101,7 @@ footer {
 
 footer em {
   display: block;
-  margin-top: 50px;
+  margin-top: 35px;
 }
 /* 팝업설정 */
 .bookPopup ul {
@@ -2401,6 +2392,7 @@ width: 42%;
 .infoBook li:nth-child(6) img {
   background-image: url(../image/popupBook06.png);
   background-size: cover;
+  border-radius: 10px;
 }
 .infoBook i {
   bottom: 0%;
