@@ -1244,6 +1244,9 @@ display: unset;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+body.night .bookContent {
+  background-color: rgb(48, 48, 44);
+}
 
 .bookPopup ul li:nth-child(3) .bookContent {
   padding: 0;
