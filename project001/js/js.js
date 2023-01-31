@@ -7,11 +7,13 @@ $(document).ready(function () {
     let siht = $('.slide .imgBox>a').height();
     $('.slide .imgBox').height(siht);
   }
+  let nsc = $('.news').offset().top;
+  let bsc = $('.bg').offset().top;
   // 전체 스크롤 동작
   $(window).scroll(function () {
     let sc = $(this).scrollTop()+$(window).height();
-    let nsc = $('.news').offset().top;
-    let bsc = $('.bg').offset().top;
+    nsc = $('.news').offset().top;
+    bsc = $('.bg').offset().top;
     if (sc >= nsc+300) {
       $('.news').addClass('on');
     } else {
@@ -171,6 +173,15 @@ $('.gnb>li').click(function(){
   $('.listBox .box li').click(function(){
     let i = $(this).index();
     $('.news .conBox article').removeClass('on').eq((newsi*8)+i).addClass('on');
+    if(wd > 1024) {
+      $('html,body').stop().animate({
+        'scrollTop': ($('.news .conBox').offset().top) -30
+      }, 600);
+    } else {
+      $('html,body').stop().animate({
+        'scrollTop': ($('.news .conBox').offset().top) - ($('.header .wrap').height()) -30
+      }, 600);
+    }
   });
 
   // 뉴스-뉴스목록-아이콘 클릭
@@ -241,14 +252,12 @@ $('.gnb>li').click(function(){
         $('.util li').eq(2).removeClass('on')
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
-          $('.infoBook li').eq(5).find('iframe').width(641).height(702)
           console.log($('.infoBook li').eq(5).find('iframe'))
           }
       } else {
         $('.slide .imgBox>a>img').css({'border-radius':0});
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrTiny[i])
-          $('.infoBook li').eq(5).find('iframe').width('464').height('526')
           console.log($('.infoBook li').eq(5).find('iframe'))
         }
         $('.listBox .box li').css({'order':0});

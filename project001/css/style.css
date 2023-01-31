@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 /* 전체 설정 */
+
 * {
   margin: 0;
   padding: 0;
@@ -1183,21 +1184,11 @@ display: unset;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.bookPopup ul li:nth-child(6) .bookContent {
-background-color: #000;
-justify-content: center;
-align-items: center;
-display: flex;
-width: 641px;
-height: 702px;
-margin: 67px 16px 97px 16px;
-}
+
 .bookPopup ul li:nth-child(3) .bookContent {
   padding: 0;
 }
-.bookPopup ul li:nth-child(6) .bookContent {
-  padding: 0;
-}
+
 .bookPopup ul li:nth-child(3) a {
   font-size: 14px;
 }
@@ -1205,6 +1196,17 @@ margin: 67px 16px 97px 16px;
   margin-bottom: 0;
   line-height: 1.1;
 }
+
+.bookPopup ul li:nth-child(6) .bookContent {
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 641px;
+  height: 702px;
+  margin: 67px 16px 97px 16px;
+  padding: 0;
+  }
 
 .bookPopup ul li h3 {
 font-size: 32px;
@@ -2056,6 +2058,15 @@ footer em {
   color: #514d47;
   transition: left 0.5s;
 }
+.bookPopup ul li:nth-child(6) .bookContent {
+  width: 478.5px;
+  height: 525px;
+  margin: 51px 0px 0px 13px;
+}
+.bookPopup ul li:nth-child(6) iframe {
+  width: 478.5px;
+  height: 525px;
+}
 }
 @media (max-width:768px) {
   /* 헤더설정 */
@@ -2362,6 +2373,15 @@ footer em {
   color: #514d47;
   transition: left 0.5s;
 }
+.bookPopup ul li:nth-child(6) .bookContent {
+  width: 318px;
+  height: 349px;
+  margin: 34px 0px 0px 9px;
+}
+.bookPopup ul li:nth-child(6) iframe {
+  width: 318px;
+  height: 349px;
+}
 
 }
 @media (max-width:425px) {
@@ -2402,5 +2422,14 @@ footer em {
       height: 346px;
       color: #514d47;
       transition: left 0.5s;
+    }
+    .bookPopup ul li:nth-child(6) .bookContent {
+      width: 256px;
+      height: 280px;
+      margin: 27px 0px 0px 7px;
+    }
+    .bookPopup ul li:nth-child(6) iframe {
+      width: 256px;
+      height: 280px;
     }
 }
