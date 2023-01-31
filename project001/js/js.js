@@ -241,11 +241,15 @@ $('.gnb>li').click(function(){
         $('.util li').eq(2).removeClass('on')
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
+          $('.infoBook li').eq(5).find('iframe').width(641).height(702)
+          console.log($('.infoBook li').eq(5).find('iframe'))
           }
       } else {
         $('.slide .imgBox>a>img').css({'border-radius':0});
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrTiny[i])
+          $('.infoBook li').eq(5).find('iframe').width('464').height('526')
+          console.log($('.infoBook li').eq(5).find('iframe'))
         }
         $('.listBox .box li').css({'order':0});
       }
