@@ -961,6 +961,9 @@ opacity: 1;
   bottom: -1px;
   transition: padding-bottom 0.5s;
 }
+.infoBook li img:nth-child(2) {
+  display: none;
+}
 
 .infoBook li:nth-child(1) {
   left: 8%;
@@ -2253,12 +2256,44 @@ margin: 30px;
   max-width: 80px;
   margin: 10px 4.5%;
   font-size: 26px;
-  /* 여기까지 */
 }
 .bg .site li i.fa-arrow-up-right-from-square {
   font-size: 12px;
   margin-bottom: -12px;
 }
+/* info 설정 */
+.info .infoBook {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-left: 0px;
+}
+
+.info .infoBook>img {
+display: none;
+}
+
+.infoBook ul {
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infoBook li {
+position: unset;
+margin: 20px 1%;
+width: 48%;
+}
+.infoBook li img:nth-child(1) {
+  display: none;
+}
+.infoBook li img:nth-child(2) {
+  display: unset;
+}
+.infoBook li:hover {
+  padding-bottom: 0px;
+}
+
 
 }
 @media (max-width:425px) {
