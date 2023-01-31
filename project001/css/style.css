@@ -1291,6 +1291,9 @@ font-size: 32px;
 .bookPopup ul li b {
   color: darkblue;
 }
+body.night .bookPopup ul li b {
+  color: rgb(96, 96, 221);
+}
 .bookPopup ul li p {
   color: royalblue;
 }
