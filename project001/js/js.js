@@ -3,9 +3,10 @@
 $(document).ready(function () {
   let wd = $(window).width()
   // 중요! 메인슬라이드-높이 지정
-  let siht = $('.slide .imgBox>a').height();
-  $('.slide .imgBox').height(siht);
-
+  if ($('.slide .imgBox>a').height() > 0) {
+    let siht = $('.slide .imgBox>a').height();
+    $('.slide .imgBox').height(siht);
+  }
   // 전체 스크롤 동작
   $(window).scroll(function () {
     let sc = $(this).scrollTop()+$(window).height();
@@ -69,8 +70,10 @@ $('.gnb>li').click(function(){
   $('.util li').eq(5).click(function(){
     if($('.header').hasClass('on')) {
       $('.header').removeClass('on')
+      $('body').css({'overflow':'unset'})
     } else {
     $('.header').addClass('on')}
+    $('body').css({'overflow':'hidden'})
   })
 
   // 메뉴 공백 클릭
@@ -81,6 +84,7 @@ $('.gnb>li').click(function(){
     })
     if(hwClick != true) {
       $('.header').removeClass('on');
+      $('body').css({'overflow':'unset'})
     }
     hwClick = false;
   })
@@ -97,15 +101,15 @@ $('.gnb>li').click(function(){
 
   // 메인슬라이드-시간
   let a = 0;
-  let timer = function(){
+  let mainTimer = function(){
     $('.slide .imgBox>i').eq(1).trigger('click');
   };
-  let mainSlide = setInterval(timer,5000);
+  let mainSlide = setInterval(mainTimer,5000);
   $('.slide .imgBox').mouseenter(function(){
     clearInterval(mainSlide)
   });
   $('.slide .imgBox').mouseleave(function(){
-    mainSlide = setInterval(timer,5000);
+    mainSlide = setInterval(mainTimer,5000);
   });
 
   // 메인슬라이드-아이콘 클릭
@@ -158,7 +162,9 @@ $('.gnb>li').click(function(){
   // 뉴스-뉴스콘텐츠-태그 클릭
   $('.news .conBox article span').click(function(){
     let i = $('.news .tag li').text().indexOf($(this).text());
+    if (i/5 != newsi) {
     $('.news .tag li').eq(i/5).trigger('click');
+    }
   });
 
   // 뉴스-뉴스목록-뉴스 클릭
@@ -184,8 +190,6 @@ $('.gnb>li').click(function(){
     $('.listBox .box ul').eq(newsi).css({'left':0}).animate({'left':'-250px'},100,
     function(){
       $('.listBox .box ul').eq(newsi).css({'left':0}).children('li').eq(b-1).css({'order':1});
-      $('.listBox .box ul').eq(newsi).children('li').eq(b-1).css({'order':1});
-      $('.listBox .box ul').eq(newsi).css({'left':0});
       if(b >= 8) {
         b = 0;
         $('.listBox .box ul').eq(newsi).children('li').css({'order':0});
@@ -194,15 +198,61 @@ $('.gnb>li').click(function(){
   });
 
   // 공지-시간
-
+  let c = 0
+  let noticeTimer = function(){
+    c++;
+    if (c > 4) {c = 0}
+    $('.news .notice ul li').eq(c).css({'top':'100%'}).animate({'top':'20%'});
+    $('.news .notice ul li').eq(c-1).css({'top':'20%'}).animate({'top':'-60%'})
+    
+  };
+  let noticeSlide = setInterval(noticeTimer,5000);
+  $('.news .notice ul').mouseenter(function(){
+    clearInterval(noticeSlide)
+  });
+  $('.news .notice ul').mouseleave(function(){
+    noticeSlide = setInterval(noticeTimer,5000);
+  });
+  
   // 인포-책-클릭
-
+  $('.infoBook li img').click(function(){
+    let i = $(this).parents().index()
+    console.log(i)
+    $('.bookPopup ul li').removeClass('on')
+    $('.bookPopup ul li').eq(i).addClass('on')
+    $('.bookPopup').addClass('on')
+    $('body').css({'overflow':'hidden'})
+  })
   // 인포-팝업-클릭
+  $('.popupBg span').click(function(){
+    $('.bookPopup').removeClass('on')
+    $('body').css({'overflow':'unset'})
+  })
+
 
   // 미디어쿼리-메인 슬라이드-높이 변경
   // 미디어쿼리-뉴스콘텐츠-줄바꿈
+  // 미디어쿼리-뉴스리스트-순서 정상화
   let NewsBrBig = [];
   let NewsBrTiny = [];
+    // 처음 화면 크기에도 적용
+  let wdset = function(){
+      if(wd > 1024){
+        $('.util li').eq(2).removeClass('on')
+        for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
+          $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
+          }
+      } else {
+        $('.slide .imgBox>a>img').css({'border-radius':0});
+        for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
+          $('.news .conBox article').eq(i).find('p').html(NewsBrTiny[i])
+        }
+        $('.listBox .box li').css({'order':0});
+      }
+      if (wd <= 768) {
+        $('.notice li').css({'order':0});
+      }
+    }
   for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
     NewsBrTiny.push($('.news .conBox article div').children('p').eq(i).text().replace(/  /g, '').replace(/\n\n/g, '<br><br>'));
     NewsBrBig.push($('.news .conBox article div').children('p').eq(i).text().replace(/  /g, '').replace(/\n/g,'<br>'));
@@ -211,34 +261,8 @@ $('.gnb>li').click(function(){
     siht = $('.slide .imgBox>a').height();
     $('.slide .imgBox').height(siht);
     wd = $(window).width()
-    if(wd > 1024){
-      $('.util li').eq(2).removeClass('on')
-    } else {
-      $('.slide .imgBox>a>img').css({'border-radius':0});
-    }
-    if(wd > 1024){
-      $('.util li').eq(2).removeClass('on')
-      for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
-        $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
-        }
-    } else {
-      $('.slide .imgBox>a>img').css({'border-radius':0});
-      for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
-        $('.news .conBox article').eq(i).find('p').html(NewsBrTiny[i])
-        }
-    }
+  wdset;
   })
-  if(wd > 1024){
-    $('.util li').eq(2).removeClass('on')
-    for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
-      $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
-      }
-  } else {
-    $('.slide .imgBox>a>img').css({'border-radius':0});
-    for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
-      $('.news .conBox article').eq(i).find('p').html(NewsBrTiny[i])
-      }
-  }
     
     $('.util li').eq(2).click(function(){
       if(wd <= 1024 && !$(this).hasClass('on')) {
@@ -247,6 +271,4 @@ $('.gnb>li').click(function(){
         $(this).removeClass('on')
       }
     })
-
-    
 });
