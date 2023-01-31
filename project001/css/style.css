@@ -349,6 +349,9 @@ h2 img {
   width: 100%;
   height: auto;
 }
+.slide .imgBox>a>img:nth-child(2) {
+  display: none;
+}
 
 .slide .imgBox>a>img {
   border-radius: 100px 300px 100px 300px;
@@ -1007,12 +1010,12 @@ opacity: 1;
 @keyframes rainbow {
   0% {color:#ff2400;}
   5%{color:#e81d1d;}
-  22%{color:#e8b71d;}
-  33%{color:#e3e81d;}
-  44%{color:#1de840;}
+  22%{color:#d3a50c;}
+  33%{color:#b8bb09;}
+  44%{color:#0fc72e;}
   66%{color:#1ddde8;}
   77%{color:#2b1de8;}
-  88%{color:#dd00f3;}
+  88%{color:#af2abb;}
   100%{color:#ff2400;}
 }
 
@@ -1037,6 +1040,7 @@ footer {
 footer>div>div {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 footer ul {
@@ -2039,9 +2043,6 @@ footer em {
 }
 }
 @media (max-width:768px) {
-  body {
-    background-color: tomato;
-  }
   /* 헤더설정 */
 
 .header .wrap {
@@ -2057,6 +2058,7 @@ footer em {
   left: 50%;
   margin-left: -125px;
   margin-top: -31.33px;
+  z-index: 30;
 }
 .header.on h1 {
   display: none;
@@ -2093,9 +2095,16 @@ right: 130px;
 .gnb {
   width: 370px;
 }
-
+/* 슬라이드 설정 */
 .slide {
   padding-bottom: 185px;
+}
+
+.slide .imgBox>a>img:nth-child(1) {
+  display: none;
+}
+.slide .imgBox>a>img:nth-child(2) {
+  display: unset;
 }
 
 .donateBox {
@@ -2152,7 +2161,7 @@ right: 130px;
 }
 
 .news .notice h2 {
-  width: 30%;
+  width: 100%;
 }
 
 .news .notice ul {
@@ -2173,6 +2182,8 @@ right: 130px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  height: 26px;
+  overflow-y: hidden;
 }
 
 .news .notice li:nth-child(1) {
@@ -2181,7 +2192,7 @@ right: 130px;
 
 .news .notice li span {
   font-size: 16px;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 /* bg 설정 */
@@ -2267,6 +2278,7 @@ margin: 30px;
   width: 100%;
   height: auto;
   margin-left: 0px;
+  margin-top: 50px;
 }
 
 .info .infoBook>img {
@@ -2277,12 +2289,13 @@ display: none;
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .infoBook li {
 position: unset;
-margin: 20px 1%;
-width: 48%;
+margin: 10px 4%;
+width: 42%;
 }
 .infoBook li img:nth-child(1) {
   display: none;
@@ -2293,11 +2306,63 @@ width: 48%;
 .infoBook li:hover {
   padding-bottom: 0px;
 }
+.infoBook li:nth-child(6) img {
+  background-image: url(../image/popupBook06.png);
+  background-size: cover;
+}
+.infoBook i {
+  bottom: 0%;
+  margin-bottom: -60px;
+  left: 96%;
+  margin-left: -50px;
 
+}
+/* footer 설정 */
+footer {
+  height: fit-content;
+  padding: 30px 0;
+}
+footer .wrap {
+  padding: 0 20px 0 30px;
+}
+footer .wrap>div>div {
+  margin-right: 10px;
+}
+footer li {
+  margin-left: 0px;
+  margin-right: 10px;
+}
+footer em {
+  margin-right: 10px;
+}
 
 }
 @media (max-width:425px) {
-  body {
-    background-color: lightgreen;
+    /* 헤더설정 */
+  .header h1 {
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -25.05px;
   }
+    /* 공지사항 설정 */
+    .news .notice li a {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      overflow-y: unset;
+    }
+    .news .notice li span {
+      font-size: 14px;
+      padding-left: 0px;
+    }
+    /* bg 설정 */
+    .bg .site li {
+      width: 40%;
+      max-width: 80px;
+      margin: 10px 5%;
+      font-size: 26px;
+    }
+
 }
