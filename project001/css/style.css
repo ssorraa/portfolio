@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 /* 전체 설정 */
-
+:root {
+  --dayNight: #f9f5ec;
+  --nightDay: #514d47;
+}
 * {
   margin: 0;
   padding: 0;
@@ -20,12 +23,12 @@ ol {
 }
 
 a {
-  color: #514d47;
+  color: var(--nightDay);
   text-decoration: none;
 }
 
 body {
-  background-color: #f9f5ec;
+  background-color: var(--dayNight);
   overflow-x: hidden;
 }
 
@@ -54,7 +57,7 @@ h2 img {
   right: 7%;
   bottom: 7%;
   z-index: 15;
-  background-color: #514d47;
+  background-color: var(--nightDay);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -62,7 +65,7 @@ h2 img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #f9f5ec;
+  color: var(--dayNight);
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.5s;
@@ -123,7 +126,7 @@ h2 img {
   display: flex;
   flex-direction: column;
   width: 70%;
-  color: #514d47;
+  color: var(--nightDay);
 }
 
 .util {
@@ -148,12 +151,12 @@ h2 img {
   top: 0;
   width: 38px;
   height: 38px;
-  outline: solid 1px #514d47;
-  background-color: #514d47;
-  border: solid 1px #f9f5ec;
+  outline: solid 1px var(--nightDay);
+  background-color: var(--nightDay);
+  border: solid 1px var(--dayNight);
   border-radius: 5px;
   transition: width 0.5s;
-  color: #f9f5ec;
+  color: var(--dayNight);
   overflow: hidden;
 }
 
@@ -180,27 +183,27 @@ h2 img {
   margin-left: 85px;
   width: 40px;
   height: 40px;
-  background-color: #514d47;
+  background-color: var(--nightDay);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
 
 .util li:nth-child(4) i {
-  color: #f9f5ec;
   position: absolute;
   left: 50%;
 }
 
 .util li:nth-child(4) i.fa-moon {
   margin-left: -12px;
-  bottom: -40%;
+  bottom: -3%;
   transition: bottom 0.5s;
   font-size: 30px;
+  margin-bottom: -16px;
 }
 
 .util li:nth-child(4):hover i.fa-moon {
-  bottom: 10%;
+  bottom: 50%;
 }
 
 .util li:nth-child(4) i.fa-star {
@@ -210,18 +213,34 @@ h2 img {
   margin-bottom: -5px;
 }
 
-/*  완료한 뒤에 시간 남으면 만들 것
-.util li:nth-child(4) i.fa-sun {
-  font-size: 36px;
-  left: 50%;
-  margin-left: -18px;
-  bottom: -40%;
-  transition: bottom 0.5s;
+body .util li:nth-child(4) i.fa-star, body .util li:nth-child(4) i.fa-moon {
+  color: #f9f5ec;
 }
+body .util li:nth-child(4) i.fa-sun {
+  color: #514d47;
+}
+body.day .util li:nth-child(4) i.fa-sun {
+  z-index: -1;
+}
+body.night .util li:nth-child(4) i.fa-sun {
+  z-index: 1;
+}
+
+.util li:nth-child(4) i.fa-sun {
+  font-size: 30px;
+  left: 50%;
+  margin-left: -15px;
+  bottom: 5%;
+  transition: bottom 0.5s;
+  margin-bottom: -17px;
+}
+
 .util li:nth-child(4):hover i.fa-sun {
   bottom: 50%;
-  margin-bottom: -19px;
-} */
+  
+}
+
+
 .util li:nth-child(5) i {
   font-size: 40px;
   margin-top: -5px;
@@ -258,11 +277,15 @@ h2 img {
   width: 100%;
   height: auto;
   background-color: rgba(81, 77, 71, 0.9);
-  color: #f9f5ec;
+  color: var(--dayNight);
   text-align: left;
   border-radius: 0 0 10px 10px;
   display: none;
   overflow: hidden;
+}
+
+body.night .snb {
+  background-color: rgba(249, 245, 236,0.8 )
 }
 .snb::before {
   content: "▼";
@@ -282,18 +305,21 @@ h2 img {
   background-size: 6px 1px;
   background-repeat: repeat-x;
 }
+body.night .snb li {
+  background-image: linear-gradient(to right, rgba(81, 77, 71,0.4) 33%, rgba(255, 255, 255, 0) 0%);
+}
 
-.snb li:last-child {
+.snb li:last-child, body.night .snb li:last-child {
   background-image: none;
 }
 
 .snb li a {
-  color: #f9f5ec;
+  color: var(--dayNight);
   display: block;
   padding: 5px;
 }
 .snb li a:hover {
-  text-shadow: 0 0 3px #514d47;
+  text-shadow: 0 0 3px var(--nightDay);
   background-color: rgba(191, 174, 153, 0.5);
   border-radius: 5px;
 }
@@ -317,6 +343,7 @@ h2 img {
 }
 
 .slide .imgBox {
+  margin: 5px 0;
   border-radius: 100px 300px 100px 300px;
   position: relative;
   width: 100%;
@@ -326,6 +353,7 @@ h2 img {
   align-items: center;
   display: block;
   overflow: hidden;
+  box-shadow: 0 0 2px #f9f5ec;
 }
 
 .slide .imgBox>* {
@@ -414,7 +442,7 @@ h2 img {
 
 .donateBox .txtBox {
   margin-left: 10%;
-  color: #f9f5ec;
+  color: var(--dayNight);
   font-size: 24px;
 }
 
@@ -440,15 +468,19 @@ h2 img {
 }
 
 .donateBox .iconBox a {
-  color: #f9f5ec;
+  color: var(--dayNight);
   font-size: 20px;
   transition: color 0.2s;
+}
+body.night .donateBox a {
+  font-weight: bold;
+  text-shadow: 0 0 2px #f9f5ec;
 }
 
 .donateBox .iconBox a span {
   width: 80px;
   height: 80px;
-  background-color: #f9f5ec;
+  background-color: var(--dayNight);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -459,19 +491,21 @@ h2 img {
   transition: color 0.2s, background-color 0.3s;
 }
 
-.donateBox .iconBox a i {}
+body.night .donateBox .iconBox a i {
+  text-shadow:none;
+}
 
 .donateBox .iconBox a:first-child i {
   font-size: 55px;
 }
 
 .donateBox .iconBox a:hover { 
-  text-shadow: 0 0 5px #514d47;
+  text-shadow: 0 0 5px var(--nightDay);
 }
 
 .donateBox .iconBox a:hover span {
-  box-shadow: 0 0 1px #514d47;
-  color: #f9f5ec;
+  box-shadow: 0 0 1px var(--nightDay);
+  color: var(--dayNight);
   background-color: #e6933d;
 }
 
@@ -508,14 +542,21 @@ h2 img {
   cursor: pointer;
   color: rgba(81, 77, 71, 0.3);
 }
+body.night .news .tag li {
+  color: rgba(249, 245, 236, 0.3);
+}
 .news .tag li:nth-child(1),
 .news .tag li:nth-child(2),
-.news .tag li:nth-child(3) {
+.news .tag li:nth-child(3),
+body.night .news .tag li:nth-child(1),
+body.night .news .tag li:nth-child(2),
+body.night .news .tag li:nth-child(3) {
   color: #e6933d;
 }
+
 .news .tag li.on {
   font-weight: bold;
-  background-color: #f9f5ec;
+  background-color: var(--dayNight);
   background-image: url(../image/titlePaw.png);
   background-blend-mode:color-burn;
   background-position: center left;
@@ -566,7 +607,7 @@ h2 img {
 
 .news .conBox div h3 {
   font-size: 30px;
-  color: #514d47;
+  color: var(--nightDay);
   width: 80%;
   font-weight: normal;
   line-height: 36px;
@@ -601,7 +642,7 @@ h2 img {
 }
 
 .news .conBox p {
-  color: #514d47;
+  color: var(--nightDay);
   font-size: 16px;
   line-height: 20px;
 }
@@ -648,7 +689,15 @@ h2 img {
   transform: rotate(180deg);
   left: 100%;
 }
-
+.news .listBox>p img {
+  margin-top: 15px;
+}
+body.day .listBox>p img:nth-child(2) {
+  display: none;
+}
+body.night .listBox>p img:nth-child(1) {
+  display: none;
+}
 .listBox .left img {
   position: absolute;
   left: -242px;
@@ -689,7 +738,7 @@ h2 img {
   height: auto;
   margin: 0 25px;
   font-size: 16px;
-  color: #514d47;
+  color: var(--nightDay);
   cursor: pointer;
 }
 
@@ -729,7 +778,7 @@ h2 img {
   right: 0;
   top: 100%;
   font-size: 24px;
-  color: #514d47;
+  color: var(--nightDay);
   text-align: right;
 }
 
@@ -751,9 +800,15 @@ h2 img {
 .bg .wrap {
   overflow: hidden;
 }
+body.night .bg {
+  background-color: rgba(230, 147, 61, 0.5);
+}
+body.night .bg>img {
+  opacity: 0.5;
+}
 
 .bg h2 a {
-  color: #f9f5ec;
+  color: var(--dayNight);
 }
 
 .bg>img:first-child {
@@ -773,10 +828,17 @@ h2 img {
 }
 
 /* 활동 설정 */
-.bg .active {}
 
 .bg .active h2 {
   padding: 75px 0 20px 80px;
+}
+
+body.night .bg h2 a {
+  color: #f9f5ec;
+}
+
+body.night .bg h2 {
+  opacity: 0.95;
 }
 
 .bg .active article {
@@ -857,6 +919,7 @@ opacity: 1;
   opacity: 0;
   transition: right 1s, opacity 2s;
 }
+
 .bg .active.on article p {
 right: 50px;
 opacity: 1;
@@ -1083,7 +1146,7 @@ pointer-events: none;
   right: 7%;
   top: 7%;
   font-size: 60px;
-  color: #f9f5ec;
+  color: var(--dayNight);
   cursor: pointer;
 }
 .bookPopup.on .popupBg {
@@ -1097,7 +1160,7 @@ pointer-events: none;
   margin-top: -432px;
   width: 676px;
   height: 865px;
-  color: #514d47;
+  color: var(--nightDay);
   transition: left 0.5s;
 }
 .bookPopup.on ul {
@@ -1331,9 +1394,6 @@ font-size: 32px;
   }
   
   
-  .news .listBox {
-  }
-  
   .listBox .box li p {
     margin-top: 10px;
   }
@@ -1527,7 +1587,7 @@ footer .wrap {
 .header .wrap {
   height: 100px;
   position: fixed;
-  background-color: #f9f5ec;
+  background-color: var(--dayNight);
   top: 0;
   left: 0;
   z-index: 30;
@@ -1558,7 +1618,7 @@ footer .wrap {
   position: absolute;
   width: 30px;
   height: 6px;
-  background-color: #514d47;
+  background-color: var(--nightDay);
   border-radius: 2px;
   left: 50%;
   top: 50%;
@@ -1598,7 +1658,7 @@ footer .wrap {
   height: 100%;
   padding-top: 100px;
   box-sizing: border-box;
-  background-color: #f9f5ec;
+  background-color: var(--dayNight);
   display: none;
   z-index: -1;
 }
@@ -1622,7 +1682,7 @@ footer .wrap {
   z-index: 10;
   width: 100%;
   background-color: rgba(81, 77, 71, 0.15);
-  color: #514d47;
+  color: var(--nightDay);
   text-align: left;
   border-radius: 0;
   display: none;
@@ -1633,7 +1693,9 @@ footer .wrap {
 .snb::before {
   content:inherit;
 }
-
+body.night .snb {
+  background-color: rgba(249, 245, 236,0.25);
+}
 .snb li {
   text-indent: 0px;
   font-size: 18px;
@@ -1643,6 +1705,9 @@ footer .wrap {
   background-image: unset;
   border-bottom: dashed 1px rgba(81, 77, 71, 0.3);
 }
+body.night .snb li {
+  background-image: unset;
+}
 
 .snb li:last-child {
   background-image: none;
@@ -1650,7 +1715,7 @@ footer .wrap {
 }
 
 .snb li a {
-  color: #514d47;
+  color: var(--nightDay);
   display: block;
   padding: 5px;
 }
@@ -1670,6 +1735,7 @@ footer .wrap {
 }
 
 .slide .imgBox {
+  margin: 0;
   border-radius: 0;
   overflow: unset;
 }
@@ -1786,7 +1852,7 @@ background-position: 20% center;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #f9f5ec;
+  background-color: var(--dayNight);
   background-image: url(../image/titlePaw.png);
   background-blend-mode:color-burn;
   background-position: center left;
@@ -1828,7 +1894,7 @@ display: none;
   width: 23%;
   font-size: 14px;
   letter-spacing: -1.2px;
-  color: #514d47;
+  color: var(--nightDay);
   cursor: pointer;
 }
 .listBox .box li img {
@@ -1961,7 +2027,7 @@ left: 30px;
   width: 85%;
   font-size: 20px;
   line-height: 32px;
-  color: #f9f5ec;
+  color: var(--dayNight);
   transition: right 1s;
 }
 .bg .active.on article p {
@@ -2055,7 +2121,7 @@ footer em {
   margin-top: -324.38px;
   width: 507px;
   height: 648.75px;
-  color: #514d47;
+  color: var(--nightDay);
   transition: left 0.5s;
 }
 .bookPopup ul li:nth-child(6) .bookContent {
@@ -2370,7 +2436,7 @@ footer em {
   margin-top: -216.25px;
   width: 338px;
   height: 432.5px;
-  color: #514d47;
+  color: var(--nightDay);
   transition: left 0.5s;
 }
 .bookPopup ul li:nth-child(6) .bookContent {
@@ -2420,7 +2486,7 @@ footer em {
       margin-top: -173px;
       width: 270.4px;
       height: 346px;
-      color: #514d47;
+      color: var(--nightDay);
       transition: left 0.5s;
     }
     .bookPopup ul li:nth-child(6) .bookContent {

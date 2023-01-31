@@ -72,11 +72,24 @@ $('.gnb>li').click(function(){
   $('.util li').eq(5).click(function(){
     if($('.header').hasClass('on')) {
       $('.header').removeClass('on')
-      $('body').css({'overflow':'unset'})
+      $('body').css({'overflow-y':'unset'})
     } else {
-    $('.header').addClass('on')}
-    $('body').css({'overflow':'hidden'})
+    $('.header').addClass('on')
+    $('body').css({'overflow-y':'hidden'})
+  }
   })
+    // 다크모드 버튼 클릭
+    $('.util li').eq(3).click(function(){
+      if($('body').hasClass('day') == true){
+        $(':root').css({'--nightDay':'#f9f5ec'}).css({'--dayNight':'#514d47'});
+        $('body').removeClass('day')
+        $('body').addClass('night')
+      } else {
+        $(':root').css({'--nightDay':'#514d47'}).css({'--dayNight':'#f9f5ec'});
+        $('body').removeClass('night')
+        $('body').addClass('day')
+      }
+    })
 
   // 메뉴 공백 클릭
   let hwClick = true;
@@ -86,7 +99,7 @@ $('.gnb>li').click(function(){
     })
     if(hwClick != true) {
       $('.header').removeClass('on');
-      $('body').css({'overflow':'unset'})
+      $('body').css({'overflow-y':'unset'})
     }
     hwClick = false;
   })
@@ -232,12 +245,12 @@ $('.gnb>li').click(function(){
     $('.bookPopup ul li').removeClass('on')
     $('.bookPopup ul li').eq(i).addClass('on')
     $('.bookPopup').addClass('on')
-    $('body').css({'overflow':'hidden'})
+    $('body').css({'overflow-y':'hidden'})
   })
   // 인포-팝업-클릭
   $('.popupBg span').click(function(){
     $('.bookPopup').removeClass('on')
-    $('body').css({'overflow':'unset'})
+    $('body').css({'overflow-y':'unset'})
   })
 
 
@@ -248,17 +261,25 @@ $('.gnb>li').click(function(){
   let NewsBrTiny = [];
     // 처음 화면 크기에도 적용
   let wdset = function(){
+    if(wd > 1440) {
+      $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
+      if(wd > 1024 && wd<= 1440) {
+        $('.slide .imgBox>a>img').css({'border-radius':'50px 150px 50px 150px'});
+      };
       if(wd > 1024){
+        if($('.header').hasClass('on') == true){
+          $('body').css({'overflow-y':'unset'})
+          $('.header').removeClass('on')
+          }
         $('.util li').eq(2).removeClass('on')
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
-          console.log($('.infoBook li').eq(5).find('iframe'))
           }
       } else {
+        $('.slide .imgBox>a>img').css({'border-radius':'0'});
         $('.slide .imgBox>a>img').css({'border-radius':0});
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrTiny[i])
-          console.log($('.infoBook li').eq(5).find('iframe'))
         }
         $('.listBox .box li').css({'order':0});
       }
@@ -274,7 +295,7 @@ $('.gnb>li').click(function(){
     siht = $('.slide .imgBox>a').height();
     $('.slide .imgBox').height(siht);
     wd = $(window).width()
-  wdset;
+    wdset();
   })
     
     $('.util li').eq(2).click(function(){
