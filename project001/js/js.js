@@ -1,12 +1,5 @@
-  // 18:41~19:25
-  // 21:00~22:53
 $(document).ready(function () {
   let wd = $(window).width()
-  // 중요! 메인슬라이드-높이 지정
-  if ($('.slide .imgBox>a').height() > 0) {
-    let siht = $('.slide .imgBox>a').height();
-    $('.slide .imgBox').height(siht);
-  }
   let nsc = $('.news').offset().top;
   let bsc = $('.bg').offset().top;
   // 전체 스크롤 동작
@@ -247,12 +240,12 @@ $('.gnb>li').click(function(){
     $('.bookPopup').addClass('on')
     $('body').css({'overflow-y':'hidden'})
   })
+
   // 인포-팝업-클릭
   $('.popupBg span').click(function(){
     $('.bookPopup').removeClass('on')
     $('body').css({'overflow-y':'unset'})
   })
-
 
   // 미디어쿼리-메인 슬라이드-높이 변경
   // 미디어쿼리-뉴스콘텐츠-줄바꿈
@@ -297,12 +290,18 @@ $('.gnb>li').click(function(){
     wd = $(window).width()
     wdset();
   })
-    
-    $('.util li').eq(2).click(function(){
-      if(wd <= 1024 && !$(this).hasClass('on')) {
-        $(this).addClass('on')
-      } else {
-        $(this).removeClass('on')
-      }
-    })
+  
+  $('.util li').eq(2).click(function(){
+    if(wd <= 1024 && !$(this).hasClass('on')) {
+      $(this).addClass('on')
+    } else {
+      $(this).removeClass('on')
+    }
+  })
+
+  // 메인슬라이드-높이 지정
+  if ($('.slide .imgBox>a').height() > 0) {
+    let siht = $('.slide .imgBox>a').height();
+    $('.slide .imgBox').height(siht);
+  }
 });
