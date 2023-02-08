@@ -127,8 +127,8 @@ $('.gnb>li').click(function(){
     $('.slide .imgBox>a').css({'pointer-events':'none'});
     let i = $(this).index()
     if(i == 7) {
-      $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).animate({'left':0});
-      $('.slide .imgBox>a').eq(a).css({'left':0}).animate({'left':'100%'},
+      $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).stop().animate({'left':0});
+      $('.slide .imgBox>a').eq(a).css({'left':0}).stop().animate({'left':'100%'},
       function(){
         if(wd > 1440) {
           $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
@@ -141,8 +141,8 @@ $('.gnb>li').click(function(){
     }else if (i == 8) {
       a++;
       if(a > 3) {a = 0;};
-      $('.slide .imgBox>a').eq(a-1).css({'left':0}).animate({'left':'-100%'});
-      $('.slide .imgBox>a').eq(a).css({'left':'100%'}).animate({'left':0},
+      $('.slide .imgBox>a').eq(a-1).css({'left':0}).stop().animate({'left':'-100%'});
+      $('.slide .imgBox>a').eq(a).css({'left':'100%'}).stop().animate({'left':0},
       function(){
         if(wd > 1440) {
         $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}

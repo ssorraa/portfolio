@@ -1,0 +1,357 @@
+@charset 'utf-8';
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+/* 전체 설정 */
+* {
+  padding: 0;
+  margin: 0;
+}
+ol,ul {
+  list-style: none;
+}
+image {
+  border: none;
+  vertical-align: bottom;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+body {
+  /* overflow-x: hidden; */
+  font-family: 'Do Hyeon', sans-serif;
+}
+/* 구글폰트, 눈누폰트 등에서 import미리설정 */
+/* 우선순위 css는 덮어쓰기가 가능한 파일
+제일 상위자 - 태그네임
+두번째 상위자 - #wrap section -> section의 클래스네임으로 변경안됨
+세번째 상위자 - ID 값 */
+
+/* 크기설정 */
+/* 화면기준으로 높이를 맞춘다면 800px
+  내용에 따라 높이가 변환된다면 1000px or 500px */
+/* section:nth-child(1) {
+  width: 100%;
+  height: 800px;
+}
+section:nth-child(2) {
+  width: 100%;
+  height: 800px;
+}
+section:nth-child(3) {
+  width: 100%;
+  height: 800px;
+}
+section:nth-child(4) {
+  width: 100%;
+  height: 800px;
+}
+section:nth-child(5) {
+  width: 100%;
+  height: 800px;
+}
+section:nth-child(6) {
+  width: 100%;
+  height: 800px;
+} */
+article {
+  width: 100%;
+  height: 800px;
+}
+h2 {
+  font-family: 'yg-jalnan', sans-serif;
+  font-size: 40px;
+}
+/* 공간설정 - 내용 모두 삽입시 삭제예정*/
+section:nth-child(1) {
+  background-color: #333;
+}
+section:nth-child(2) {
+  background-color: #444;
+}
+section:nth-child(3) {
+  background-color: #555;
+}
+section:nth-child(4) {
+  background-color: #666;
+}
+section:nth-child(5) {
+  background-color: #777;
+}
+section:nth-child(6) {
+  background-color: #888;
+}
+
+/* 헤더설정 */
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100px;
+  z-index: 30;
+}
+#header #gnb {
+  position: fixed;
+}
+#gnb li i {
+  font-size: 2rem;
+  color: #fff;
+  margin-left: 25px;
+  margin-top: 32px;
+  cursor: pointer;
+}
+#gnb .box {
+  display: none;
+}
+#gnb .box:nth-child(1) {}
+#gnb .box:nth-child(2) {}
+#gnb .box:nth-child(3) {}
+#gnb .box:nth-child(4) {}
+.box>.front {}
+.box>.left {}
+.box>.right {}
+.box>.back {}
+.box>.top {}
+.box>.bottom {}
+.box>.circle {}
+.box>.circle>.top {}
+.box>.circle>.bottom {}
+.box>.circle>div[class^='side'] {}
+.box>.circle>.side1 {}
+.box>.circle>.side2 {}
+.box>.circle>.side3 {}
+.box>.circle>.side4 {}
+.box>.circle>.side5 {}
+.box>.circle>.side6 {}
+.box>.circle>.side7 {}
+.box>.circle>.side8 {}
+#header h1 {
+position: absolute;
+left: 50%;
+top: 0;
+width: auto;
+height: 100px;
+}
+#header h1 a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: auto;
+  height: 100%;
+
+}
+#header h1 a:nth-child(1) {
+margin-left: -65px;
+}
+
+#header h1 img {
+  width: auto;
+  height: 60%;
+  margin-top: 20%;
+}
+#header #util {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  width: auto;
+  height: 100px;
+  align-items: center;
+}
+#util li {
+  margin: 0 25px;
+  color: #fff;
+  font-size: 2rem;
+}
+#util li i {
+  cursor: pointer;
+}
+/* 랩 설정 */
+.wrap {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+/* 메인 설정 */
+#main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#main .vid {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+#main .vid video {
+  width: 100%;
+  height: auto;
+}
+#main .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#main .cover p {
+  margin-bottom: 25px;
+  color: #fff;
+}
+#main .cover p span {
+  margin-bottom: 10px;
+  display: block;
+  border: 2px solid #fff;
+  width: 30px;
+  height: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+#main .cover p span::before {
+  content: "|";
+  font-size: 18px;
+}
+#main .cover p em {
+  border: 2px solid #000;
+  width: 1px;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  animation: scroll 1s infinite linear;
+}
+@keyframes scroll {
+  0% {
+  }
+  50% { 
+
+  }
+  100% { 
+
+  }
+}
+
+/* 제품설명 설정 */
+#product {}
+#product span {}
+#product span:nth-child(1) {}
+#product span:nth-child(2) {}
+#product span:nth-child(3) {}
+#product span:nth-child(4) {}
+#product .block {}
+#product .block div[class^='circle']{}
+#product .block .circle1{}
+#product .block .circle2{}
+#product .block .circle3{}
+#product .block .circle4{}
+#product .block .blockPlus{}
+#product .block .blockPlus>div:nth-child(1){}
+#product .block .blockPlus>div:nth-child(2){}
+#product .text {}
+#product .text h2 {}
+#product .text p {}
+
+/* 제품목록 설정 */
+#list {}
+#list div {}
+#list div:nth-child(1) {}
+#list div:nth-child(2) {}
+#list div:nth-child(3) {}
+#list div:nth-child(4) {}
+#list div:nth-child(5) {}
+#list div:nth-child(6) {}
+#list div:nth-child(7) {}
+#list div:nth-child(8) {}
+#list .text h2 {}
+#list .text p {}
+#list div:nth-child(9) {}
+#list div:nth-child(10) {}
+#list div:nth-child(11) {}
+#list div:nth-child(12) {}
+#list div:nth-child(13) {}
+#list div:nth-child(14) {}
+#list div:nth-child(15) {}
+
+/* 기업정보 설정 */
+#info {}
+#info video {}
+#info .cover {}
+#info .text {}
+#info .text img {}
+#info .text h2 {}
+#info .text p {}
+#info .text a {}
+#info .text a i {}
+
+#info .lego {}
+#info .lego video {}
+#info .lego .cover {}
+#info .lego .text {}
+#info .lego .text img {}
+#info .lego .text h2 {}
+#info .lego .text p {}
+#info .lego .text a {}
+#info .lego .text a i {}
+#info .mc {}
+#info .mc video {}
+#info .mc .cover {}
+#info .mc .text {}
+#info .mc .text img {}
+#info .mc .text h2 {}
+#info .mc .text p {}
+#info .mc .text a {}
+#info .mc .text a i {}
+#info .legoMc {}
+#info .legoMc video {}
+#info .legoMc .cover {}
+#info .legoMc .text {}
+#info .legoMc .text img {}
+#info .legoMc .text h2 {}
+#info .legoMc .text p {}
+#info .legoMc .text a {}
+#info .legoMc .text a i {}
+
+/* sns설정 */
+#sns {}
+#sns .snsIcon{}
+#sns .snsIcon i {}
+#sns .snsIcon i.on {}
+#sns .text h2 {}
+#sns .text p {}
+#sns .text p b {}
+#sns .snsImg ul {}
+#sns .snsImg li {}
+#sns .snsImg li a {}
+#sns .snsImg li a.on {}
+#sns .snsImg li a img{}
+
+/* 맵+푸터 설정 */
+#end {}
+#end .map {}
+#end .map div:nth-child(1) {}
+#end .map .text {}
+#end .map .text h2 {}
+#end .map .text p {}
+#end .footer {}
+#end .footer ul {}
+#end .footer li {}
+#end .footer p {}
+
+/* 미디어쿼리 */
+/* 1440px이상 */
+@media (min-width:1440px) {
+.wrap {margin-left: auto;
+margin-right: auto;
+}
+}
+/*  */
+@media (max-width:px) {
+  
+}

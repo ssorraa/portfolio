@@ -1315,6 +1315,7 @@ body.night .bookPopup ul li b {
 /* 미디어쿼리 */
 @media (min-width:1441px) {
   .wrap {
+    color: rgb(194, 131, 64);
     max-width: 1440px;
     margin: 0 auto;
   }
