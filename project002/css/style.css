@@ -451,7 +451,7 @@ margin-left: -65px;
 #product .text {
   width: 545px;
   height: 545px;
-  background: url(../image/legoBlock1.png), #18AC00;
+  background: url(../image/legoBlock1.png), #139200;
   background-blend-mode: soft-light, normal;
   position: absolute;
   transform: rotateZ(45deg);
@@ -517,7 +517,7 @@ margin-left: -65px;
 }
 #list div:nth-child(8) {
   display: block;
-  background: url(../image/legoBlock2.png), #18AC00;
+  background: url(../image/legoBlock2.png), #139200;
   background-blend-mode: soft-light, normal;
   background-size: 57px;
   background-position: center center;
@@ -554,36 +554,51 @@ background-color: #FFE000;
 
 /* 기업정보 설정 */
 #info {
-  background: url(../image/legoBlock2.png), #18AC00;
+  background: url(../image/legoBlock2.png), #139200;
   background-blend-mode: soft-light, normal;
   background-attachment: fixed;
   color: #fff;
   text-align: center;
+  position: relative;
 }
-#info .lego h3 {
-  width: 35%;
-  height: auto;
-  margin: 0 auto;
+
+#info img.legoLogo {
+  height: 10%;
+  width: auto;
+}
+#info img.mcLogo {
+  height: 5%;
+  width: auto;
+}
+#info .legoMc img.mcLogo {
+  margin: 5% 0;
 }
 #info article {
   position: relative;
   overflow: hidden;
 }
-#info iframe {
+#info .videoWrap {
   position: absolute;
   right: 0;
   top: 0;
   width: 70%;
   height: 100%;
+  overflow: hidden;
+}
+#info iframe {
+  width: auto;
+  height: 100%;
 }
 #info .cover {
+  position: absolute;
   width: 70%;
-  height: 100%;
+  height: auto;
   margin-left: 30%;
+  z-index: 1;
 }
 #info .text {
   width: 30%;
-  height: auto;
+  height: 100%;
 }
 #info .text img {}
 #info .text h2 {}
