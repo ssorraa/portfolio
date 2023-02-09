@@ -1,6 +1,11 @@
 @charset 'utf-8';
-@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff');
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* 전체 설정 */
 * {
@@ -15,12 +20,13 @@ image {
   vertical-align: bottom;
 }
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 body {
   /* overflow-x: hidden; */
   font-family: 'Do Hyeon', sans-serif;
+  font-size: 20px;
 }
 /* 구글폰트, 눈누폰트 등에서 import미리설정 */
 /* 우선순위 css는 덮어쓰기가 가능한 파일
@@ -179,7 +185,6 @@ margin-left: -65px;
 /* 메인 설정 */
 #main {
   position: relative;
-  width: 100%;
   overflow: hidden;
 }
 #main .vid {
@@ -188,8 +193,12 @@ margin-left: -65px;
   justify-content: end;
 }
 #main .vid video {
+  width: max-content;
+  height: 100%;
+}
+#main .vid video.on {
   width: 100%;
-  height: auto;
+  height: max-content;
 }
 #main .cover {
   width: 100%;
@@ -227,6 +236,7 @@ margin-left: -65px;
   display: block;
   animation: scroll 1s infinite linear;
 }
+/* 추후 할것 */
 @keyframes scroll {
   0% {
   }
@@ -239,51 +249,342 @@ margin-left: -65px;
 }
 
 /* 제품설명 설정 */
-#product {}
-#product span {}
-#product span:nth-child(1) {}
-#product span:nth-child(2) {}
-#product span:nth-child(3) {}
-#product span:nth-child(4) {}
-#product .block {}
-#product .block div[class^='circle']{}
-#product .block .circle1{}
-#product .block .circle2{}
-#product .block .circle3{}
-#product .block .circle4{}
-#product .block .blockPlus{}
-#product .block .blockPlus>div:nth-child(1){}
-#product .block .blockPlus>div:nth-child(2){}
-#product .text {}
-#product .text h2 {}
-#product .text p {}
+#product {
+  background-color: #FFD02C;
+  position: relative;
+  overflow: hidden;
+}
+#product .ani {
+  width: 200%;
+  position: absolute;
+  left: -100%;
+  border-radius: 50%;
+  animation: rotate1 20s linear infinite;
+}
+@keyframes rotate1 {
+  0% {transform: rotateZ(0deg);}
+  23% {transform: rotateZ(0deg);}
+  25% {transform: rotateZ(90deg);}
+  48% {transform: rotateZ(90deg);}
+  50% {transform: rotateZ(180deg);}
+  73% {transform: rotateZ(180deg);}
+  75% {transform: rotateZ(270deg);}
+  98% {transform: rotateZ(270deg);}
+  100% {transform: rotateZ(360deg);}
+}
+#product span {
+  display: inline-block;
+  position: absolute;
+  color: #FFB613;
+  font-size: 352px;
+}
+#product span:nth-child(1) {
+  transform: rotateZ(0deg);
+  right: 0;
+  top: 50%;
+  margin-top: -70px;
+  margin-right: 20px;
+}
+#product span:nth-child(2) {
+  transform: rotateZ(90deg);
+  right: 50%;
+  bottom: 0;
+  margin-bottom: 180px;
+  margin-right: -246px;
+}
+#product span:nth-child(3) {
+  transform: rotateZ(180deg);
+  bottom: 50%;
+  left: 0;
+  margin-bottom: -70px;
+  margin-left: 10px;
+}
+#product span:nth-child(4) {
+  transform: rotateZ(270deg);
+  top: 0;
+  left: 50%;
+  margin-left: -340px;
+  margin-top: 280px;
+}
+#product .block {
+  position: absolute;
+  background-color: #008CC7;
+  width: 1200px;
+  height: 1200px;
+  border-radius: 20px;
+  left: 0;
+  top: 50%;
+  margin-left: -400px;
+  margin-top: -600px;
+  transform: rotateZ(45deg);
+  box-shadow: 30px 0 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  animation: rotate2 20s linear infinite;
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotateZ(45deg);
+    box-shadow: 30px 0 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  23% {
+    transform: rotateZ(45deg);
+    box-shadow: 30px 0 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  25% {
+    transform: rotateZ(135deg);
+    box-shadow: 0px -30px 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  48% {
+    transform: rotateZ(135deg);
+    box-shadow: 0px -30px 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: rotateZ(225deg);
+    box-shadow: -30px 0px 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  73% {
+    transform: rotateZ(225deg);
+    box-shadow: -30px 0px 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  75% {
+    transform: rotateZ(315deg);
+    box-shadow: 0px 30px 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  98% {
+    transform: rotateZ(315deg);
+    box-shadow: 0px 30px 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: rotateZ(405deg);
+    box-shadow: 30px 0 6px 10px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.25);
+  }
+}
+#product .block div[class^='circle']{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #009DE0;
+  border-radius: 50%;
+  box-shadow: 10px 10px 4px 3px rgba(0, 0, 0, 0.25), inset 0 0 8px 1px rgba(0, 0, 0, 0.25);
+  animation: rotate3 20s linear infinite;
+}
+
+@keyframes rotate3 {
+  0% {transform: rotateZ(-45deg);}
+  23% {transform: rotateZ(-45deg);}
+  25% {transform: rotateZ(-135deg);}
+  48% {transform: rotateZ(-135deg);}
+  50% {transform: rotateZ(-225deg);}
+  73% {transform: rotateZ(-225deg);}
+  75% {transform: rotateZ(-315deg);}
+  98% {transform: rotateZ(-315deg);}
+  100% {transform: rotateZ(-405deg);}
+}
+
+#product .block .circle1{
+  left: 80px;
+  top: 80px;
+}
+#product .block .circle2{
+  right: 80px;
+  top: 80px;
+  
+}
+#product .block .circle3{
+  right: 80px;
+  bottom: 80px;
+}
+#product .block .circle4{
+  left: 80px;
+  bottom: 80px;
+}
+#product .block div[class^='circle'] img {
+  width: 60%;
+  margin: 60px;
+}
+
+#product .block .blockPlus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  margin-left: -120px;
+  margin-top: -120px;
+  animation: rotate4 20s linear infinite;
+}
+#product .block .blockPlus div {
+  width: 80px;
+  height: 240px;
+  border-radius: 12px;
+  background-color: #FFD02C;
+  box-shadow: inset 0px 0px 10px #000;
+}
+#product .block .blockPlus div:nth-child(1) {
+  margin-left: 80px;
+}
+#product .block .blockPlus div:nth-child(2) {
+  margin-left: 80px;
+  margin-top: -240px;
+  transform: rotateZ(90deg);
+}
+#product .block .blockPlus div:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  margin-left: 80px;
+  margin-top: -160px;
+  box-shadow: none;
+  position: absolute;
+  border-radius: 6px;
+}
+@keyframes rotate4 {
+  0% {filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.3));}
+  23% {filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.3));}
+  25% {filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.3));}
+  48% {filter: drop-shadow(0px -10px 10px rgba(0, 0, 0, 0.3));}
+  50% {filter: drop-shadow(-10px 0px 10px rgba(0, 0, 0, 0.3));}
+  73% {filter: drop-shadow(-10px 0px 10px rgba(0, 0, 0, 0.3));}
+  75% {filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));}
+  75% {filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));}
+  100% {filter: drop-shadow(10px 0px 10px rgba(0, 0, 0, 0.3));}
+}
+
+#product .text {
+  width: 545px;
+  height: 545px;
+  background: url(../image/legoBlock1.png), #18AC00;
+  background-blend-mode: soft-light, normal;
+  position: absolute;
+  transform: rotateZ(45deg);
+  right: 120px;
+  bottom: -50px;
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+#product .text h2 {
+  transform: rotateZ(-45deg);
+  display: inline-block;
+  margin-left: -215px;
+  margin-top: 100px;
+}
+#product .text p {
+  transform: rotateZ(-45deg);
+  margin-left: 60px;
+  margin-top: -20px;
+}
+
 
 /* 제품목록 설정 */
-#list {}
-#list div {}
-#list div:nth-child(1) {}
-#list div:nth-child(2) {}
-#list div:nth-child(3) {}
-#list div:nth-child(4) {}
-#list div:nth-child(5) {}
-#list div:nth-child(6) {}
-#list div:nth-child(7) {}
-#list div:nth-child(8) {}
-#list .text h2 {}
-#list .text p {}
-#list div:nth-child(9) {}
-#list div:nth-child(10) {}
-#list div:nth-child(11) {}
-#list div:nth-child(12) {}
-#list div:nth-child(13) {}
-#list div:nth-child(14) {}
-#list div:nth-child(15) {}
+#list article{
+  display: flex;
+  flex-wrap: wrap;
+}
+#list div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#list div a {
+  width: 70%;
+  height: auto;
+}
+#list div img {
+  width: 100%;
+  height: auto;
+}
+#list div:nth-child(1) {
+  background-color: #EBD59F;
+}
+#list div:nth-child(2) {
+  background-color: #56B4EA;
+}
+#list div:nth-child(3) {
+  background-color: #582E9D;
+}
+#list div:nth-child(4) {
+  background-color: #E03224;
+}
+#list div:nth-child(5) {
+  background-color: #17A4F0;
+}
+#list div:nth-child(6) {
+  background-color: #ACE200;
+}
+#list div:nth-child(7) {
+  background-color: #F05944;
+}
+#list div:nth-child(8) {
+  display: block;
+  background: url(../image/legoBlock2.png), #18AC00;
+  background-blend-mode: soft-light, normal;
+  background-size: 57px;
+  background-position: center center;
+  text-align: center;
+  color: #fff;
+}
+#list .text h2 {
+  margin-top: 20%;
+}
+#list .text p {
+  margin: 10% 15% 0 15%;
+}
+#list div:nth-child(9) {
+background-color: #FF96CF;
+}
+#list div:nth-child(10) {
+background-color: #FFE000;
+}
+#list div:nth-child(11) {
+  background-color: #009E5C;
+}
+#list div:nth-child(12) {
+  background-color: #FFED1A;
+}
+#list div:nth-child(13) {
+  background-color: #BC0038;
+}
+#list div:nth-child(14) {
+  background-color: #5EDFC0;
+}
+#list div:nth-child(15) {
+  background-color: #FF9000;
+}
 
 /* 기업정보 설정 */
-#info {}
-#info video {}
-#info .cover {}
-#info .text {}
+#info {
+  background: url(../image/legoBlock2.png), #18AC00;
+  background-blend-mode: soft-light, normal;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+}
+#info .lego h3 {
+  width: 35%;
+  height: auto;
+  margin: 0 auto;
+}
+#info article {
+  position: relative;
+  overflow: hidden;
+}
+#info iframe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+}
+#info .cover {
+  width: 70%;
+  height: 100%;
+  margin-left: 30%;
+}
+#info .text {
+  width: 30%;
+  height: auto;
+}
 #info .text img {}
 #info .text h2 {}
 #info .text p {}
