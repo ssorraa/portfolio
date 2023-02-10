@@ -43,6 +43,5 @@ $(document).ready(function () {
     } else {
       $('#info article').eq(2).find('.videoWrap').css({'top':0})
     }
-
   })
 })

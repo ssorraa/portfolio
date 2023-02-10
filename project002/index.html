@@ -10,6 +10,8 @@
   <script src="https://use.fontawesome.com/94a449005c.js"></script>
   <!-- 외부스타일시트 연결 -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- 스크롤 아웃 연결 -->
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
   <!-- 제이쿼리 연결 -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <!-- 외부스크립트 연결 -->
@@ -162,7 +164,7 @@
             <div></div>
           </div>
         </div>
-        <div class="text">
+        <div class="text" data-scroll>
           <h2>놀이를 통해 <br>
             능력을 깨워보세요</h2>
           <p>다양한 시나리오와 다채로운 구성을 자랑하는 레고 마인크래프트 <br>
@@ -212,7 +214,7 @@
             <img src="image/list07_1.png" alt="">
           </a>
         </div>
-        <div class="text">
+        <div class="text" data-scroll>
           <h2>인기제품</h2>
           <p>마인크래프트의 새로운 세상을
             현실에서도 체험해보세요!</p>
@@ -258,10 +260,14 @@
       <div class="cover"></div>
       <article class="lego">
         <div class="videoWrap">
-          <iframe src="https://www.youtube.com/embed/B48lnZh4bFI?autoplay=1&end=200&mute=1&controls=0&loop=1&playlist=B48lnZh4bFI?end=200" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/B48lnZh4bFI?autoplay=1&end=200&mute=1&controls=0&loop=1&playlist=B48lnZh4bFI"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+            allowfullscreen></iframe>
         </div>
-        <div class="text">
-<img src="image/logo_lego02.svg" alt="레고 로고" class="legoLogo">
+        <div class="text" data-scroll>
+          <h3><img src="image/logo_lego02.svg" alt="레고 로고" class="legoLogo"></h3>
           <h2>'LEGO'는 '재미있게 놀다'라는 'leg godt'를 줄인 것입니다</h2>
           <p>
             레고의 블럭 모양은 1958년에 만들어졌습니다.<br>
@@ -273,16 +279,20 @@
           </p>
           <a href="#" target="_blank">
             사이트로 이동
-            <i class="fa-solid fa-arrow-right-long"></i>
+            <span>→</span>
           </a>
         </div>
       </article>
       <article class="mc">
         <div class="videoWrap">
-          <iframe src="https://www.youtube.com/embed/vdrn4ouZRvQ?autoplay=1&end=96&mute=1&controls=0&loop=1&playlist=vdrn4ouZRvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/vdrn4ouZRvQ?autoplay=1&end=96&mute=1&controls=0&loop=1&playlist=vdrn4ouZRvQ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+            allowfullscreen></iframe>
         </div>
-        <div class="text">
-<img src="image/logo_mc01.svg" alt="마인크래프트 로고" class="mcLogo">
+        <div class="text" data-scroll>
+          <h3><img src="image/logo_mc01.svg" alt="마인크래프트 로고" class="mcLogo"></h3>
           <h2>'MINECRAFT'는 채광과 제작(MINE+CRAFT)을 합친 단어입니다</h2>
           <p>
             모든 플랫폼에서 가장 많이 팔린 게임이며, 컴퓨터 소프트웨어인
@@ -294,16 +304,21 @@
           </p>
           <a href="#" target="_blank">
             사이트로 이동
-            <i class="fa-solid fa-arrow-right-long"></i>
+            <span>→</span>
           </a>
         </div>
       </article>
       <article class="legoMc">
         <div class="videoWrap">
-          <iframe src="https://www.youtube.com/embed/qNBHM883Wac?autoplay=1&mute=1&controls=0&loop=1&playlist=qNBHM883Wac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/qNBHM883Wac?autoplay=1&mute=1&controls=0&loop=1&playlist=qNBHM883Wac"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
         </div>
-        <div class="text">
-<img src="image/logo_lego02.svg" alt="레고 로고" class="legoLogo"> <img src="image/logo_mc01.svg" alt="마인크래프트 로고" class="mcLogo">
+        <div class="text" data-scroll>
+          <h3><img src="image/logo_lego02.svg" alt="레고 로고" class="legoLogo"> <img src="image/logo_mc01.svg"
+              alt="마인크래프트 로고" class="mcLogo"></h3>
           <h2>대다수의 아이들은 마인크래프트에 대해 이미 많은 것을 알고 있습니다</h2>
           <p>
             그러다보니 레고 마인크래프트 세트를 열자마자 알아보고 무슨 상황인지를 금방
@@ -315,10 +330,10 @@
             화면에서만 보던 마인크래프트 블록이 레고 블록으로 자연스럽게
             전환되면서 새로운 경험을 느낄 수 있습니다.
           </p>
-          <a href="#" target="_blank">
+          <!-- <a href="#" target="_blank">
             사이트로 이동
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </a>
+            <span>→</span>
+          </a> -->
         </div>
       </article>
     </section>
@@ -330,156 +345,156 @@
           <i class="fa-brands fa-twitter"></i>
           <i class="fa-brands fa-tiktok"></i>
         </div>
-        <div class="text">
+        <div class="text" data-scroll>
           <h2>팬 모먼트</h2>
-          <p>가장 좋아하는 레고 제품을 직접
-            만들어서 모습을 공유해 주세요.
-            <b>LEGO</b>를 태그하면
-            레고 쇼케이스에 사진이
+          <p>가장 좋아하는 레고 제품을 직접<br>
+            만들어서 모습을 공유해 주세요.<br>
+            <b>LEGO</b>를 태그하면<br>
+            레고 쇼케이스에 사진이<br>
             게시됩니다.</p>
         </div>
         <div class="snsImg">
-          <ul>
-            <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
+          <ul class="on reddit">
+            <li class="up">
+              <a href="https://www.reddit.com/r/lego/comments/10l2x3c/my_first_lego_minecraft_moc_how_do_you_like_it/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/l8qtnxbtv7ea1.jpg?width=1080&crop=smart&auto=webp&v=enabled&s=b81888aaca57c241fc2d850ea187d62c2ec53fd4" alt=""> -->
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.reddit.com/r/lego/comments/w2qf78/i_made_a_minecraft_bee_cause_i_couldnt_sleep/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/i0g3is5wfic91.jpg?width=640&crop=smart&auto=webp&v=enabled&s=ecab0906369375f76a3b0047a06cc6243ff3a04e" alt=""> -->
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.reddit.com/r/lego/comments/qc6lcc/its_wednesday_my_dudes_lego_minecraft_frogs_and/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/82aj02vp7nu71.png?width=960&crop=smart&auto=webp&v=enabled&s=b288860dfe75e3b922fcc37bc35f4055c707aa12" alt=""> -->
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.reddit.com/r/lego/comments/fzklz2/the_lego_minecraft_turtle_we_deserved/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/j1e7m4aan9s41.jpg?width=960&crop=smart&auto=webp&v=enabled&s=b8f82e730eb9fbf7a8d6b2e977e71f7b61de98f3" alt=""> -->
               </a>
             </li>
-            <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
+            <li class="down">
+              <a href="https://www.reddit.com/r/lego/comments/d50dtu/my_minecraft_chess_board_the_board_itself_also/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/0lt4zbpsfym31.jpg?width=960&crop=smart&auto=webp&v=enabled&s=43bc54a20e01d9f6d28263023c8695f45cf57daf" alt=""> -->
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.reddit.com/r/lego/comments/gzlkkc/i_made_a_minecraft_themed_antigravity_structure/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/wq5z1lvfhv351.png?width=640&crop=smart&auto=webp&v=enabled&s=724cc67a853619fb3767edf1eca052086a3cd943" alt=""> -->
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.reddit.com/r/lego/comments/tczgv/what_you_can_do_with_6_minecraft_sets/"
+                target="_blank">
+                <!-- <img src="https://external-preview.redd.it/UufXGHjE7whQqnK1s6id06Zln1hJq1_u-GexZ4HsjwQ.jpg?width=960&crop=smart&auto=webp&v=enabled&s=26bf70f647542c3a6f2f328995b9e6c29969e12a" alt=""> -->
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.reddit.com/r/lego/comments/e96ler/more_micro_minecraft_chunks_5_village_modules/"
+                target="_blank">
+                <!-- <img src="https://preview.redd.it/doabw5bj10441.png?width=960&crop=smart&auto=webp&v=enabled&s=be6babf24c961a27d42f7de786dbab1bce87e07b" alt=""> -->
               </a>
             </li>
           </ul>
           <ul>
             <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
+              <a href="https://youtu.be/KxyojeihJCo" target="_blank">
+                <img src="https://i.ytimg.com/vi/KxyojeihJCo/maxresdefault.jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://youtu.be/Zm-VbAUbHm8" target="_blank">
+                <img src="https://i.ytimg.com/vi/Zm-VbAUbHm8/maxresdefault.jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://youtu.be/4ruH9hjZZ90" target="_blank">
+                <img src="https://i.ytimg.com/vi/4ruH9hjZZ90/maxresdefault.jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
-              </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://youtu.be/wT7UQXXm1gY" target="_blank">
+                <img src="https://i.ytimg.com/vi/wT7UQXXm1gY/maxresdefault.jpg" alt="">
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
+              <a href="https://youtu.be/kkCX2PjIJl4" target="_blank">
+                <img src="https://i.ytimg.com/vi/kkCX2PjIJl4/maxresdefault.jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://youtu.be/Q2JgnBevGDM" target="_blank">
+                <img src="https://i.ytimg.com/vi/Q2JgnBevGDM/maxresdefault.jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://youtu.be/3Uv_-rzxnV8" target="_blank">
+                <img src="https://i.ytimg.com/vi/3Uv_-rzxnV8/maxresdefault.jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://youtu.be/1CklslTJsS4" target="_blank">
+                <img src="https://i.ytimg.com/vi/1CklslTJsS4/maxresdefault.jpg" alt="">
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://twitter.com/BrickToyNews/status/836041973425401857" target="_blank">
+                <img src="https://pbs.twimg.com/media/C5o3vg-UYAAPgnr?format=jpg" alt="">
+              </a>
+              <a href="https://twitter.com/_ReBrick/status/795673899195371521" target="_blank">
+                <img src="https://pbs.twimg.com/media/CwrM2WkWQAExxH7?format=jpg" alt="">
+              </a>
+              <a href="https://twitter.com/alx_islas_99/status/1331994864389656577" target="_blank">
+                <img src="https://pbs.twimg.com/media/EnwyQ_MXcAEa91I?format=jpg" alt="">
+              </a>
+              <a href="https://mobile.twitter.com/brickfanatics/status/1265555970131988480" target="_blank">
+                <img src="https://pbs.twimg.com/media/EZAob8oXQAIWdmb?format=jpg" alt="">
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
+              <a href="https://twitter.com/LEGO_Group/status/969905256078430208" target="_blank">
+                <img src="https://pbs.twimg.com/media/DXXLsHUUMAE_ty3?format=jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://twitter.com/MikeyM32_/status/1480226936735547394" target="_blank">
+                <img src="https://pbs.twimg.com/media/FIrSidrXoAUF87c?format=jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://twitter.com/promobricks/status/1024598744799621121" target="_blank">
+                <img src="https://pbs.twimg.com/media/DjgbIMEX4AEGumm?format=jpg" alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://twitter.com/bricksbymind/status/1394413159285407754" target="_blank">
+                <img src="https://pbs.twimg.com/media/E1nzXjtWQAEubvJ?format=jpg" alt="">
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://www.tiktok.com/@letitlego/video/7180229372777958702" target="_blank">
+                <img
+                  src="https://p19-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/e066fd7f8dd4444eb5bff8fdcde62fd6?x-expires=1676016000&x-signature=3uim98P6Xu%2Bw0WeeLiVXk4aV9AU%3D"
+                  alt="">
+              </a>
+              <a href="https://www.tiktok.com/@girlheartsminecraft/video/7035721515974823174" target="_blank">
+                <img
+                  src="https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/e82e1fc061ef46ffb4c19ec8f8717847_1638131584~tplv-dmt-logom:tos-useast2a-v-0068/a7fb6534b7974601b4bbeba015379eef.image?x-expires=1676016000&x-signature=r4AjLRtZuyN2gy56zGWVOttmL5o%3D"
+                  alt="">
+              </a>
+              <a href="https://www.tiktok.com/@sacredbricks/video/7116230970352684331" target="_blank">
+                <img
+                  src="https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/b9ad1b7afdfa4f8e91d2112038364823_1656876656?x-expires=1676016000&x-signature=uKwE8KvlpvdeWeXqGJxH%2BPNRFT8%3D"
+                  alt="">
+              </a>
+              <a href="https://www.tiktok.com/@scdude1999/video/7107265975958965547" target="_blank">
+                <img
+                  src="https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/020fb37c7e244782b9eaa0d2b48254c8?x-expires=1676016000&x-signature=OZoiTb3o9ATo3R315YR%2BSqYn2uU%3D"
+                  alt="">
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" class="on">
-                <img src="" alt="">
+              <a href="https://www.tiktok.com/@shopherovn/video/7129509585542548763" target="_blank">
+                <img
+                  src="https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/ca0a6f178f3746f1817dcb4b0270ca41_1659968316?x-expires=1676016000&x-signature=5PSkjUdvZEuSdxuAEVYoV0%2F8fMM%3D"
+                  alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.tiktok.com/@sacredbricks/video/7115409548097342766" target="_blank">
+                <img
+                  src="https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/b0c31a43ceee4f7ba3031da5828b4727_1656685394?x-expires=1676016000&x-signature=sHm6YX4k7ZpN7Cvg%2BhLXkqcSQAQ%3D"
+                  alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.tiktok.com/@shopherovn/video/7120919221260832027" target="_blank">
+                <img
+                  src="https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/4af37dc0c9e14fd5b54425911a75ef97_1657968268?x-expires=1676016000&x-signature=nKLHc%2BorABemtU9zxWx5yIbnmKE%3D"
+                  alt="">
               </a>
-              <a href="#" target="_blank">
-                <img src="" alt="">
+              <a href="https://www.tiktok.com/@legotkmaster/video/7165696386736868650" target="_blank">
+                <img
+                  src="https://p19-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/1ea147ed3230450293ec06014d79354f_1668393714~tplv-dmt-logom:tos-useast5-i-0068-tx/c51be496609e41649003cf7907846325.image?x-expires=1676016000&x-signature=7%2FW4078mkpAcS5HlIJDyyObmlkE%3D"
+                  alt="">
               </a>
             </li>
           </ul>
@@ -488,9 +503,11 @@
     </section>
     <section id="end">
       <article>
-        <div class="map">
-          <div class=""></div>
-          <div class="text">
+        <div class="store">
+          <div class="map">
+            <img src="image/map.png" alt="지도 넣기 전 임시 사진">
+          </div>
+          <div class="text" data-scroll>
             <h2>레고 스토어</h2>
             <p>
               레고만의 특별한 경험을 느낄 수 있도록 디자인된 매장을 방문해보세요. <br>
@@ -518,6 +535,23 @@
       </article>
     </section>
   </div>
+  <style>
+    [data-scroll] {
+      opacity: 0;
+      transition: opacity 1.5s;
+    }
+
+    [data-scroll="in"] {
+      opacity: 1;
+    }
+
+    [data-scroll="out"] {
+      opacity: 0;
+    }
+  </style>
+  <script>
+    ScrollOut();
+  </script>
 </body>
 
 </html>

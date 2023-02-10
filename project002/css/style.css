@@ -27,6 +27,7 @@ body {
   /* overflow-x: hidden; */
   font-family: 'Do Hyeon', sans-serif;
   font-size: 20px;
+  color: #fff;
 }
 /* 구글폰트, 눈누폰트 등에서 import미리설정 */
 /* 우선순위 css는 덮어쓰기가 가능한 파일
@@ -94,7 +95,6 @@ section:nth-child(6) {
   position: fixed;
   left: 0;
   top: 0;
-
   width: 100%;
   height: 100px;
   z-index: 30;
@@ -104,7 +104,6 @@ section:nth-child(6) {
 }
 #gnb li i {
   font-size: 2rem;
-  color: #fff;
   margin-left: 25px;
   margin-top: 32px;
   cursor: pointer;
@@ -170,7 +169,7 @@ margin-left: -65px;
 }
 #util li {
   margin: 0 25px;
-  color: #fff;
+
   font-size: 2rem;
 }
 #util li i {
@@ -213,7 +212,7 @@ margin-left: -65px;
 }
 #main .cover p {
   margin-bottom: 25px;
-  color: #fff;
+
 }
 #main .cover p span {
   margin-bottom: 10px;
@@ -460,7 +459,7 @@ margin-left: -65px;
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   text-align: center;
-  color: #fff;
+
 }
 
 #product .text h2 {
@@ -522,7 +521,7 @@ margin-left: -65px;
   background-size: 57px;
   background-position: center center;
   text-align: center;
-  color: #fff;
+
 }
 #list .text h2 {
   margin-top: 20%;
@@ -556,22 +555,10 @@ background-color: #FFE000;
 #info {
   background: url(../image/legoBlock2.png), #139200;
   background-blend-mode: soft-light, normal;
+  background-size: 30px;
   background-attachment: fixed;
-  color: #fff;
   text-align: center;
   position: relative;
-}
-
-#info img.legoLogo {
-  height: 10%;
-  width: auto;
-}
-#info img.mcLogo {
-  height: 5%;
-  width: auto;
-}
-#info .legoMc img.mcLogo {
-  margin: 5% 0;
 }
 #info article {
   position: relative;
@@ -600,62 +587,195 @@ background-color: #FFE000;
   width: 30%;
   height: 100%;
 }
-#info .text img {}
-#info .text h2 {}
-#info .text p {}
-#info .text a {}
-#info .text a i {}
+#info .text h3 {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20% 0 5% 0;
+}
+#info .text h2 {
+  width: 80%;
+  margin: 0 10%;
+}
+#info .text p {
+  width: 80%;
+  margin: 15% 10%;
+}
 
-#info .lego {}
-#info .lego video {}
-#info .lego .cover {}
-#info .lego .text {}
-#info .lego .text img {}
-#info .lego .text h2 {}
-#info .lego .text p {}
-#info .lego .text a {}
-#info .lego .text a i {}
-#info .mc {}
-#info .mc video {}
-#info .mc .cover {}
-#info .mc .text {}
-#info .mc .text img {}
-#info .mc .text h2 {}
-#info .mc .text p {}
-#info .mc .text a {}
-#info .mc .text a i {}
-#info .legoMc {}
-#info .legoMc video {}
-#info .legoMc .cover {}
-#info .legoMc .text {}
-#info .legoMc .text img {}
-#info .legoMc .text h2 {}
-#info .legoMc .text p {}
-#info .legoMc .text a {}
-#info .legoMc .text a i {}
+#info .text a {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    overflow: hidden;
+    padding-right: 30px;
+    border-bottom: 4px solid #fff;
+    border-right: 4px solid #00000000;
+    transition: padding-right 0.3s, color 0.3s, border-bottom 0.3s;
+  }
+  #info .text a:hover {
+    padding-right: 60px;
+    color: #dfd;
+    border-bottom: 4px solid #dfd;
+  }
+  #info .text a span {
+    font-size: 80px;
+    position: absolute;
+    bottom: -70px;
+    right: -6px;
+    font-family: 'yg-jalnan';
+  }
+  #info .text img.legoLogo {
+  height: 100%;
+  width: auto;
+  }
+  #info .text img.mcLogo {
+  height: 50%;
+  width: auto;
+  }
+  #info .legoMc img.mcLogo {
+    margin-left: 2%;
+  }
 
 /* sns설정 */
-#sns {}
-#sns .snsIcon{}
-#sns .snsIcon i {}
-#sns .snsIcon i.on {}
-#sns .text h2 {}
-#sns .text p {}
-#sns .text p b {}
-#sns .snsImg ul {}
-#sns .snsImg li {}
-#sns .snsImg li a {}
-#sns .snsImg li a.on {}
-#sns .snsImg li a img{}
+#sns {
+  background: url(../image/legoBlock2.png), #333;
+  background-blend-mode: soft-light, normal;
+  background-size: 30px;
+  position: relative;
+  overflow: hidden;
+}
+#sns .snsIcon{
+  padding: 3%;
+}
+#sns .snsIcon i {
+  cursor: pointer;
+  font-size: 48px;
+margin: 0 3%;
+}
+#sns .snsIcon i:nth-child(1).on {
+  color: #ff723e;
+}
+#sns .snsIcon i:nth-child(2).on {
+  color: #ff6161;
+}
+#sns .snsIcon i:nth-child(3).on {
+  color: #64c3ff;
+}
+#sns .snsIcon i:nth-child(4).on {
+  color: #69c9d0;
+}
+#sns .text {
+  padding: 0 6%;
+}
+#sns .text h2 {
+  margin: 3% 0;
+}
+#sns .text p {
+  letter-spacing: 1px;
+}
+#sns .text p b {
+  font-size: 34px;
+  color: #FFE000;
+  letter-spacing: 3px;
+}
+#sns .snsImg ul {
+  position: absolute;
+  right: 20%;
+  top: -20%;
+  display: none;
+  transform: rotateZ(30deg);
+  width: 50%;
+  height: 200%;
+  /* background-color: #008CC7; */
+}
+#sns .snsImg ul.on {
+  display: flex;
+}
+#sns .snsImg li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#sns .snsImg li a {
+  width: 90%;
+  height: 22%;
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #222;
+}
+
+.snsImg .reddit .up a:nth-child(1) {
+  background-image: url(https://preview.redd.it/l8qtnxbtv7ea1.jpg?width=1080&crop=smart&auto=webp&v=enabled&s=b81888aaca57c241fc2d850ea187d62c2ec53fd4);
+  background-size: cover;
+}
+.snsImg .reddit .up a:nth-child(2) {
+  background-image: url(https://preview.redd.it/i0g3is5wfic91.jpg?width=640&crop=smart&auto=webp&v=enabled&s=ecab0906369375f76a3b0047a06cc6243ff3a04e);
+  background-size: cover;
+}
+.snsImg .reddit .up a:nth-child(3) {
+  background-image: url(https://preview.redd.it/82aj02vp7nu71.png?width=960&crop=smart&auto=webp&v=enabled&s=b288860dfe75e3b922fcc37bc35f4055c707aa12);
+  background-size: cover;
+}
+.snsImg .reddit .up a:nth-child(4) {
+  background-image: url(https://preview.redd.it/j1e7m4aan9s41.jpg?width=960&crop=smart&auto=webp&v=enabled&s=b8f82e730eb9fbf7a8d6b2e977e71f7b61de98f3);
+  background-size: cover;
+}
+.snsImg .reddit .down a:nth-child(1) {
+  background-image: url(https://preview.redd.it/0lt4zbpsfym31.jpg?width=960&crop=smart&auto=webp&v=enabled&s=43bc54a20e01d9f6d28263023c8695f45cf57daf);
+  background-size: cover;
+}
+.snsImg .reddit .down a:nth-child(2) {
+  background-image: url(https://preview.redd.it/wq5z1lvfhv351.png?width=640&crop=smart&auto=webp&v=enabled&s=724cc67a853619fb3767edf1eca052086a3cd943);
+  background-size: cover;
+}
+.snsImg .reddit .down a:nth-child(3) {
+  background-image: url(https://external-preview.redd.it/UufXGHjE7whQqnK1s6id06Zln1hJq1_u-GexZ4HsjwQ.jpg?width=960&crop=smart&auto=webp&v=enabled&s=26bf70f647542c3a6f2f328995b9e6c29969e12a);
+  background-size: cover;
+}
+.snsImg .reddit .down a:nth-child(4) {
+  background-image: url(https://preview.redd.it/doabw5bj10441.png?width=960&crop=smart&auto=webp&v=enabled&s=be6babf24c961a27d42f7de786dbab1bce87e07b);
+  background-size: cover;
+}
+
+
 
 /* 맵+푸터 설정 */
 #end {}
-#end .map {}
-#end .map div:nth-child(1) {}
-#end .map .text {}
-#end .map .text h2 {}
-#end .map .text p {}
-#end .footer {}
+#end .store {
+  display: flex;
+}
+#end .store .map {
+width: 80%;
+height: auto;
+}
+#end .store .map img {
+  width: 100%;
+  height: auto;
+}
+#end .store .text {
+  padding: 6%;
+  width: 20%;
+  height: auto;
+  background: url(../image/legoBlock2.png), #139200;
+  background-blend-mode: soft-light, normal;
+  background-size: 30px;
+}
+#end .store .text h2 {
+  margin: 3% 0;
+}
+#end .store .text p {}
+#end .footer {
+  width: 100%;
+  height: auto;
+  background-color: #333;
+}
 #end .footer ul {}
 #end .footer li {}
 #end .footer p {}
