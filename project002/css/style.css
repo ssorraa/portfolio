@@ -635,10 +635,12 @@ transform: rotateX(180deg) translateZ(50px);
   display: flex;
   width: auto;
   height: 100px;
+  justify-content: end;
   align-items: center;
+  text-shadow: 0 0 2px #000;
 }
 #util li {
-  margin: 0 25px;
+  margin-right: 20%;
 
   font-size: 2rem;
 }
@@ -682,7 +684,10 @@ transform: rotateX(180deg) translateZ(50px);
 }
 #main .cover p {
   margin-bottom: 25px;
-
+display: flex;
+flex-direction: column;
+align-items: center;
+filter: drop-shadow(0 0 2px #000);
 }
 #main .cover p span {
   margin-bottom: 10px;
@@ -693,27 +698,30 @@ transform: rotateX(180deg) translateZ(50px);
   border-radius: 15px;
   text-align: center;
 }
-#main .cover p span::before {
-  content: "|";
-  font-size: 18px;
-}
 #main .cover p em {
-  border: 2px solid #000;
-  width: 1px;
-  height: 2px;
-  margin: 0 auto;
   display: block;
-  animation: scroll 1s infinite linear;
+  width: 4px;
+  background-color: #fff;
+  height: 15px;
+  margin: 3px auto;
+  border-radius: 2px;
+  box-sizing: border-box;
+  animation: scroll 0.7s infinite alternate;
+}
+#main .cover p b {
+  display: block;
+  background-color: #999;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
 }
 /* 추후 할것 */
 @keyframes scroll {
   0% {
-  }
-  50% { 
-
+    padding-top: 0px;
   }
   100% { 
-
+  padding-top: 11px;
   }
 }
 
@@ -1117,12 +1125,12 @@ background-color: #FFE000;
   overflow: hidden;
 }
 #sns .snsIcon{
-  padding: 3%;
+  padding: 12% 1% 6% 0;
 }
 #sns .snsIcon i {
   cursor: pointer;
   font-size: 48px;
-margin: 0 3%;
+margin: 0 2%;
 }
 #sns .snsIcon i:nth-child(1).on {
   color: #ff723e;
@@ -1137,7 +1145,7 @@ margin: 0 3%;
   color: #69c9d0;
 }
 #sns .text {
-  padding: 0 6%;
+  padding: 0 3%;
 }
 #sns .text h2 {
   margin: 3% 0;
@@ -1152,12 +1160,12 @@ margin: 0 3%;
 }
 #sns .snsImg ul {
   position: absolute;
-  right: 20%;
-  top: -20%;
+  right: -10%;
+  top: -10%;
   display: none;
-  transform: rotateZ(30deg);
-  width: 50%;
-  height: 200%;
+  transform: rotateZ(20deg);
+  width: 80%;
+  height: 150%;
   /* background-color: #008CC7; */
 }
 #sns .snsImg ul.on {
@@ -1220,35 +1228,61 @@ margin: 0 3%;
 #end {}
 #end .store {
   display: flex;
+  width: 100%;
+  height: 80%;
+  position: relative;
+  overflow: hidden;
 }
-#end .store .map {
+#end .store #map {
 width: 80%;
 height: auto;
-}
-#end .store .map img {
-  width: 100%;
-  height: auto;
+color: #333;
 }
 #end .store .text {
+  position: absolute;
+  top: 50%;
+  right: 0;
   padding: 6%;
   width: 20%;
   height: auto;
   background: url(../image/legoBlock2.png), #139200;
   background-blend-mode: soft-light, normal;
   background-size: 30px;
+  z-index: 1;
+  transform: rotateZ(45deg);
 }
 #end .store .text h2 {
   margin: 3% 0;
 }
 #end .store .text p {}
 #end .footer {
+  box-sizing: border-box;
   width: 100%;
-  height: auto;
+  height: 20%;
   background-color: #333;
+  font-size: 14px;
+  position: relative;
 }
-#end .footer ul {}
-#end .footer li {}
-#end .footer p {}
+#end .footer ul {
+  display: flex;
+  padding: 30px;
+}
+#end .footer li {
+  padding-right: 20px;
+}
+#end .footer p {
+  padding-left: 30px;
+}
+#end .footer p:last-child {
+  background-color: #111;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
 
 /* 미디어쿼리 */
 /* 1440px이상 */

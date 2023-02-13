@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- 스크롤 아웃 연결 -->
   <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+  <!-- 지도 API 연결 -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a863e7006f1331596e43032828af00d0&libraries=services"></script>
   <!-- 제이쿼리 연결 -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <!-- 외부스크립트 연결 -->
@@ -129,8 +131,7 @@
       </article>
       <article class="cover">
         <p>
-          <span></span>
-          <em></em>
+          <span><em><b></b></em></span>
           scroll
         </p>
       </article>
@@ -502,8 +503,7 @@
     <section id="end">
       <article>
         <div class="store">
-          <div class="map">
-            <img src="image/map.png" alt="지도 넣기 전 임시 사진">
+          <div id="map">
           </div>
           <div class="text" data-scroll>
             <h2>레고 스토어</h2>
@@ -519,16 +519,17 @@
         </div>
         <div class="footer">
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>개인정보처리방침</li>
+            <li>쿠키</li>
+            <li>법적고지</li>
+            <li>이용약관</li>
+            <li>접근성</li>
+            <li>쿠키설정</li>
           </ul>
           <p>LEGO System A/S, DK-7190 Billund, Denmark. 만 18세 이상부터 온라인 구매가 가능합니다. 레고, 레고 로고, 미니피겨, 듀플로, 키마의 전설, 닌자고,
             바이오니클, 마인드스톰 및 믹셀은 레고 그룹의 상표 및/또는 저작권입니다. ©2022 The LEGO Group. All rights reserved. 이 사이트를 이용하면 이용약관에 동의하는
             것으로 간주됩니다.</p>
+            <p>본 홈페이지는 개인 PR용 포트폴리오이며, 상업적 용도로 사용하지 않습니다.</p>
         </div>
       </article>
     </section>
