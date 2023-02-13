@@ -19,7 +19,8 @@ $(document).ready(function () {
       $('#main .vid video').css({
         'margin-left': -((vidWd - wd) / 2)
       })
-    }, 100)
+      // 추후 오프닝
+    }, 500)
     $('#list div').css({'height': ht / 3}).css({'width': wd / 5})
     $('#info article iframe').css({'width':(ht/9)*16}).css({'margin-left':($('#info article iframe').width()-$('#info article .videoWrap').width())/-2})
     $('#info .cover').css({'height': ht*3});

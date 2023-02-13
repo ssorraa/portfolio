@@ -89,6 +89,436 @@ section:nth-child(5) {
 section:nth-child(6) {
   background-color: #888;
 }
+/* 인트로 설정 */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background:  #00000064;
+  backdrop-filter: blur(10px);
+  z-index: 29;
+  display: none;
+}
+#intro .box {
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(-30deg) rotateY(30deg);
+  position: absolute;
+  top: -150px;
+  left: 0;
+  animation: introBlock 7s linear;
+}
+@keyframes introBlock {
+  0% {transform: rotateX(-30deg) rotateY(30deg);}
+  1% {transform: rotateX(-30deg) rotateY(30deg) scaleX(1.05) scaleY(0.95);}
+  2% {transform: rotateX(-30deg) rotateY(33deg) scaleX(1.1) scaleY(0.9);}
+  3% {
+    transform: rotateX(-30deg) rotateY(30deg);
+    top: 0;
+  }
+  6% {top: -100px;}
+  9% {transform: rotateX(-30deg) rotateY(-120deg);}
+  10% {
+    transform: rotateX(-30deg) rotateY(-160deg) scaleX(1.1) scaleY(0.9);
+    top: 10px;
+  }
+  11% {
+    transform: rotateX(-30deg) rotateY(-152deg) scaleX(1.05) scaleY(0.95);
+    top: -5px;
+  }
+  12% {
+    transform: rotateX(-30deg) rotateY(-152deg) scaleX(1) scaleY(1);
+    top: 2px;
+  }
+  13% {
+    transform: rotateX(-30deg) rotateY(-150deg);
+    top: 0;
+  }
+  30% {
+    transform: rotateX(-30deg) rotateY(-150deg);
+  }
+  31% {
+    transform: rotateX(-30deg) rotateY(-150deg) scaleX(1.05) scaleY(0.95);
+  }
+  32% {
+    transform: rotateX(-30deg) rotateY(-153deg) scaleX(1.1) scaleY(0.9);
+  }
+  33% {
+    transform: rotateX(-30deg) rotateY(-150deg);
+    top: 0;
+  }
+  36% {
+    top: -100px;
+  }
+  39% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  40% {
+    transform: rotateX(-30deg) rotateY(40deg) scaleX(1.1) scaleY(0.9);
+    top: 10px;
+  }
+  41% {
+    transform: rotateX(-30deg) rotateY(32deg) scaleX(1.05) scaleY(0.95);
+    top: -5px;
+  }
+  42% {
+    transform: rotateX(-30deg) rotateY(32deg) scaleX(1) scaleY(1);
+    top: 2px;
+  }
+  43% {
+    transform: rotateX(-30deg) rotateY(30deg);
+    top: 0;
+  }
+  60% {
+    transform: rotateX(-30deg) rotateY(30deg);
+  }
+  61% {
+    transform: rotateX(-30deg) rotateY(30deg) scaleX(1.05) scaleY(0.95);
+  }
+  62% {
+    transform: rotateX(-33deg) rotateY(32deg) scaleX(1.1) scaleY(0.9);
+  }
+  63% {
+    transform: rotateX(-33deg) rotateY(29.5deg) scaleX(1.1) scaleY(0.9);
+  }
+  64% {
+    transform: rotateX(-33deg) rotateY(30.5deg) scaleX(1.1) scaleY(0.9);
+  }
+  65% {
+    transform: rotateX(-33deg) rotateY(29deg) scaleX(1.1) scaleY(0.9);
+  }
+  66% {
+    transform: rotateX(-33deg) rotateY(31deg) scaleX(1.1) scaleY(0.9);
+  }
+  67% {
+    transform: rotateX(-33deg) rotateY(28deg) scaleX(1.1) scaleY(0.9);
+  }
+  69% {
+    transform: rotateX(-33deg) rotateY(30deg) scaleX(1.1) scaleY(0.9);
+  }
+  70% {
+    transform: rotateX(-30deg) rotateY(30deg);
+    top: 0;
+  }
+  72% {
+    top: -100px;
+  }
+  76% {
+    transform: rotateX(-330deg) rotateY(30deg);
+  }
+  77% {
+    transform: rotateX(-402deg) rotateY(30deg) scaleX(1) scaleY(1);
+    top: 10px;
+  }
+  78% {
+    transform: rotateX(-400deg) rotateY(30deg);
+    top: -5px;
+  }
+  79% {
+    transform: rotateX(-392deg) rotateY(30deg);
+    top: 2px;
+  }
+  79.5% {
+    transform: rotateX(-389deg) rotateY(30deg);
+    top: 10px;
+  }
+  80% {
+    transform: rotateX(-389deg) rotateY(30deg);
+    top: -5px;
+  }
+  80.5% {
+    transform: rotateX(-390deg) rotateY(30deg);
+    top: 2px;
+  }
+  85% {
+    top: 0;
+  }
+  90% {
+    top: 0;
+  }
+  91% {
+    top: -10px;
+  }
+  94% {
+    top: -140px;
+  }
+  95% {
+    top: -150px;
+  }
+  100% {
+    transform: rotateX(-390deg) rotateY(30deg);
+    top: -150px;
+  }
+}
+#intro>.box>div {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  margin-left: -200px;
+  margin-top: -100px;
+  top: 50%;
+  left: 50%;
+  background-blend-mode: multiply;
+}
+#intro .front {
+  background: #086500;
+  transform: translateZ(200px);
+  animation: introFront 7s linear;
+}
+@keyframes introFront {
+  0% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  3% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  7% {
+    background: url(../image/introSide.jpg) #00000000;
+  }
+  38% {
+    background: url(../image/introSide.jpg) #00000000;
+  }
+  40% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  74% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  74.1% {
+    background: #139200;
+  }
+  75.5% {
+    background: #139200;
+  }
+  76.5% {
+    background: #086500;
+  }
+  100% {
+    background: #086500;
+  }
+}
+#intro .left {
+  transform: rotateY(-90deg) translateZ(200px);
+  background: #0b8700;
+  animation: introLeft 7s linear;
+}
+@keyframes introLeft {
+  0% {
+    background: url(../image/introSide.jpg);
+  }
+  74% {
+    background: url(../image/introSide.jpg);
+  }
+  74.1% {
+    background: #139200;
+  }
+  75.5% {
+    background: #139200;
+  }
+  76.5% {
+    background:#0b8700;
+  }
+  100% {
+    background: #0b8700;
+  }
+}
+#intro .right {
+  transform: rotateY(90deg) translateZ(200px);
+  background: #086500;
+  animation: introRight 7s linear;
+}
+@keyframes introRight {
+  0% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  6.5% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  8% {
+    background: url(../image/introSide.jpg) #00000000;
+  }
+  34% {
+    background: url(../image/introSide.jpg) #00000000;
+  }
+  36% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  70% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  72% {
+    background: url(../image/introSide.jpg) #00000000;
+  }
+  74% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  75% {
+    background: #086500;
+  }
+  100% {
+    background: #086500;
+  }
+}
+#intro .back {
+  transform: rotateY(180deg) translateZ(200px);
+  background: #086500;
+  animation: introBack 7s linear;
+}
+@keyframes introBack {
+  0% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  70% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  72% {
+    background: url(../image/introSide.jpg) #00000000;
+  }
+  74% {
+    background: url(../image/introSide.jpg) #00000064;
+  }
+  75% {
+    background: #086500;
+  }
+  100% {
+    background: #086500;
+  }
+}
+#intro>.box>.top {
+  transform: rotateX(90deg) translateZ(200px);
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  background: #139200;
+  animation: introTop 7s linear;
+}
+@keyframes introTop {
+  0% {
+    background: url(../image/introTop.jpg);
+  }
+  75% {
+    background: url(../image/introTop.jpg);
+  }
+  76.5% {
+    background: #139200;
+  }
+  100% {
+    background: #139200;
+  }
+}
+#intro>.box>.bottom {
+  transform: rotateX(-90deg) translateZ(000px);
+  width: 400px;
+  height: 400px;
+  background: #542e18;
+  animation: introBottom 7s linear;
+}
+@keyframes introBottom {
+  0% {
+    background: url(../image/introBottom.jpg);
+  }
+  71% {
+    background: url(../image/introBottom.jpg);
+  }
+  71.5% {
+    background: #139200;
+  }
+  74.5% {
+    background: #139200;
+  }
+  76% {
+    background:#086500;
+  }
+  100% {
+    background: #086500;
+  }
+}
+#intro .circle {
+  transform-style: preserve-3d;
+  position: absolute;
+  animation: introCircle 7s linear;
+}
+@keyframes introCircle {
+  0% {
+  transform: translateZ(-100px);
+  }
+  75% {
+    transform: translateZ(-100px);
+  }
+  76.5% {
+    transform: translateZ(0px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+#intro .circle:nth-child(1) {
+left: 50px;
+top: 50px;
+}
+#intro .circle:nth-child(2) {
+right: 150px;
+top: 50px;
+}
+#intro .circle:nth-child(3) {
+right: 150px;
+bottom: 150px;
+}
+#intro .circle:nth-child(4) {
+left: 50px;
+bottom: 150px;
+}
+#intro .circle div {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background: #0b8700;
+}
+#intro .circle .top1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #1b9b00;
+  transform: translateZ(51px);
+}
+#intro .circle .top2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #0b8700;
+  transform: translateZ(50px);
+}
+#intro .circle .bottom {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #0b8700;
+}
+#intro .circle .side1 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(0deg);
+}
+#intro .circle .side2 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(45deg);
+}
+#intro .circle .side3 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(90deg);
+}
+#intro .circle .side4 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(135deg);
+}
+#intro .circle .side5 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(22.5deg);
+}
+#intro .circle .side6 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(67.5deg);
+}
+#intro .circle .side7 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(112.5deg);
+}
+#intro .circle .side8 {
+  transform: rotateX(90deg) translateZ(-25px) translateY(25px) rotateY(157.5deg);
+}
 
 /* 헤더설정 */
 #header {
@@ -137,26 +567,66 @@ section:nth-child(6) {
 position: absolute;
 left: 50%;
 top: 0;
-width: auto;
+width: 600px;
 height: 100px;
+margin-left: -250px;
+transform-style: preserve-3d;
+animation: introLogo 7s linear;
 }
-#header h1 a {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: block;
-  width: auto;
+@keyframes introLogo {
+  0% {
+    position: fixed;
+    top: 80%;
+  }
+  90% {
+    top: 80%;
+  }
+  91% {
+    top: 70%;
+  }
+  94% {
+    top: 0;
+  }
+  95% {
+    top: 0;
+  }
+  100% {
+    position: fixed;
+    top: 0;
+  }
+}
+#header h1 div {
+  display: flex;
   height: 100%;
-
+  width: 100%;
+  justify-content: center;
+  position: absolute;
 }
-#header h1 a:nth-child(1) {
-margin-left: -65px;
+#header h1 div:nth-child(1) {
+transform: translateZ(50px);
+}
+#header h1 div:nth-child(2) {
+transform: rotateX(90deg) translateZ(50px);
+}
+#header h1 div:nth-child(3) {
+transform: rotateX(270deg) translateZ(50px);
+}
+#header h1 div:nth-child(4) {
+transform: rotateX(180deg) translateZ(50px);
+}
+#header h1 div a {
+  display: block;
+  display: flex;
+  align-items: center;
 }
 
 #header h1 img {
   width: auto;
   height: 60%;
-  margin-top: 20%;
+}
+
+#header h1 div:nth-child(3) img {
+  margin-right: 10px;
 }
 #header #util {
   position: absolute;
