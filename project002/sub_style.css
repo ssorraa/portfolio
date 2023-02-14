@@ -1,0 +1,138 @@
+@charset 'utf-8';
+
+body {
+  overflow-x: hidden;
+}
+
+.sub .box02 {
+  position: fixed;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #00000066;
+  transition: all 0.5s;
+  z-index: 9999;
+}
+.sub .box02.on {
+  right: 0;
+}
+.sub .box02 h3 {
+  width: 100%;
+  text-align: center;
+}
+.sub .box02  form {
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+.sub .box02 .number {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  color: #333;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  border: none;
+}
+.sub .box02 .button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  background-color: #000;
+  color: #fff;
+}
+.sub .box02 input {}
+.sub .text {
+  padding: 20px 10px;
+  margin-bottom: 50px;
+  font-size: 14px;
+}
+.sub label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.sub .review {
+  padding: 20px 10px;
+}
+.sub .review li {
+  margin-bottom: 10px;
+}
+.sub .review li i {
+  font-size: 14px;
+  color: #fff;
+}
+.sub .button02 {
+  width: 150px;
+  height: 30px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+.btn {
+position: fixed;
+right: 0;
+height: 150px;
+z-index: 999;
+width: 120px;
+background-color: #00000066;
+top: 50%;
+margin-top: -75px;
+transition: all 0.5s;
+cursor: pointer;
+}
+.btn.on {
+  right: 250px;
+}
+.btn span {
+  position: absolute;
+  font-size: 80px;
+  text-align: center;
+  width: 100%;
+  line-height: 1.6;
+  color: #fff;
+  opacity: 0.8;
+  display: none;
+  animation: ani 0.5s infinite alternate linear;
+  height: 100%;
+}
+.btn span.on {
+  display: block;
+}
+.btn:hover span {
+  animation-play-state: paused;
+}
+@keyframes ani {
+0% {transform: scale(1);}
+100% {transform: scale(1.2);color: #ccc;}
+}
+.notice {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #00000066;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 999;
+}
+.notice .txtBox {
+  width: 800px;
+  height: 500px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -250px;
+  margin-left: -400px;
+  z-index: 5;
+}
+.notice .close {
+  width: 100%;
+  height: 100%;
+}

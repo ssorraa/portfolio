@@ -24,6 +24,8 @@ $(document).ready(function () {
     $('#list div').css({'height': ht / 3}).css({'width': wd / 5})
     $('#info article iframe').css({'width':(ht/9)*16}).css({'margin-left':($('#info article iframe').width()-$('#info article .videoWrap').width())/-2})
     $('#info .cover').css({'height': ht*3});
+    $('#end .store .text').css({'height':2*ht}).css({'width':wd})
+    $('#end .store .cover').css({'height':2*ht}).css({'width':wd})
   }
   wdset();
   $(window).resize(function () {
@@ -51,8 +53,8 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
-      center: new kakao.maps.LatLng(36.38266, 129.18915), // 지도의 중심좌표
-      level: 13, // 지도의 확대 레벨
+      center: new kakao.maps.LatLng(36.38266, 129.28915), // 지도의 중심좌표
+      level: 12, // 지도의 확대 레벨
       mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
     };  
 
@@ -79,11 +81,10 @@ function placesSearchCB (data, status, pagination) {
         }       
 
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-        map.setBounds(bounds);
+        // map.setBounds(bounds);
     } 
 }
 // 마커 위치 확인
-var markerPos;
 // 지도에 마커를 표시하는 함수입니다
 function displayMarker(place) {
     // 마커를 생성하고 지도에 표시합니다
@@ -95,29 +96,42 @@ function displayMarker(place) {
     		// 마커에 mouseover 이벤트를 등록한다
 		kakao.maps.event.addListener(marker, 'mouseover', function() {
       marker.setOpacity(1);
-      console.log(marker.getTitle())
   });
-
   // 마커에 mouseout 이벤트 등록
   kakao.maps.event.addListener(marker, 'mouseout', function() {
-    // console.log($(this).index())
-    if (marker.getZIndex() != 1) {
     marker.setOpacity(0.6);
-    console.log(marker.getPosition())
-    console.log(marker.getTitle())
-    }
   });
 
     // 마커에 클릭이벤트를 등록합니다
     kakao.maps.event.addListener(marker, 'click', function() {
         // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-        $('#map div div div div').css({'z-index':0})
-        infowindow.setContent('<div style="padding:10px;font-size:16px;cursor:pointer;">' + place.place_name + '</div>');
+        infowindow.setContent('<div style="padding:10px;font-size:16px;white-space: nowrap;">' + place.place_name + '</div>');
         infowindow.open(map, marker);
-        marker.setOpacity(1);
     });
-    kakao.maps.event.addListener(infowindow, 'click', function() {
-      alert('1')
-    });
-}
+} 
+// 메뉴 클릭하면 on/off
+  $('#gnb li').eq(0).click(function(){
+    if ($('#gnb').hasClass('on') != true) {
+    $('#gnb').addClass('on')
+    } else {
+      $('#gnb').removeClass('on')
+    }
+  })
+  $('#list div').mouseenter(function(){
+    if ($(this).index() != 7 ) {
+    $(this).stop().animate({'height': ht / 3*1.15, 'width': wd / 5*1.15, 'margin-left': ((wd/3)-(wd/3*1.15))/2, 'margin-top': ((ht/5)-(ht/5*1.15))/2}, 300).css({'z-index':5})
+    $(this).find('p').eq(0).stop().animate({'margin-left': ((wd/3*1.15)-(wd/3))/2, 'margin-top': ((ht/5*1.15)-(ht/5))/2}, 300)
+    $(this).find('p').eq(1).stop().animate({'margin-right': ((wd/3*1.15)-(wd/3))/8, 'margin-bottom': ((ht/5*1.15)-(ht/5))}, 300)
+    
+    }
+  })
+  $('#list div').mouseleave(function(){
+    if ($(this).index() != 7 ) {
+    $(this).css({'z-index':4}).stop().animate({'height': ht / 3, 'width': wd / 5, 'margin-left': 0, 'margin-top': 0}, 200, function(){
+      $(this).css({'z-index':3})
+    })
+    $(this).find('p').eq(0).stop().animate({'margin-left': 0, 'margin-top': 0}, 200)
+    $(this).find('p').eq(1).stop().animate({'margin-right': 0, 'margin-bottom': 0}, 200)
+  }
+  })
 })
