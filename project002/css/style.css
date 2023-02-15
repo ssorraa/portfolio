@@ -553,13 +553,20 @@ bottom: 150px;
   height: 100%
 }
 #gnb li i {
-  font-size: 24px;
+  font-size: 36px;
   cursor: pointer;
+}
+#gnb li:hover {
+  color: #FFD02C;
+}
+#gnb li:hover a {
+  color: #FFD02C;
+  transition: color 0.5s;
 }
 #gnb li {
   position: absolute;
   left: -100%;
-
+  transition: color 0.5s;
 }
 #gnb li:nth-child(1) {
   left: 30px;
@@ -578,16 +585,16 @@ bottom: 150px;
   transition: left 0.5s linear;
 }
 #gnb.on li:nth-child(2) {
-  left: 80px;
+  left: 90px;
 }
 #gnb.on li:nth-child(3) {
-  left: 156px;
+  left: 166px;
 }
 #gnb.on li:nth-child(4) {
-  left: 247px;
+  left: 257px;
 }
 #gnb.on li:nth-child(5) {
-  left: 338px;
+  left: 348px;
 }
 #header h1 {
 width: 600px;
@@ -809,7 +816,7 @@ filter: drop-shadow(0 0 2px #000);
   margin: 3px auto;
   border-radius: 2px;
   box-sizing: border-box;
-  animation: scroll 0.5s infinite alternate;
+  animation: scroll 0.7s infinite alternate;
 }
 #main .cover p b {
   display: block;
@@ -983,7 +990,7 @@ filter: drop-shadow(0 0 2px #000);
   transition: transform 0.5s;
 }
 #product .block div[class^='circle'] img:hover {
-  transform: rotateZ(360deg);
+  transform: scale(1.2);
 }
 
 #product .block .blockPlus {
@@ -1081,8 +1088,15 @@ filter: drop-shadow(0 0 2px #000);
   font-size: 30px;
   transition: text-shadow 1s;
 }
-#list div:hover {
-  text-shadow: 0 0 2px #00000064;
+#list div:hover a p {
+  mix-blend-mode: screen;
+  animation: textMix 0.5s linear;
+}
+@keyframes textMix {
+  0% {mix-blend-mode: normal;}
+  50% {mix-blend-mode: screen;
+  opacity: 0.8;}
+  100% {mix-blend-mode: screen; opacity: 1;}
 }
 #list div span {
   background-color: rgba(255, 255, 255, 0.5);
@@ -1107,13 +1121,11 @@ filter: drop-shadow(0 0 2px #000);
   position: absolute;
   left: 0;
   top: 0;
-  /* padding: 10%; */
 }
 #list div .price {
   position: absolute;
   right: 0;
   bottom: 0;
-  /* padding: 10%; */
 }
 
 #list div:nth-child(1) {
@@ -1137,25 +1149,40 @@ filter: drop-shadow(0 0 2px #000);
   left: 40%;
   top: 0;
 }
+#list div:nth-child(3) a{
+  color: #592b9d;
+}
 #list div:nth-child(4) {
   background-color: #d7190e;
   left: 60%;
   top: 0;
+}
+#list div:nth-child(4) a{
+  color: #e1321f;
 }
 #list div:nth-child(5) {
   background-color: #038de4;
   left: 80%;
   top: 0;
 }
+#list div:nth-child(5) a{
+  color: #07a5eb;
+}
 #list div:nth-child(6) {
   background-color: #93d900;
   left: 0;
   top: 33.333%;
 }
+#list div:nth-child(6) a{
+  color: #aae200;
+}
 #list div:nth-child(7) {
   background-color: #ee3826;
   left: 20%;
   top: 33.333%;
+}
+#list div:nth-child(7) a{
+  color: #f25844;
 }
 #list div:nth-child(8) {
   display: block;
@@ -1178,35 +1205,56 @@ background-color: #ff7bc0;
 left: 60%;
 top: 33.333%;
 }
+#list div:nth-child(9) a{
+  color: #ff96cf;
+}
 #list div:nth-child(10) {
 background-color: #ffd700;
 left: 80%;
 top: 33.333%;
+}
+#list div:nth-child(10) a{
+  color: #ffe100;
 }
 #list div:nth-child(11) {
   background-color: #00833c;
   left: 0%;
   top: 66.666%;
 }
+#list div:nth-child(11) a{
+  color: #009d5c;
+}
 #list div:nth-child(12) {
   background-color: #fde800;
   left: 20%;
   top: 66.666%;
+}
+#list div:nth-child(12) a{
+  color: #feee00;
 }
 #list div:nth-child(13) {
   background-color: #a7001e;
   left: 40%;
   top: 66.666%;
 }
+#list div:nth-child(13) a{
+  color: #bb0039;
+}
 #list div:nth-child(14) {
   background-color: #3ed5b0;
   left: 60%;
   top: 66.666%;
 }
+#list div:nth-child(14) a{
+  color: #5edfc2;
+}
 #list div:nth-child(15) {
   background-color: #ff7302;
   left: 80%;
   top: 66.666%;
+}
+#list div:nth-child(15) a{
+  color: #ff8f05;
 }
 
 /* 기업정보 설정 */
@@ -1252,6 +1300,18 @@ top: 33.333%;
   justify-content: center;
   align-items: center;
   padding: 20% 0 5% 0;
+}
+#info .text:hover h3 {
+  animation: logoMove 2s infinite;
+}
+@keyframes logoMove {
+  0% {transform: rotateZ(0deg);}
+  10% {transform: rotateZ(5deg);}
+  20% {transform: rotateZ(-5deg);}
+  30% {transform: rotateZ(5deg);}
+  40% {transform: rotateZ(-5deg);}
+  60% {transform: rotateZ(0deg);}
+  100% {transform: rotateZ(0deg);}
 }
 #info .text h2 {
   width: 80%;
@@ -1305,12 +1365,27 @@ top: 33.333%;
   overflow: hidden;
 }
 #sns .snsIcon{
-  padding: 12% 1% 6% 0;
+  padding: 10% 1% 1% 0;
 }
 #sns .snsIcon i {
   cursor: pointer;
   font-size: 48px;
 margin: 0 2%;
+}
+#sns .snsIcon i:hover {
+  transition: color 0.5s;
+}
+#sns .snsIcon i:nth-child(1):hover {
+  color: #ffb99f;
+}
+#sns .snsIcon i:nth-child(2):hover {
+  color: #ffb0b0;
+}
+#sns .snsIcon i:nth-child(3):hover {
+  color: #b2e1ff;
+}
+#sns .snsIcon i:nth-child(4):hover {
+  color: #b4e4e8;
 }
 #sns .snsIcon i:nth-child(1).on {
   color: #ff723e;
@@ -1367,41 +1442,130 @@ margin: 0 2%;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #222;
+  background-size: cover;
 }
 
 .snsImg .reddit .up a:nth-child(1) {
   background-image: url(https://preview.redd.it/l8qtnxbtv7ea1.jpg?width=1080&crop=smart&auto=webp&v=enabled&s=b81888aaca57c241fc2d850ea187d62c2ec53fd4);
-  background-size: cover;
 }
 .snsImg .reddit .up a:nth-child(2) {
   background-image: url(https://preview.redd.it/i0g3is5wfic91.jpg?width=640&crop=smart&auto=webp&v=enabled&s=ecab0906369375f76a3b0047a06cc6243ff3a04e);
-  background-size: cover;
 }
 .snsImg .reddit .up a:nth-child(3) {
   background-image: url(https://preview.redd.it/82aj02vp7nu71.png?width=960&crop=smart&auto=webp&v=enabled&s=b288860dfe75e3b922fcc37bc35f4055c707aa12);
-  background-size: cover;
 }
 .snsImg .reddit .up a:nth-child(4) {
   background-image: url(https://preview.redd.it/j1e7m4aan9s41.jpg?width=960&crop=smart&auto=webp&v=enabled&s=b8f82e730eb9fbf7a8d6b2e977e71f7b61de98f3);
-  background-size: cover;
 }
 .snsImg .reddit .down a:nth-child(1) {
   background-image: url(https://preview.redd.it/0lt4zbpsfym31.jpg?width=960&crop=smart&auto=webp&v=enabled&s=43bc54a20e01d9f6d28263023c8695f45cf57daf);
-  background-size: cover;
 }
 .snsImg .reddit .down a:nth-child(2) {
   background-image: url(https://preview.redd.it/wq5z1lvfhv351.png?width=640&crop=smart&auto=webp&v=enabled&s=724cc67a853619fb3767edf1eca052086a3cd943);
-  background-size: cover;
 }
 .snsImg .reddit .down a:nth-child(3) {
   background-image: url(https://external-preview.redd.it/UufXGHjE7whQqnK1s6id06Zln1hJq1_u-GexZ4HsjwQ.jpg?width=960&crop=smart&auto=webp&v=enabled&s=26bf70f647542c3a6f2f328995b9e6c29969e12a);
-  background-size: cover;
 }
 .snsImg .reddit .down a:nth-child(4) {
   background-image: url(https://preview.redd.it/doabw5bj10441.png?width=960&crop=smart&auto=webp&v=enabled&s=be6babf24c961a27d42f7de786dbab1bce87e07b);
-  background-size: cover;
 }
 
+.snsImg .youtube .up a:nth-child(1) {
+  background-image: url(https://i.ytimg.com/vi/KxyojeihJCo/maxresdefault.jpg);
+}
+.snsImg .youtube .up a:nth-child(2) {
+  background-image: url(https://i.ytimg.com/vi/Zm-VbAUbHm8/maxresdefault.jpg);
+}
+.snsImg .youtube .up a:nth-child(3) {
+  background-image: url(https://i.ytimg.com/vi/4ruH9hjZZ90/maxresdefault.jpg);
+}
+.snsImg .youtube .up a:nth-child(4) {
+  background-image: url(https://i.ytimg.com/vi/wT7UQXXm1gY/maxresdefault.jpg);
+}
+.snsImg .youtube .down a:nth-child(1) {
+  background-image: url(https://i.ytimg.com/vi/kkCX2PjIJl4/maxresdefault.jpg);
+}
+.snsImg .youtube .down a:nth-child(2) {
+  background-image: url(https://i.ytimg.com/vi/Q2JgnBevGDM/maxresdefault.jpg);
+}
+.snsImg .youtube .down a:nth-child(3) {
+  background-image: url(https://i.ytimg.com/vi/3Uv_-rzxnV8/maxresdefault.jpg);
+}
+.snsImg .youtube .down a:nth-child(4) {
+  background-image: url(https://i.ytimg.com/vi/1CklslTJsS4/maxresdefault.jpg);
+}
+
+.snsImg .twitter .up a:nth-child(1) {
+  background-image: url(https://pbs.twimg.com/media/C5o3vg-UYAAPgnr?format=jpg);
+}
+.snsImg .twitter .up a:nth-child(2) {
+  background-image: url(https://pbs.twimg.com/media/CwrM2WkWQAExxH7?format=jpg);
+}
+.snsImg .twitter .up a:nth-child(3) {
+  background-image: url(https://pbs.twimg.com/media/EnwyQ_MXcAEa91I?format=jpg);
+}
+.snsImg .twitter .up a:nth-child(4) {
+  background-image: url(https://pbs.twimg.com/media/EZAob8oXQAIWdmb?format=jpg);
+}
+.snsImg .twitter .down a:nth-child(1) {
+  background-image: url(https://pbs.twimg.com/media/DXXLsHUUMAE_ty3?format=jpg);
+}
+.snsImg .twitter .down a:nth-child(2) {
+  background-image: url(https://pbs.twimg.com/media/FIrSidrXoAUF87c?format=jpg);
+}
+.snsImg .twitter .down a:nth-child(3) {
+  background-image: url(https://pbs.twimg.com/media/DjgbIMEX4AEGumm?format=jpg);
+}
+.snsImg .twitter .down a:nth-child(4) {
+  background-image: url(https://pbs.twimg.com/media/E1nzXjtWQAEubvJ?format=jpg);
+}
+
+.snsImg .tiktok .up a:nth-child(1) {
+  background-image: url(https://p19-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/e066fd7f8dd4444eb5bff8fdcde62fd6?x-expires=1676016000&x-signature=3uim98P6Xu%2Bw0WeeLiVXk4aV9AU%3D);
+}
+.snsImg .tiktok .up a:nth-child(2) {
+  background-image: url(https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/e82e1fc061ef46ffb4c19ec8f8717847_1638131584~tplv-dmt-logom:tos-useast2a-v-0068/a7fb6534b7974601b4bbeba015379eef.image?x-expires=1676016000&x-signature=r4AjLRtZuyN2gy56zGWVOttmL5o%3D);
+}
+.snsImg .tiktok .up a:nth-child(3) {
+  background-image: url(https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/b9ad1b7afdfa4f8e91d2112038364823_1656876656?x-expires=1676016000&x-signature=uKwE8KvlpvdeWeXqGJxH%2BPNRFT8%3D);
+}
+.snsImg .tiktok .up a:nth-child(4) {
+  background-image: url(https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/020fb37c7e244782b9eaa0d2b48254c8?x-expires=1676016000&x-signature=OZoiTb3o9ATo3R315YR%2BSqYn2uU%3D);
+}
+.snsImg .tiktok .down a:nth-child(1) {
+  background-image: url(https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/ca0a6f178f3746f1817dcb4b0270ca41_1659968316?x-expires=1676016000&x-signature=5PSkjUdvZEuSdxuAEVYoV0%2F8fMM%3D);
+}
+.snsImg .tiktok .down a:nth-child(2) {
+  background-image: url(https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/b0c31a43ceee4f7ba3031da5828b4727_1656685394?x-expires=1676016000&x-signature=sHm6YX4k7ZpN7Cvg%2BhLXkqcSQAQ%3D);
+}
+.snsImg .tiktok .down a:nth-child(3) {
+  background-image: url(https://p16-sign-va.tiktokcdn.com/obj/tos-useast2a-p-0037-aiso/4af37dc0c9e14fd5b54425911a75ef97_1657968268?x-expires=1676016000&x-signature=nKLHc%2BorABemtU9zxWx5yIbnmKE%3D);
+}
+.snsImg .tiktok .down a:nth-child(4) {
+  background-image: url(https://p19-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/1ea147ed3230450293ec06014d79354f_1668393714~tplv-dmt-logom:tos-useast5-i-0068-tx/c51be496609e41649003cf7907846325.image?x-expires=1676016000&x-signature=7%2FW4078mkpAcS5HlIJDyyObmlkE%3D);
+}
+
+.snsImg li a p {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  backdrop-filter: blur(45px);
+  -webkit-backdrop-filter: blur(45px);
+  color: #ddd;
+  background-color: #00000064;
+  opacity: 0;
+  transition: opacity 0.3s, border 0.5s;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.snsImg li a:hover p {
+  opacity: 0.9;
+  border: solid 12px #ddd;
+}
 
 
 /* 맵+푸터 설정 */
@@ -1455,6 +1619,8 @@ color: #333;
 #end .store .text p {
   transform: rotateZ(20deg);
   transform-origin: left top;
+  width: fit-content;
+  text-align: end;
 }
 #end .footer {
   box-sizing: border-box;

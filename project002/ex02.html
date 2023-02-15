@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(#e66465, #9198e5);
+        position: relative;
+    }
+  
+    body div.container {
+        width: 100%;
+        height: 2500px;
+    }
+  
+    body div.container div {
+        position: absolute;
+        width: 200px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        font-size: 24px;
+        top: 150px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+    }
+  
+    body div:first-child {
+        left: 20%;
+    }
+  
+    body div:last-child {
+        right: 20%;
+    }  
+</style>
+  
+<body>
+<div class="container">
+    <div onclick="scroll_on()">스크롤 제한 ON</div>
+    <div onclick="scroll_off()">스크롤 제한 OFF</div>
+</div>
+</body>
+  
+<script>
+    // 스크롤 제한 ON
+    function scroll_on() {
+        $('.container').on('scroll touchmove mousewheel', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+        window.setTimeout(function () {
+        $('.container').off('scroll touchmove mousewheel');
+        console.log(3)
+      }, 300)
+    }
+  
+    // 스크롤 제한 OFF
+    function scroll_off() {
+        $('.container').off('scroll touchmove mousewheel');
+    }
+</script>
+</body>
+</html>
