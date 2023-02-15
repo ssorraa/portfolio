@@ -119,7 +119,7 @@ function displayMarker(place) {
   })
   $('#list div').mouseenter(function(){
     if ($(this).index() != 7 ) {
-    $(this).stop().animate({'height': ht / 3*1.15, 'width': wd / 5*1.15, 'margin-left': ((wd/3)-(wd/3*1.15))/2, 'margin-top': ((ht/5)-(ht/5*1.15))/2}, 300).css({'z-index':5})
+    $(this).stop().animate({'height': (ht/3)*1.15, 'width': (wd/5)*1.15, 'margin-left': -(((wd/3)*1.15)-(wd/3))/4, 'margin-top': -(((ht/5)*1.15)-(ht/5))/4}, 300).css({'z-index':5})
     $(this).find('p').eq(0).stop().animate({'margin-left': ((wd/3*1.15)-(wd/3))/2, 'margin-top': ((ht/5*1.15)-(ht/5))/2}, 300)
     $(this).find('p').eq(1).stop().animate({'margin-right': ((wd/3*1.15)-(wd/3))/8, 'margin-bottom': ((ht/5*1.15)-(ht/5))}, 300)
     
