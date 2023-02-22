@@ -1,0 +1,328 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allerta+Stencil&family=Arbutus&family=Babylonica&family=Bad+Script&family=Ballet:opsz@16..72&family=Blaka+Hollow&family=Bungee+Shade&family=Cardo&family=Cherry+Cream+Soda&family=Creepster&family=Flavors&family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Henny+Penny&family=Lacquer&family=Langar&family=Montserrat+Alternates&family=Nanum+Myeongjo&family=Nosifer&family=Nova+Mono&family=Over+the+Rainbow&family=Philosopher&family=Plaster&family=Raleway&family=Rubik+80s+Fade&family=Rubik+Glitch&family=Rubik+Storm&family=Sacramento&family=Skranji&family=Special+Elite&family=Splash&family=Vast+Shadow&family=Yatra+One&family=Zeyada&display=swap');
+/* 
+\font-family: 'Abril Fatface', cursive;
+font-family: 'Allerta Stencil', sans-serif;
+font-family: 'Arbutus', cursive;
+font-family: 'Babylonica', cursive;
+font-family: 'Bad Script', cursive;
+\font-family: 'Ballet', cursive;
+font-family: 'Blaka Hollow', cursive;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Cardo', serif;
+font-family: 'Cherry Cream Soda', cursive;
+font-family: 'Creepster', cursive;
+font-family: 'Flavors', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Hachi Maru Pop', cursive;
+\font-family: 'Henny Penny', cursive;
+font-family: 'Lacquer', cursive;
+\font-family: 'Langar', cursive;
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Nosifer', cursive;
+font-family: 'Nova Mono', monospace;
+font-family: 'Over the Rainbow', cursive;
+font-family: 'Philosopher', sans-serif;
+\font-family: 'Plaster', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rubik 80s Fade', cursive;
+font-family: 'Rubik Glitch', cursive;
+\font-family: 'Rubik Storm', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Skranji', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Splash', cursive;
+font-family: 'Vast Shadow', cursive;
+font-family: 'Yatra One', cursive;
+\font-family: 'Zeyada', cursive;
+*/
+/* 전체설정 */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #fff;
+  overflow: hidden;
+}
+ul,ol {
+  list-style: none;
+}
+a {
+  color: #fdfdfd;
+  text-decoration: none;
+}
+img {
+  vertical-align: bottom;
+  border: none;
+}
+
+/* 헤더설정 */
+header {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  mix-blend-mode: difference;
+  color: #fdfdfd;
+  z-index: 30;
+}
+
+header h1 {
+  margin-top: 20px;
+  line-height: 0;
+  letter-spacing: 3px;
+  font-size: 40px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 .s {
+  animation: logoS 60s infinite linear;
+}
+@keyframes logoS {
+  0.1% {font-family: 'Ballet', cursive;}
+  0.2% {font-family: 'Henny Penny', cursive;}
+  0.3% {font-family: 'Henny Penny', cursive;}
+  9.9% {font-family: 'Henny Penny', cursive;}
+  10% {font-family: 'Abril Fatface', cursive;}
+  10.1% {font-family: 'Rubik Storm', cursive;}
+  10.2% {font-family: 'Zeyada', cursive;}
+  10.4% {font-family: 'Plaster', cursive;}
+  10.6% {font-family: 'Raleway', sans-serif;}
+  10.7% {font-family: 'Bungee Shade', cursive;}
+  11% {font-family: 'Henny Penny', cursive;}
+  19.9% {font-family: 'Henny Penny', cursive;}
+    20% {font-family: 'Lacquer', cursive;}
+  20.5% {font-family: 'Henny Penny', cursive;}
+  75.9% {font-family: 'Henny Penny', cursive;}
+    76% {font-family: 'Sacramento', cursive;}
+    76.2% {font-family: 'Cherry Cream Soda', cursive;}
+    76.3% {font-family: 'Hachi Maru Pop', cursive;}
+  76.5% {font-family: 'Henny Penny', cursive;}
+  100% {font-family: 'Henny Penny', cursive;}
+}
+header h1 .w {
+  animation: logoW 60s infinite linear;
+}
+@keyframes logoW {
+  0% {font-family: 'Hachi Maru Pop', cursive;}
+  0.1% {font-family: 'Splash', cursive;}
+  0.2% {font-family: 'Bad Script', cursive;}
+  0.3% {font-family: 'Montserrat Alternates', sans-serif;}
+  0.4% {font-family: 'Nanum Myeongjo', serif;}
+  16.3% {font-family: 'Nanum Myeongjo', serif;}
+  16.5% {font-family: 'Creepster', cursive;}
+  16.6% {font-family: 'Lacquer', cursive;}
+  16.9% {font-family: 'Fredericka the Great', cursive;}
+  17% {font-family: 'Sacramento', cursive;}
+  17.8% {font-family: 'Plaster', cursive;}
+  17.9% {font-family: 'Over the Rainbow', cursive;}
+  49.8% {font-family: 'Over the Rainbow', cursive;}
+  49.9% {font-family: 'Nanum Myeongjo', serif;}
+    50% {font-family: 'Flavors', cursive;}
+  50.3% {font-family: 'Nanum Myeongjo', serif;}
+  100% {font-family: 'Nanum Myeongjo', serif;}
+}
+header h1 .j {
+  animation: logoJ 60s infinite linear;
+}
+@keyframes logoJ {
+  0% {font-family: 'Rubik Storm', cursive;}
+  0.1% {font-family: 'Cardo', serif;}
+  0.2% {font-family: 'Allerta Stencil', sans-serif;}
+  0.3% {font-family: 'Nova Mono', monospace;}
+  0.4% {font-family: 'Sacramento', cursive;}
+  0.5% {font-family: 'Skranji', cursive;}
+  0.6% {font-family: 'Fredericka the Great', cursive;}
+  0.8% {font-family: 'Creepster', cursive;}
+  0.9% {font-family: 'Philosopher', sans-serif;}
+  1% {font-family: 'Rubik 80s Fade', cursive;}
+  60.1% {font-family: 'Rubik 80s Fade', cursive;}
+    60.2% {font-family: 'Bungee Shade', cursive;}
+    60.3% {font-family: 'Babylonica', cursive;}
+  61% {font-family: 'Rubik 80s Fade', cursive;}
+  100% {font-family: 'Rubik 80s Fade', cursive;}
+}
+header h1 .a {
+  animation: logoA 60s infinite linear;
+}
+@keyframes logoA {
+  0%{font-family: 'Flavors', cursive;}
+  22%{font-family: 'Flavors', cursive;}
+  22.6% {font-family: 'Arbutus', cursive;}
+  22.8% {font-family: 'Babylonica', serif;}
+  22.9%{font-family: 'Flavors', cursive;}
+  59.5%{font-family: 'Flavors', cursive;}
+  59.7% {font-family: 'Nanum Myeongjo', serif;}
+  59.8% {font-family: 'Sacramento', cursive;}
+  60% {font-family: 'Plaster', cursive;}
+  60.1% {font-family: 'Vast Shadow', cursive;}
+  60.2%{font-family: 'Flavors', cursive;}
+  73%{font-family: 'Flavors', cursive;}
+  73.2% {font-family: 'Nosifer', cursive;}
+  73.4% {font-family: 'Cherry Cream Soda', cursive;}
+  73.5% {font-family: 'Raleway', sans-serif;}
+  73.6% {font-family: 'Flavors', cursive;}
+  80.1% {font-family: 'Flavors', cursive;}
+  80.2% {font-family: 'Hachi Maru Pop', cursive;}
+  81% {font-family: 'Rubik Glitch', cursive;}
+  81.1% {font-family: 'Flavors', cursive;}
+  100% {font-family: 'Flavors', cursive;}
+}
+
+
+header nav ul {
+  position: fixed;
+  top: 100px;
+  left: 30px;
+  font-size: 32px;
+  font-family: 'Cardo', serif;
+  letter-spacing: 1px;
+  animation: navOn 0.5s;
+}
+@keyframes navOn {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 30px;
+  }
+}
+header nav li {
+margin: 15px 0;
+}
+header nav a {
+  position: relative;
+}
+header a p {
+position: absolute;
+width: 0px;
+height: 6px;
+background-color: #fdfdfd;
+top: 50%;
+margin-top: -3px;
+left: -30px;
+mix-blend-mode: difference;
+transition: width 0.5s cubic-bezier(0.680, -0.550, 0.000, 1), margin-left 0.5s;
+}
+header nav li:hover p {
+  width: 20px;
+}
+
+header nav li:hover:active p {
+  animation: navInput 0.3s;
+  width: 20px;
+  left: unset;
+  right: 0;
+  margin-right: -25px;
+}
+@keyframes navInput {
+  0% {
+    left: -30px;
+    margin-right: unset;
+    width: 0px;
+  }
+  50% {
+    width: calc(100% + 55px);
+    left: -30px;
+    right: unset;
+    margin-right: unset;
+  }
+  50.0001%{
+    left: unset;
+    right: 0;
+    margin-right: -25px;
+  }
+  100% {
+    width: 20px;
+    left: unset;
+    right: 0;
+    margin-right: -25px;
+  }
+}
+header nav li:not(:active) p{
+animation: navOutput 0.5s;
+}
+@keyframes navOutput {
+  0% {
+    width: 20px;
+    left: unset;
+    right: 0;
+    margin-right: -25px;
+  }
+  49.9999% {
+    width: calc(100% + 55px);
+    left: unset;
+    right: 0;
+    margin-right: -25px;
+  }
+  50% {
+    left: -30px;
+    right: unset;
+    margin-right: unset;
+  }
+  100% {
+    left: -30px;
+    margin-right: unset;
+    width: 0px;
+  }
+}
+
+header nav li.on p {
+  left: unset;
+  right: 0;
+  width: 20px;
+  margin-right: -25px;
+}
+/* 푸터설정 */
+footer {}
+footer img {
+  width: 300px;
+  height: auto;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 30;
+}
+footer section{
+  color: #fff;
+  mix-blend-mode: difference;
+  position: fixed;
+  bottom: -140px;
+  left: 0;
+  height: 140px;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  background: #fdfdfd32;
+  transition: bottom 0.7s;
+  z-index: 30;
+  clip-path: polygon(0 20%, 10% 0, 100% 70%, 100% 100%, 0 100%);
+}
+footer section article {
+    position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+footer section article:first-child {
+  top: 0;
+  padding: 20px 30px;
+}
+footer section article:last-child {
+  background: #fdfdfd32;
+  bottom: -70px;
+  transition: bottom 1.4s;
+  clip-path: polygon(0 40%, 50% 0, 55% 100%, 0 100%);
+  padding: 20px 0 0 30px;
+  box-sizing: border-box;
+}
+footer:hover section {
+  bottom: 0;
+}
+footer:hover section article:last-child {
+  bottom: 0;
+}

@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allerta+Stencil&family=Arbutus&family=Babylonica&family=Bad+Script&family=Ballet:opsz@16..72&family=Blaka+Hollow&family=Bungee+Shade&family=Cardo&family=Cherry+Cream+Soda&family=Creepster&family=Flavors&family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Henny+Penny&family=Lacquer&family=Langar&family=Montserrat+Alternates&family=Nanum+Myeongjo&family=Nosifer&family=Nova+Mono&family=Over+the+Rainbow&family=Philosopher&family=Plaster&family=Raleway&family=Rubik+80s+Fade&family=Rubik+Glitch&family=Rubik+Storm&family=Sacramento&family=Skranji&family=Special+Elite&family=Splash&family=Vast+Shadow&family=Yatra+One&family=Zeyada&display=swap');
+/* 
+\font-family: 'Abril Fatface', cursive;
+font-family: 'Allerta Stencil', sans-serif;
+font-family: 'Arbutus', cursive;
+font-family: 'Babylonica', cursive;
+font-family: 'Bad Script', cursive;
+\font-family: 'Ballet', cursive;
+font-family: 'Blaka Hollow', cursive;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Cardo', serif;
+font-family: 'Cherry Cream Soda', cursive;
+font-family: 'Creepster', cursive;
+font-family: 'Flavors', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Hachi Maru Pop', cursive;
+\font-family: 'Henny Penny', cursive;
+font-family: 'Lacquer', cursive;
+\font-family: 'Langar', cursive;
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Nosifer', cursive;
+font-family: 'Nova Mono', monospace;
+font-family: 'Over the Rainbow', cursive;
+font-family: 'Philosopher', sans-serif;
+\font-family: 'Plaster', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rubik 80s Fade', cursive;
+font-family: 'Rubik Glitch', cursive;
+\font-family: 'Rubik Storm', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Skranji', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Splash', cursive;
+font-family: 'Vast Shadow', cursive;
+font-family: 'Yatra One', cursive;
+\font-family: 'Zeyada', cursive;
+*/
+/* 베이직 설정 변경 */
+body {
+  background: #160E09;
+}
