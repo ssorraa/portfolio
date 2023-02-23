@@ -44,7 +44,7 @@ font-family: 'Yatra One', cursive;
 }
 body {
   background-color: #fff;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 ul,ol {
   list-style: none;

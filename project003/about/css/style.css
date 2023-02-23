@@ -1,13 +1,13 @@
 @charset 'utf-8';
 
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allerta+Stencil&family=Arbutus&family=Babylonica&family=Bad+Script&family=Ballet:opsz@16..72&family=Blaka+Hollow&family=Bungee+Shade&family=Cardo&family=Cherry+Cream+Soda&family=Creepster&family=Flavors&family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Henny+Penny&family=Lacquer&family=Langar&family=Montserrat+Alternates&family=Nanum+Myeongjo&family=Nosifer&family=Nova+Mono&family=Over+the+Rainbow&family=Philosopher&family=Plaster&family=Raleway&family=Rubik+80s+Fade&family=Rubik+Glitch&family=Rubik+Storm&family=Sacramento&family=Skranji&family=Special+Elite&family=Splash&family=Vast+Shadow&family=Yatra+One&family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allerta+Stencil&family=Arbutus&family=Babylonica&family=Bad+Script&family=Ballet:opsz@16..72&family=Blaka+Hollow&family=Bungee+Shade&family=Cardo&family=Cherry+Cream+Soda&family=Creepster&family=Flavors&family=Fredericka+the+Great&family=Hachi+Maru+Pop&family=Henny+Penny&family=Lacquer&family=Langar&family=Montserrat+Alternates&family=Nanum+Myeongjo&family=Nosifer&family=Nova+Mono&family=Over+the+Rainbow&family=Philosopher&family=Plaster&family=Raleway&family=Rubik+80s+Fade&family=Rubik+Glitch&family=Rubik+Storm&family=Sacramento&family=Skranji&family=Special+Elite&family=Splash&family=Vast+Shadow&family=Yatra+One&family=Zeyada&family=Noto+Serif+KR&display=swap');
 /* 
-\font-family: 'Abril Fatface', cursive;
+font-family: 'Abril Fatface', cursive;
 font-family: 'Allerta Stencil', sans-serif;
 font-family: 'Arbutus', cursive;
 font-family: 'Babylonica', cursive;
 font-family: 'Bad Script', cursive;
-\font-family: 'Ballet', cursive;
+font-family: 'Ballet', cursive;
 font-family: 'Blaka Hollow', cursive;
 font-family: 'Bungee Shade', cursive;
 font-family: 'Cardo', serif;
@@ -16,29 +16,234 @@ font-family: 'Creepster', cursive;
 font-family: 'Flavors', cursive;
 font-family: 'Fredericka the Great', cursive;
 font-family: 'Hachi Maru Pop', cursive;
-\font-family: 'Henny Penny', cursive;
+font-family: 'Henny Penny', cursive;
 font-family: 'Lacquer', cursive;
-\font-family: 'Langar', cursive;
+font-family: 'Langar', cursive;
 font-family: 'Montserrat Alternates', sans-serif;
 font-family: 'Nanum Myeongjo', serif;
 font-family: 'Nosifer', cursive;
 font-family: 'Nova Mono', monospace;
 font-family: 'Over the Rainbow', cursive;
 font-family: 'Philosopher', sans-serif;
-\font-family: 'Plaster', cursive;
+font-family: 'Plaster', cursive;
 font-family: 'Raleway', sans-serif;
 font-family: 'Rubik 80s Fade', cursive;
 font-family: 'Rubik Glitch', cursive;
-\font-family: 'Rubik Storm', cursive;
+font-family: 'Rubik Storm', cursive;
 font-family: 'Sacramento', cursive;
 font-family: 'Skranji', cursive;
 font-family: 'Special Elite', cursive;
 font-family: 'Splash', cursive;
 font-family: 'Vast Shadow', cursive;
 font-family: 'Yatra One', cursive;
-\font-family: 'Zeyada', cursive;
+font-family: 'Zeyada', cursive;
+font-family: 'Noto Serif KR', serif;
 */
 /* 베이직 설정 변경 */
 body {
   background: #160E09;
+}
+/* bg설정 */
+.bg img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  left: 0;
+  top: 0;
+}
+.bg>img:last-child {
+  opacity: 0;
+}
+.bg:hover>img:first-child {
+  animation: bgAni1 2s;
+}
+@keyframes bgAni1 {
+0% {opacity: 1;}
+10% {opacity: 1;}
+12% {opacity: 0;}
+14% {opacity: 1;}
+50% {opacity: 1;}
+51% {opacity: 0;}
+52% {opacity: 1;}
+55% {opacity: 1;}
+55.5% {opacity: 0;}
+56% {opacity: 1;}
+100% {opacity: 1;}
+}
+.bg:hover>img:last-child {
+  animation: bgAni2 2s;
+  opacity: 1;
+}
+@keyframes bgAni2 {
+0% {opacity: 0;}
+51% {opacity: 0;}
+52% {opacity: 1;}
+55% {opacity: 1;}
+55.5% {opacity: 0;}
+56% {opacity: 1;}
+100% {opacity: 1;}
+}
+/* 컨텐츠-프로필 설정 */
+.profile {
+  position: absolute;
+  left: 36.4%;
+  height: 100%;
+  background-color: #fff;
+  transition: left 1s;
+  width: 63.6%;
+  padding-top: 120px;
+  padding-left: 100px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  color: #160E09;
+}
+.profile.on {
+  left: 58%;
+}
+.profile .imgTxt {
+position: absolute;
+right: 100%;
+top: 0;
+height: 100%;
+width: auto;
+margin-right: -1px;
+}
+
+.profile h2 {
+  font-size: 48px;
+  font-family: 'Noto Serif KR', serif;
+  font-weight: normal;
+}
+.profile p {
+  margin: 45px 0;
+  width: 700px;
+  line-height: 163.5%;
+  letter-spacing: 1.5%;
+}
+.profile table td:nth-child(1) {
+  font-size: 36px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+}
+.profile table tr:nth-child(3) td:nth-child(1) {
+padding-bottom: 0;
+}
+.profile table td:nth-child(2) {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.profile table tr:nth-child(1) td:nth-child(2) {
+font-size: 24px;
+}
+.profile table tr:nth-child(4) td:nth-child(2) {
+  padding-bottom: 30px;
+}
+.profile table td:nth-child(2) span {
+  font-size: 16px;
+}
+.next {
+  border-top: 10px solid #160E09;
+  font-family: 'Cardo', serif;
+  font-size: 24px;
+  width: 200px;
+  position: absolute;
+  margin-right: -100px;
+  right: 5%;
+  top: 10%;
+  transition: margin-right 0.7s;
+  cursor: pointer;
+  z-index: 2;
+}
+.next:hover {
+  margin-right: 0;
+}
+/* 연표 설정 */
+.timeline {
+  background-color: #fff;
+  position: absolute;
+  left: 95%;
+  top: 0;
+  height: 100%;
+  width: max-content;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  color: #160E09;
+  transition: left 1s;
+}
+.timeline.on {
+  left: 116.6%;
+}
+.timeline .top{
+  border-bottom: 10px solid #160E09;
+  height: 10%;
+  display: flex;
+  align-items: end;
+  padding-left: 30px;
+  font-size: 36px;
+}
+
+.timeline .list>div::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.timeline .list {
+  height: 90%;
+}
+.timeline .list>div {
+  float: left;
+  margin-left: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  height: 100%;
+  padding-left: 10px;
+}
+.timeline .list>div:nth-child(1) {
+  margin-left: 50px;
+}
+.timeline .list h2 {
+  font-size: 64px;
+}
+.timeline .list ul{
+display: grid;
+grid-template-rows: repeat(4,1fr);
+grid-auto-flow: column;
+flex-wrap: wrap;
+width: fit-content;
+}
+.timeline .list li{
+  display: flex;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+.timeline .list li div:nth-child(1) {
+  width: 100px;
+}
+.timeline .list h3{
+  font-size: 24px;
+}
+.timeline .list li div:nth-child(1) p {
+position: relative;
+display: inline-block;
+}
+.timeline .list i{
+  font-size: 24px;
+}
+.timeline .list i:nth-child(2){
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.timeline .list img {
+  width: 140px;
+  height: auto;
+  box-shadow: 0 0 2px #00000050;
+  margin-bottom: 3px;
+}
+.timeline .list li div:nth-child(2) p {
+  font-size: 14px;
 }
