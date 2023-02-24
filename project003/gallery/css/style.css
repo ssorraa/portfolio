@@ -38,3 +38,33 @@ font-family: 'Vast Shadow', cursive;
 font-family: 'Yatra One', cursive;
 \font-family: 'Zeyada', cursive;
 */
+.photo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: green;
+  width: 85%;
+}
+article{
+  background-color: red;
+  width: 1050px;
+  margin: 0 auto;
+}
+article::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.photo div {
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  margin: 5px 5px;
+  float: left;
+  order: 2;
+}
+.photo .twoXtwo {
+  width: 410px;
+  height: 410px;
+  order: 3
+}
