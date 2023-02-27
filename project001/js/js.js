@@ -127,8 +127,8 @@ $('.gnb>li').click(function(){
     $('.slide .imgBox>a').css({'pointer-events':'none'});
     let i = $(this).index()
     if(i == 7) {
-      $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).stop().animate({'left':0});
-      $('.slide .imgBox>a').eq(a).css({'left':0}).stop().animate({'left':'100%'},
+      $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).animate({'left':0});
+      $('.slide .imgBox>a').eq(a).css({'left':0}).animate({'left':'100%'},
       function(){
         if(wd > 1440) {
           $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
@@ -141,8 +141,8 @@ $('.gnb>li').click(function(){
     }else if (i == 8) {
       a++;
       if(a > 3) {a = 0;};
-      $('.slide .imgBox>a').eq(a-1).css({'left':0}).stop().animate({'left':'-100%'});
-      $('.slide .imgBox>a').eq(a).css({'left':'100%'}).stop().animate({'left':0},
+      $('.slide .imgBox>a').eq(a-1).css({'left':0}).animate({'left':'-100%'});
+      $('.slide .imgBox>a').eq(a).css({'left':'100%'}).animate({'left':0},
       function(){
         if(wd > 1440) {
         $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
@@ -163,7 +163,7 @@ $('.gnb>li').click(function(){
       $('.news .tag li').removeClass('on').eq(newsi).addClass('on');
       $('.news .conBox article').removeClass('on').eq(newsi*8).addClass('on');
       $('.listBox .box ul').removeClass('on').eq(newsi).addClass('on');
-      $('.listBox .box li').css({'order':0});
+      $('.listBox .box li').css({'order':0}).removeClass('on').eq(newsi*8).addClass('on');
       b = 0;
   };
   })
@@ -177,8 +177,11 @@ $('.gnb>li').click(function(){
   });
 
   // 뉴스-뉴스목록-뉴스 클릭
+  let d = 0;
   $('.listBox .box li').click(function(){
     let i = $(this).index();
+    d = i;
+    $('.listBox .box li').removeClass('on').eq(i+(newsi*8)).addClass('on');
     $('.news .conBox article').removeClass('on').eq((newsi*8)+i).addClass('on');
     if(wd > 1024) {
       $('html,body').stop().animate({
@@ -255,6 +258,8 @@ $('.gnb>li').click(function(){
   let NewsBrTiny = [];
     // 처음 화면 크기에도 적용
   let wdset = function(){
+    siht = $('.slide .imgBox>a').height();
+    $('.slide .imgBox').height(siht);
     if(wd > 1440) {
       $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
       if(wd > 1024 && wd<= 1440) {
@@ -269,6 +274,9 @@ $('.gnb>li').click(function(){
         for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
           $('.news .conBox article').eq(i).find('p').html(NewsBrBig[i])
           }
+        for (let i = 0; i < d-1; i ++) {
+          $('.listBox .box li').eq(i).css({'order':1});
+        }
       } else {
         $('.slide .imgBox>a>img').css({'border-radius':'0'});
         $('.slide .imgBox>a>img').css({'border-radius':0});
@@ -281,6 +289,10 @@ $('.gnb>li').click(function(){
         $('.notice li').css({'order':0});
       }
     }
+    window.setTimeout(function () {
+      wdset();
+      console.log(1)
+    }, 300)
   for (let i = 0; i < $('.news .conBox').children('article').length; i++ ) {
     NewsBrTiny.push($('.news .conBox article div').children('p').eq(i).text().replace(/  /g, '').replace(/\n\n/g, '<br><br>'));
     NewsBrBig.push($('.news .conBox article div').children('p').eq(i).text().replace(/  /g, '').replace(/\n/g,'<br>'));

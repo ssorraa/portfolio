@@ -30,6 +30,7 @@ a {
 body {
   background-color: var(--dayNight);
   overflow-x: hidden;
+  transition: background-color 0.7s;
 }
 
 .wrap {
@@ -746,6 +747,12 @@ body.night .listBox>p img:nth-child(1) {
 .listBox .box li p {
   margin-top: 10px;
 }
+.listBox .box li img {
+  transition: filter 0.7s;
+}
+.listBox .box li.on img {
+  filter: sepia(0.6) blur(1px);
+}
 
 /* 공지사항 설정 */
 .news .notice {
@@ -1315,7 +1322,6 @@ body.night .bookPopup ul li b {
 /* 미디어쿼리 */
 @media (min-width:1441px) {
   .wrap {
-    color: rgb(194, 131, 64);
     max-width: 1440px;
     margin: 0 auto;
   }
