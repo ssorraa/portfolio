@@ -545,6 +545,7 @@ bottom: 150px;
   padding: 0 30px;
   box-sizing: border-box;
   text-shadow: 0 0 2px #000;
+  transition: background-color 1s;
 }
 #header #gnb {
   display: flex;
@@ -556,17 +557,14 @@ bottom: 150px;
   font-size: 36px;
   cursor: pointer;
 }
-#gnb li:hover {
-  color: #FFD02C;
-}
-#gnb li:hover a {
+#gnb li:hover, #gnb li:hover a, #util li:hover {
   color: #FFD02C;
   transition: color 0.5s;
 }
+
 #gnb li {
   position: absolute;
   left: -100%;
-  transition: color 0.5s;
 }
 #gnb li:nth-child(1) {
   left: 30px;
@@ -1088,7 +1086,7 @@ filter: drop-shadow(0 0 2px #000);
   font-size: 30px;
   transition: text-shadow 1s;
 }
-#list div:hover a p {
+#list div:hover a p, #list div:hover a i {
   mix-blend-mode: screen;
   animation: textMix 0.5s linear;
 }
@@ -1127,6 +1125,16 @@ filter: drop-shadow(0 0 2px #000);
   right: 0;
   bottom: 0;
 }
+#list div .fa-heart {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#list div .fa-shopping-cart {
+  position: absolute;
+  left: 60px;
+  bottom: 0;
+}
 
 #list div:nth-child(1) {
   background-color: #e5c885;
@@ -1145,20 +1153,20 @@ filter: drop-shadow(0 0 2px #000);
   color: #51b3e8;
 }
 #list div:nth-child(3) {
-  background-color: #391583;
+  background-color: #442683;
   left: 40%;
   top: 0;
 }
 #list div:nth-child(3) a{
-  color: #592b9d;
+  color: #64449d;
 }
 #list div:nth-child(4) {
-  background-color: #d7190e;
+  background-color: #b02820;
   left: 60%;
   top: 0;
 }
 #list div:nth-child(4) a{
-  color: #e1321f;
+  color: #c2463c;
 }
 #list div:nth-child(5) {
   background-color: #038de4;
@@ -1209,12 +1217,12 @@ top: 33.333%;
   color: #ff96cf;
 }
 #list div:nth-child(10) {
-background-color: #ffd700;
+background-color: #eccf35;
 left: 80%;
 top: 33.333%;
 }
 #list div:nth-child(10) a{
-  color: #ffe100;
+  color: #f1db55;
 }
 #list div:nth-child(11) {
   background-color: #00833c;
@@ -1225,20 +1233,20 @@ top: 33.333%;
   color: #009d5c;
 }
 #list div:nth-child(12) {
-  background-color: #fde800;
+  background-color: #9024b1;
   left: 20%;
   top: 66.666%;
 }
 #list div:nth-child(12) a{
-  color: #feee00;
+  color: #a841c3;
 }
 #list div:nth-child(13) {
-  background-color: #a7001e;
+  background-color: #9d172f;
   left: 40%;
   top: 66.666%;
 }
 #list div:nth-child(13) a{
-  color: #bb0039;
+  color: #b32f4f;
 }
 #list div:nth-child(14) {
   background-color: #3ed5b0;

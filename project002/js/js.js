@@ -1,11 +1,12 @@
 $(document).ready(function () {
   let wd = $(window).width()
-  let ht = $(window).height()
+  let ht = $(window).height()-100;
+  console.log(ht)
   // 윈도우에 맞게 크기 조절
   let wdset = function () {
     wd = $(window).width();
-    ht = $(window).height();
-    $('article').css({'height': ht});
+    ht = $(window).height()-100;
+    $('article').height(ht).eq(0).height(ht+100);
     $('#product .ani').css({'height': wd * 2}).css({'top': parseInt($('#product .ani').css('left'))});
       let vidWd = $('#main .vid video').width();
       let vidHt = $('#main .vid video').height();
@@ -34,37 +35,44 @@ $(document).ready(function () {
   })
   $(window).scroll(function () {
     let sc = $(this).scrollTop();
+    // 스크롤 헤더 설정
+    if (sc == 0) {
+      $('#header').css({'background-color': 'unset'})
+    } else {
+      $('#header').css({'background-color': '#FFD02C'})
+    }
     // 스크롤 설정
 $('section').mousewheel(function(event,delta){
-  let i = $(this).index()
+  let i = $(this).index();
+  let throttle;
   event.preventDefault();
   event.stopPropagation();
-  if (i < 3 && delta > 0) {
-    $('html,body').stop().animate({'scrollTop':ht*(i-1)}, 300, function(){$('section').unbind()})
-  }
-  if (i < 3 && delta < 0) {
-    $('html,body').stop().animate({'scrollTop':ht*(i+1)}, 300, function(){$('section').unbind()})
-    if (i == 2) {
-      $(this).unbind().mousewheel();
-      console.log(1)
-    }
-  }
-  if (i == 3 && delta > 0 && sc < ht*(i-1)) {
-      $('html,body').stop().animate({'scrollTop':ht*(i-1)})
-  }
-  if (i == 3 && delta < 0 && sc > ht*(i+2)) {
-      $('html,body').stop().animate({'scrollTop':ht*(i+3)})
-  }
-  if (i > 3 && delta > 0 && $('#map').mouseenter() != true) {
-    $('html,body').stop().animate({'scrollTop':ht*(i+1)})
-    if(i == 4) {
-      $(this).unbind().mousewheel();
-      console.log(2)
-    }
-  }
-  if (i > 3 && delta < 0) {
-    $('html,body').stop().animate({'scrollTop':ht*(i+4)})
-  }
+    throttle = setTimeout(() => {
+      throttle = null;
+      if (i < 3 && delta > 0) {
+        $('html,body').stop().animate({'scrollTop':ht*(i-1)}, 300, function(){$('section').unbind()})
+      }
+      if (i < 3 && delta < 0) {
+        $('html,body').stop().animate({'scrollTop':ht*(i+1)}, 300, function(){$('section').unbind()})
+        if (i == 2) {
+        }
+      }
+      if (i == 3 && delta > 0 && sc < ht*(i-1)) {
+          $('html,body').stop().animate({'scrollTop':ht*(i-1)})
+      }
+      if (i == 3 && delta < 0 && sc > ht*(i+2)) {
+          $('html,body').stop().animate({'scrollTop':ht*(i+3)})
+      }
+      if (i > 3 && delta > 0 && $('#map').mouseenter() != true) {
+        $('html,body').stop().animate({'scrollTop':ht*(i+1)})
+        if(i == 4) {
+          console.log(2)
+        }
+      }
+      if (i > 3 && delta < 0) {
+        $('html,body').stop().animate({'scrollTop':ht*(i+4)})
+      }
+    }, 300);
 })
     // 동영상 flex
     if ( sc > $('#info article').eq(0).offset().top && sc < $('#info article').eq(0).offset().top+ht) {
@@ -158,6 +166,7 @@ function displayMarker(place) {
     $(this).stop().animate({'height': (ht/3)*1.15, 'width': (wd/5)*1.15, 'margin-left': -(((wd/5)*1.15)-(wd/5))/2, 'margin-top': -(((ht/3)*1.15)-(ht/3))/2}, 300).css({'z-index':5})
     $(this).find('p').eq(0).stop().animate({'margin-left': ((wd/5*1.15)-(wd/5))/2, 'margin-top': ((ht/3*1.15)-(ht/3))/2}, 300)
     $(this).find('p').eq(1).stop().animate({'margin-right': ((wd/5*1.15)-(wd/5))/2, 'margin-bottom': ((ht/3*1.15)-(ht/3))/2}, 300)
+    $(this).find('.fa-heart, .fa-shopping-cart').stop().animate({'margin-left': ((wd/5*1.15)-(wd/5))/2, 'margin-bottom': ((ht/3*1.15)-(ht/3))/2}, 300)
     
     }
   })
@@ -168,6 +177,7 @@ function displayMarker(place) {
     })
     $(this).find('p').eq(0).stop().animate({'margin-left': 0, 'margin-top': 0}, 200)
     $(this).find('p').eq(1).stop().animate({'margin-right': 0, 'margin-bottom': 0}, 200)
+    $(this).find('.fa-heart, .fa-shopping-cart').stop().animate({'margin-left': 0, 'margin-bottom': 0}, 200)
   }
   // sns아이콘 클릭시 클래스 변경
   })
