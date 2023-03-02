@@ -1,0 +1,141 @@
+@charset 'utf-8';
+@font-face {
+  font-family: 'TAEBAEKmilkyway';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+/* 
+font-family: 'Jura', sans-serif;
+font-family: 'TAEBAEKmilkyway';
+*/
+/* 전체 설정 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+/* 임시설정 */
+body {
+  font-family: 'TAEBAEKmilkyway';
+}
+section {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+section:nth-child(3) {
+  display: block;
+}
+
+/* 프로필 설정 */
+#profile {
+  background: linear-gradient(0deg, #C8D2A4 4.17%, #E8F1D3 83.33%);
+  left: 0;
+  top: 0;
+}
+#profile article {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.25), inset 4px 4px 12px rgba(115, 128, 102, 0.5), inset -8px -8px 16px rgba(88, 100, 73, 0.6);
+  backdrop-filter: blur(7px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profile h5 {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.25), inset 4px 4px 12px rgba(115, 128, 102, 0.5), inset -8px -8px 16px rgba(88, 100, 73, 0.6);
+  backdrop-filter: blur(7px);
+  border-radius: 10px;
+  color: #fff;
+  height: 50px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: default;
+  transition: opacity 0.7s;
+}
+#profile article:hover:has(.popupBox:not(:hover)) h5 {
+  opacity: 1;
+}
+#profile .popupBox {
+  background: #FFFFFF;
+box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.25), inset 8px 8px 12px rgba(206, 230, 184, 0.4), inset -8px -8px 16px rgba(161, 178, 142, 0.6);
+border-radius: 30px;
+width: 1280px;
+height: 768px;
+display: grid;
+overflow-y: scroll;
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+#profile .popupBox::-webkit-scrollbar {
+  display: none;
+}
+.popupBox h3 {
+  background-color: #7CB247;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 20px;
+}
+.popupBox .chart {
+  height: 60%;
+}
+.popupBox .info {
+  height: 40%;
+}
+.popupBox .info ul {}
+.popupBox .info li {
+  color: #558a35;
+  font-size: 20px;
+  margin: 20px 0;
+}
+.popupBox .info i {
+font-size: 14px;
+margin-right: 20px;
+}
+.popupBox .info li:nth-child(1) {
+  font-size: 42px;
+}
+.popupBox .info li i:nth-child(3) {
+  opacity: 0;
+}
+.popupBox img {
+  width: 300px;
+}
+
+
