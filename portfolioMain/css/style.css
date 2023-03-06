@@ -68,6 +68,7 @@ font-weight: normal;
 transition: width 0.5s, margin 1s, top 1s, padding 1s;
 pointer-events: all;
 }
+
 /* 메인 설정 */
 #main {
   background: linear-gradient(0deg, #C8D2A4 4.17%, #E8F1D3 83.33%);
@@ -125,7 +126,6 @@ margin-top: 0;
 margin-left: 0;
 }
 #design article {
-  background-color: #fff;
   margin-left: 300px;
   margin-right: 150px;
   height: 100%;
@@ -138,35 +138,116 @@ opacity: 1;
 display: flex;
 justify-content: center;
 align-items: center;
+pointer-events: all;
 }
 #design article>img {
   width: fit-content;
   height: auto;
+  cursor: pointer;
 }
 #design .con {
-  background-color: #ddd;
   /* width: 800px; */
   /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 200px;
 }
-#design .con .count {}
+#design .con .count {
+  display: flex;
+  position: relative;
+  justify-content: center
+}
 #design .con .count li {
-  width: 30px;
-  height: 30px;
-  background-color: #718166;
-  box-shadow: 2px 2px 8px rgba(46, 51, 41, 0.25), inset 4px 4px 8px rgba(206, 230, 184, 0.4), inset -2px -2px 4px rgba(161, 178, 142, 0.6);
-  border-radius: 50%;
+  width: 20%;
+}
+
+#design .con .count li img {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
 }
 #design .con .count li span {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 100%;
+  left: 50%;
+  margin-left: -39.6px;
+  display: none;
+}
+#design .con.list0 .count li:nth-child(1) span {
+display: unset;
+}
+#design .con.list1 .count li:nth-child(2) span {
+display: unset;
+}
+#design .con.list2 .count li:nth-child(3) span {
+display: unset;
 }
 #design .con .count li div {}
-#design .con .ex {}
+#design .con .ex {
+  position: relative;
+  width: 1000px;
+  height: 800px;
+  overflow: hidden;
+  color: #718166;
+}
+#design .con .ex li { 
+  position: absolute;
+  left: 150%;
+  top: 0;
+  width: 600px;
+  height: 650px;
+  margin-left: -300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#design .con .ex li:nth-child(1) { 
+  left: 50%;
+}
+
+#design .con .ex img {
+  width: 500px;
+  height: auto;
+}
+#design .con .ex h3 {
+  font-size: 36px;
+  margin-top: -70px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+#design .con .ex span {
+  word-spacing: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#design .con .ex br { 
+  margin-bottom: 10px;
+  display: block;
+  content: "";
+}
+#design .con .ex p {
+  text-align: center;
+  color: #000;
+  text-shadow: 0 0 0px #000;
+}
+
+#design .con .ex div {
+  width: 200px;
+  height: 50px;
+  background-color: #718166;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -100px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.3), inset 4px 4px 16px rgba(224, 241, 208, 0.6), inset -4px -4px 16px rgba(66, 78, 52, 0.6);
+  border-radius: 20px;
+  cursor: pointer;
+}
 
 /* 퍼블리싱 설정 */
 #publishing {
