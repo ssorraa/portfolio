@@ -41,9 +41,7 @@ section {
   height: 100%;
   pointer-events: none;
 }
-section:has( .popupBox.on) {
-z-index: 1;
-}
+
 section:nth-child(1) {
   display: block;
   width: 100%;
@@ -249,6 +247,7 @@ display: unset;
   cursor: pointer;
 }
 
+
 /* 퍼블리싱 설정 */
 #publishing {
   background-image: url(../image/bg_publishing.png);
@@ -307,7 +306,9 @@ display: unset;
 #profile:not(.on) h2:hover {
   padding: 0 75px 0 500px;
 }
-#profile article {
+
+/* 팝업창 설정 */
+#popup {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -322,11 +323,11 @@ display: unset;
   opacity: 0;
   transition: opacity 0.5s;
 }
-#profile.on article {
+#popup.on {
   opacity: 1;
   pointer-events: all;
 }
-#profile h5 {
+#popup h5 {
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.25), inset 4px 4px 12px rgba(115, 128, 102, 0.5), inset -8px -8px 16px rgba(88, 100, 73, 0.6);
@@ -346,29 +347,39 @@ display: unset;
   cursor: default;
   transition: opacity 0.7s;
 }
-#profile article:hover:has(.popupBox:not(:hover)) h5 {
+#popup:hover:has(.popupBox:not(:hover)) h5 {
   opacity: 1;
 }
-#profile .popupBox {
+#popup .popupBox {
   background: #FFFFFF;
 box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.25), inset 8px 8px 12px rgba(206, 230, 184, 0.4), inset -8px -8px 16px rgba(161, 178, 142, 0.6);
 border-radius: 30px;
 width: 1280px;
 height: 768px;
-/* overflow-y: scroll;
-scrollbar-width: none;
--ms-overflow-style: none; */
-display: flex;
 padding: 50px;
 box-sizing: border-box;
 -moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;
 }
-#profile .popupBox::-webkit-scrollbar {
+#popup .popupBox>li::-webkit-scrollbar {
   display: none;
 }
-#profile .popupBox {}
-.popupBox>div {
+#popup .popupBox>li {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+#popup .popupBox>li:nth-child(4) {
+  overflow: unset;
+}
+#popup .popupBox>li.on {
+  display: flex;
+}
+
+.profilePopup01>div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -376,10 +387,10 @@ box-sizing: border-box;
   margin: 0 10px;
   width: 300px;
 }
-.popupBox .part2 {
+.profilePopup01 .part2 {
   flex: 1;
 }
-.popupBox h3 {
+.profilePopup01 h3 {
   background-color: #7CB247;
   width: 300px;
   display: flex;
@@ -392,124 +403,124 @@ box-sizing: border-box;
   font-size: 20px;
   margin-bottom: 30px;
 }
-.popupBox .chart {}
-.popupBox #myChart {}
-.popupBox .info {}
-.popupBox .info ul {}
-.popupBox .info li {
+.profilePopup01 .chart {}
+.profilePopup01 #myChart {}
+.popuprofilePopup01pBox .info {}
+.profilePopup01 .info ul {}
+.profilePopup01 .info li {
   color: #558a35;
   font-size: 20px;
   margin: 20px 0;
 }
-.popupBox .info i {
+.profilePopup01 .info i {
 font-size: 14px;
 margin-right: 20px;
 }
-.popupBox .info li:nth-child(1) {
+.profilePopup01 .info li:nth-child(1) {
   font-size: 42px;
 }
-.popupBox .info li i:nth-child(3) {
+.profilePopup01 .info li i:nth-child(3) {
   opacity: 0;
 }
-.popupBox .tag {
+.profilePopup01 .tag {
   position: relative;
   margin-top: 20px;
 }
-.popupBox .tag span {
+.profilePopup01 .tag span {
   position: absolute;
   width: max-content;
 }
-.popupBox .tag .green {
+.profilePopup01 .tag .green {
   color: #7CB247;
 }
-.popupBox .tag span:nth-child(1) {
+.profilePopup01 .tag span:nth-child(1) {
   opacity: 0.3;
   left: 35%;
   top: 0; 
   font-size: 16px;
 }
-.popupBox .tag span:nth-child(2) {
+.profilePopup01 .tag span:nth-child(2) {
   opacity: 0.6;
   left: 10%;
   top: 20px;
   font-size: 26px;
 }
-.popupBox .tag span:nth-child(3) {
+.profilePopup01 .tag span:nth-child(3) {
   opacity: 0.75;
   right: 20%;
   top: 25px;
   font-size: 24px;
 }
-.popupBox .tag span:nth-child(4) {
+.profilePopup01 .tag span:nth-child(4) {
   left: 25%;
   top: 55px;
   font-size: 24px;
 }
-.popupBox .tag span:nth-child(5) {
+.profilePopup01 .tag span:nth-child(5) {
   opacity: 0.2;
   right: 24%;
   top: 80px;
   font-size: 16px;
   font-weight: bold;
 }
-.popupBox .tag span:nth-child(6) {
+.profilePopup01 .tag span:nth-child(6) {
   left: 35%;
   top: 90px;
   font-size: 16px;
 }
-.popupBox .tag span:nth-child(7) {
+.profilePopup01 .tag span:nth-child(7) {
   opacity: 0.2;
   right: 40%;
   top: 100px;
   font-size: 12px;
   font-weight: bold;
 }
-.popupBox .tag span:nth-child(8) {
+.profilePopup01 .tag span:nth-child(8) {
   left: 20%;
   top: 115px;
   font-size: 32px;
 }
-.popupBox .tag span:nth-child(9) {
+.profilePopup01 .tag span:nth-child(9) {
   left: 35%;
   top: 150px;
   font-size: 20px;
   opacity: 0.3;
 }
-.popupBox .tag span:nth-child(10) {
+.profilePopup01 .tag span:nth-child(10) {
   right: 10%;
   top: 160px;
   font-size: 16px;
   opacity: 0.2;
 }
-.popupBox .tag span:nth-child(11) {
+.profilePopup01 .tag span:nth-child(11) {
   left: 16%;
   top: 170px;
   font-size: 16px;
   opacity: 0.2;
   font-weight: bold;
 }
-.popupBox .tag span:nth-child(12) {
+.profilePopup01 .tag span:nth-child(12) {
   left: 45%;
   top: 180px;
   font-size: 20px;
   opacity: 0.6;
 }
-.popupBox .tag span:nth-child(13) {
+.profilePopup01 .tag span:nth-child(13) {
   left: 24%;
   top: 185px;
   font-size: 24px;
   opacity: 0.5;
 }
-.popupBox .tag span:nth-child(14) {
+.profilePopup01 .tag span:nth-child(14) {
   left: 50%;
   top: 205px;
   font-size: 26px;
   opacity: 0.8;
 }
-.popupBox .pic {
+.profilePopup01 .pic {
 position: relative;
 }
-.popupBox .pic img:nth-child(1) {
+.profilePopup01 .pic img:nth-child(1) {
   width: 200px;
   position: absolute;
   bottom: 265px;
@@ -517,10 +528,10 @@ position: relative;
   margin-left: -100px;
   transition: opacity 0.7s;
 }
-#profile article:hover:has(.popupBox:not(:hover)) .popupBox .pic img:nth-child(1) {
+#popup:hover:has(.popupBox:not(:hover)) .profilePopup01 .pic img:nth-child(1) {
   opacity: 0;
 }
-.popupBox .pic img:nth-child(2) {
+.profilePopup01 .pic img:nth-child(2) {
   width: 300px;
   position: absolute;
   bottom: -180px;
@@ -528,41 +539,41 @@ position: relative;
   margin-left: -150px;
 }
 
-.popupBox .hobby {
+.profilePopup01 .hobby {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 }
-.popupBox .hobby span {
+.profilePopup01 .hobby span {
   display: inline-block;
   text-align: center;
   font-size: 24px;
   color: #7CB247;
   opacity: 0.75;
 }
-.popupBox .hobby b {
+.profilePopup01 .hobby b {
   font-size: 16px;
   font-weight: normal;
 }
-.popupBox .favorite {
+.profilePopup01 .favorite {
   display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 }
-.popupBox .favorite span {
+.profilePopup01 .favorite span {
   font-size: 24px;
   color: #7CB247;
   opacity: 0.75;
 }
-.popupBox .stat {
+.profilePopup01 .stat {
 }
-.popupBox .stat li {
+.profilePopup01 .stat li {
   background-color: #DCEFC9;
   height: 20px;
   border-radius: 10px;
   margin: 15px 0;
 }
-.popupBox .stat li span {
+.profilePopup01 .stat li span {
 display: block;
 background-color: #7CB247;
 border-radius: 10px;
@@ -574,18 +585,18 @@ transition: width 1s;
 font-size: 12px;
 line-height: 1.8;
 }
-#profile.on .stat li:nth-child(1) span {
+#popup.on .stat li:nth-child(1) span {
 width: 85%;
 }
-#profile.on .stat li:nth-child(2) span {
+#popup.on .stat li:nth-child(2) span {
 width: 75%;
 }
-#profile.on .stat li:nth-child(3) span {
+#popup.on .stat li:nth-child(3) span {
 width: 95%;
 }
-#profile.on .stat li:nth-child(4) span {
+#popup.on .stat li:nth-child(4) span {
 width: 95%;
 }
-#profile.on .stat li:nth-child(5) span {
+#popup.on .stat li:nth-child(5) span {
 width: 85%;
 }

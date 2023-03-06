@@ -307,15 +307,15 @@ body.three {
   width: 125px;
   left: 0;
 }
-body:has(li:nth-child(1):hover) .list div {
+body .list:has(li:nth-child(1):hover) div {
   width: 125px;
   left: 0;
 }
-body:has(li:nth-child(2):hover) .list div {
+body .list:has(li:nth-child(2):hover) div {
   width: 121px;
   left: 155px;
 }
-body:has(li:nth-child(3):hover) .list div {
+body .list:has(li:nth-child(3):hover) div {
   width: 171px;
   left: 306px;
 }
