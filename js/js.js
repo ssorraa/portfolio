@@ -15,7 +15,7 @@ $(document).ready(function(){
   })
   // #main 설정
   // mainBg 효과-css변수 생성 및 랜덤값 생성
-  const COUNT = 10
+  const COUNT = 5
 let random = (min, max) => Math.random() * (max - min) + min
 let mainBg = document.querySelector('.mainBg')
 
@@ -29,26 +29,33 @@ Array(COUNT).fill('').forEach((x, i) => {
   mainBg.appendChild(span)
 })
 // mainCon 효과-10초 후에 20초마다 타이핑
+let stop = 0;
 setTimeout(function time() {
+  stop++;
+  if (stop <= 1) {
+  console.log('icon')
     TypeHangul.type('.typing', {
     intervalType: 80,
-    humanize: 0.4,
-})
+    humanize: 0.4
+  })}
   setInterval(time, 20000);
 }, 5000);
 let a = 0;
-// article에 있는 동그라미 버튼 클릭하면 이동-왜안되지
-// $('.count li').click(function() {
-//   let b = $(this).index()
-//   console.log(b)
-//   console.log(a)
-//   if ((b == 2 && a == 0) || (b == 1 && a == 2) || (b == 0 && a == 1)) {
-//     $('.leftBtn').trigger('click');
-//   }
-//   else if ((b == 1 && a == 0) || (b == 2 && a == 1) || (b == 0 && a == 2)) {
-//     $('.rightBtn').trigger('click');
-//   }
-// })
+// article에 있는 동그라미 버튼 클릭하면 이동-왜 trigger인식이 2번되지
+let b = 0;
+$('.count li').click(function() {
+  b = $(this).index()
+  // console.log(b)
+  // console.log(a)
+  if ((b == 2 && a == 0) || (b == 1 && a == 2) || (b == 0 && a == 1)) {
+    console.log('leftTrigger')
+    $('.leftBtn').trigger('click');
+  }
+  else if ((b == 1 && a == 0) || (b == 2 && a == 1) || (b == 0 && a == 2)) {
+    console.log('rightTrigger')
+    $('.rightBtn').trigger('click');
+  }
+})
 // article에 있는 좌우버튼 클릭하면 이동
 $('.leftBtn').click(function() {
   // 왜안되지
@@ -58,8 +65,10 @@ $('.leftBtn').click(function() {
   $('#design .ex li').eq(a).css({'left':'50%'}).animate({'left':'150%'})
   $('#publishing .ex li').eq(a-1).css({'left':'-150%'}).animate({'left':'50%'});
   $('#publishing .ex li').eq(a).css({'left':'50%'}).animate({'left':'150%'})
+  console.log('left:'+a)
   let i = 0;
   let iconEdit = function(){
+    console.log(1)
     $('#design .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
     $('#publishing .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
     if(a == 2) {
@@ -81,6 +90,7 @@ $('.leftBtn').click(function() {
 })
 $('.rightBtn').click(function() {
   a++;
+  console.log('right'+a)
   if(a > 2) {a = 0;};
   $('.con').attr('class','con list' + a);
   // $('.ex li').eq(a-1).css({'left':'50%'}).animate({'left':'150%'});
@@ -91,6 +101,7 @@ $('.rightBtn').click(function() {
   $('#publishing .ex li').eq(a).css({'left':'150%'}).animate({'left':'50%'})
   let i = 0;
   let iconEdit = function(){
+    console.log(1)
     $('#design .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
     $('#design .count li').eq(a-1).find('img').attr('src','image/i_circle' + (10-i) + '.png')
     $('#publishing .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
