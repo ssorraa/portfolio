@@ -13,8 +13,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- 제이쿼리 연결 -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <!-- 한글 타이핑 연결 -->
+  <script src="https://unpkg.com/type-hangul"></script>
   <!-- 자바스크립트 연결 -->
   <script src="js/js.js"></script>
+  <!-- --------------------------- -->
   <!-- 아이콘추가 -->
   <!-- 안드로이드용 -->
   <link rel="shortcut icon" href="image/icon.png">
@@ -31,23 +34,39 @@
 <body>
   <section id="main">
     <h2>M A I N</h2>
+    <article class='mainBg'></article>
+    <article class='mainCon'>
+      <div></div>
+      <ul class="hello">
+        <li>HELLO</li>
+        <li class="typing">안녕하세요</li>
+      </ul>
+      <ul class="text">
+        <li>WORLD!</li>
+        <li>HTML!</li>
+        <li>CSS!</li>
+        <li>JAVASCRIPT!</li>
+        <li>PORTFOLIO!</li>
+        <li>최소라의 포트폴리오입니다!</li>
+      </ul>
+    </article>
   </section>
   <section id="design" class="">
     <h2>D E S I G N</h2>
     <article>
-      <img src="image/i_left.png" alt="">
+      <img src="image/i_left.png" alt="" class="leftBtn">
       <div class="con list0">
         <ul class="count">
           <li>
-            <img src="image/i_circle01.png" alt="">
+            <img src="image/i_circle10.png" alt="">
             <span>PROJECT1</span>
           </li>
           <li>
-            <img src="image/i_circle01.png" alt="">
+            <img src="image/i_circle0.png" alt="">
             <span>PROJECT2</span>
           </li>
           <li>
-            <img src="image/i_circle01.png" alt="">
+            <img src="image/i_circle0.png" alt="">
             <span>PROJECT3</span>
           </li>
         </ul>
@@ -85,27 +104,80 @@
           </li>
         </ul>
       </div>
-      <img src="image/i_right.png" alt="">
+      <img src="image/i_right.png" alt="" class="rightBtn">
+    </article>
+  </section>
+  <section id="publishing" class="">
+    <h2>P U B L I S H I N G</h2>
+    <article>
+      <img src="image/i_left.png" alt="" class="leftBtn">
+      <div class="con list0">
+        <ul class="count">
+          <li>
+            <img src="image/i_circle10.png" alt="">
+            <span>PROJECT1</span>
+          </li>
+          <li>
+            <img src="image/i_circle0.png" alt="">
+            <span>PROJECT2</span>
+          </li>
+          <li>
+            <img src="image/i_circle0.png" alt="">
+            <span>PROJECT3</span>
+          </li>
+        </ul>
+        <ul class="ex">
+          <li>
+            <img src="image/design_Project001.png" alt="">
+            <h3>한국동물보호연합</h3>
+            <span>#리뉴얼_사이트 #반응형 #따뜻함</span>
+            <p>
+              동물을 향한 마음을 사람들에게 보일 수 있으면 더 좋지 않을까?<br>
+              동물을 가리지 않고 사랑하는 따뜻한 마음을 시각화하기 위해 따뜻한 색으로 디자인했습니다.
+            </p>
+            <div class="btn">사이트 이동 ↗</div>
+          </li>
+          <li>
+            <img src="image/design_Project002.png" alt="">
+            <h3>레고 + 마인크래프트</h3>
+            <span>#신규_사이트 #PC #비비드_컬러</span>
+            <p>
+              유명한 것 + 유명한 것 = 최고의 콜라보<br>
+              네모난 세상을 세상으로 끄집어내 재탄생시킨 레고 사이트를 제작했습니다.<br>
+              어린이들의 눈길을 사로잡을 수 있게 원색을 사용해 디자인했습니다.
+            </p>
+            <div class="btn"><a href="project002/">사이트 이동 ↗</a></div>
+          </li>
+          <li>
+            <img src="image/design_Project003.png" alt="">
+            <h3>선우정아</h3>
+            <span>#팬사이트 #PC #포인트_컬러</span>
+            <p>
+              장르의 허들을 가볍게 부수고 자신만의 음색으로 새롭게 만들어내는 가수, 성우정아. <br>
+              다양한 매력 중 일부를 포인트로 보여준다는 의미를 담아 디자인했습니다. <br>
+            </p>
+            <div class="btn">사이트 이동 ↗</div>
+          </li>
+        </ul>
+      </div>
+      <img src="image/i_right.png" alt="" class="rightBtn">
     </article>
   </section>
   <section id="profile">
     <h2>P R O F I L E</h2>
   </section>
-  <section id="publishing">
-    <h2>P U B L I S H I N G</h2>
-  </section>
-  <section id="popup" class="bg on">
+  <section id="popup" class="bg">
     <ul class="popupBox">
-      <li class="designPopup01">
+      <li class="designPopup0">
         <img src="image/" alt="">
       </li>
-      <li class="designPopup02 on">
+      <li class="designPopup1">
         <img src="image/popup_design02.png" alt="">
       </li>
-      <li class="designPopup03">
+      <li class="designPopup2">
         <img src="image/" alt="">
       </li>
-      <li class="profilePopup01">
+      <li class="profilePopup0">
         <div class="part1">
           <div class="chart">
             <h3>강점</h3>
@@ -171,15 +243,6 @@
     </ul>
     <h5>클릭하면 팝업창이 닫힙니다</h5>
   </section>
-  <script>
-    $('#design h2').click(function () {
-      $('#design').toggleClass('on')
-    })
-    $('#profile h2').click(function () {
-      $('#profile').toggleClass('on')
-      $('.popupBox').toggleClass('on')
-    })
-  </script>
 </body>
 
 </html>
