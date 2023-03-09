@@ -42,6 +42,7 @@ font-family: 'Noto Serif KR', serif;
 /* 베이직 설정 변경 */
 body {
   background: #160E09;
+  overflow-y: hidden;
 }
 /* bg설정 */
 .bg img {
@@ -101,7 +102,7 @@ body {
   color: #160E09;
 }
 .profile.on {
-  left: 58%;
+  left: 55%;
 }
 .profile .imgTxt {
 position: absolute;
@@ -149,10 +150,10 @@ font-size: 24px;
   border-top: 10px solid #160E09;
   font-family: 'Cardo', serif;
   font-size: 24px;
-  width: 200px;
+  width: 300px;
   position: absolute;
   margin-right: -100px;
-  right: 5%;
+  right: -5%;
   top: 10%;
   transition: margin-right 0.7s;
   cursor: pointer;
@@ -165,7 +166,7 @@ font-size: 24px;
 .timeline {
   background-color: #fff;
   position: absolute;
-  left: 95%;
+  left: 100%;
   top: 0;
   height: 100%;
   width: max-content;
@@ -173,6 +174,7 @@ font-size: 24px;
   font-weight: 800;
   color: #160E09;
   transition: left 1s;
+  z-index: 3;
 }
 .timeline.on {
   left: 116.6%;

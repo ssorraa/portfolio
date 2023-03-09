@@ -48,65 +48,195 @@ header {
 }
 header h1 {
 position: fixed;
-left: 50%;
-top: 50%;
-margin-top: -300px;
-margin-left: -400px;
-height: 600px;
-width: 800px;
-border: 30px solid #fdfdfd;
 box-sizing: border-box;
 -moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;
-font-size: 128px;
-animation: introOpa 5s linear;
+animation: introH1 4s;
 }
-header h1 span {
-position: absolute;
-font-family: 'Nanum Myeongjo', serif;
+@keyframes introH1 {
+  0% {opacity: 0.5;
+    height: 600px;
+    width: 800px;
+    margin-top: -300px;
+margin-left: -400px;
 left: 50%;
 top: 50%;
+border: 30px solid #fdfdfd;
+font-size: 128px;
+  }
+  70% {
+    border: 30px solid #fdfdfd;
+  }
+  80% {opacity: 1;
+    height: 600px;
+    width: 800px;
+    margin-top: -300px;
+margin-left: -400px;
+left: 50%;
+top: 50%;
+border: 0px solid #fdfdfd;
+font-size: 128px;
+  }
+100% {
+  height: 20px;
+  width: 150px;
+  margin-top: 20px;
+margin-left: 0;
+left: 0;
+top: 0;
+
+font-size: 40px;
 }
+}
+header h1 span {
+font-family: 'Nanum Myeongjo', serif;
+}
+
 header h1 .s {
-  animation: none;
-  margin-left: -100px;
-  margin-top: -90px;
+  animation: introS 4s;
 }
+@keyframes introS {
+  0% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -90px;
+  }
+  80% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -90px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 20px;
+    left: 0%;
+    top: 0%;
+  }
+  }
 header h1 .w {
-  animation: none;
-  margin-left: -10px;
-  margin-top: -90px;
+  animation: introW 4s;
 }
+@keyframes introW {
+  0% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -90px;
+  }
+  80% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -90px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+    left: 0%;
+    top: 0%;
+  }
+  }
 header h1 .j {
-  animation: none;
-  margin-left: -100px;
-  margin-top: 50px;
+  animation: introJ 4s;
 }
+@keyframes introJ {
+  0% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: 50px;
+  }
+  80% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+    left: 0%;
+    top: 0%;
+  }
+  }
 header h1 .a {
-  animation: none;
-  margin-left: 10px;
-  margin-top: 50px;
+  animation: introA 4s;
 }
-@keyframes introOpa {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
+@keyframes introA {
+  0% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 10px;
+    margin-top: 50px;
+  }
+  80% {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 10px;
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+    left: 0%;
+    top: 0%;
+  }
+  }
+
 
 /* 메인 */
 .curtain {}
-.curtain img {
+.curtain div {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+.curtain img {
+  position: absolute;
+  top: 0;
+  height: 100%;
 }
 .curtain .left {
-  left: 0;
+  left: -100%;
+  animation: left 3s;
+}
+.curtain .left img {
+  left: 100%;
+}
+@keyframes left {
+  0% {left: -50%;}
+  100% {left: -100%;}
 }
 .curtain .right {
-  right: 0;
+  right: -100%;
+  animation: right 3s;
+}
+.curtain .right img {
+  right: 100%;
+}
+@keyframes right {
+  0% {right: -50%;}
+  100% {right: -100%;}
 }
 .bg {
+  position: fixed;
+  width: 100%;
+  /* height: 100%; */
+  top: 0;
+  left: 0;
 }
 .bg img {
-  width: 100%;
+  margin-left: 100px;
 }

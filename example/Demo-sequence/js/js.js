@@ -11,8 +11,8 @@ $(document).ready(function(){
     // 움직인/최대거리*200
     // 연산식 만들기
     let num = Math.trunc((x/wd)*200)
-    $('section img').hide()
-    $('section img').eq(num).show()
+    $('bg img').hide()
+    $('bg img').eq(num).show()
   })
 
 

@@ -284,7 +284,7 @@ footer img {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 30;
+  z-index: 31;
 }
 footer section{
   color: #fff;
@@ -297,7 +297,7 @@ footer section{
   backdrop-filter: blur(3px);
   background: #fdfdfd32;
   transition: bottom 0.7s;
-  z-index: 30;
+  z-index: 31;
   clip-path: polygon(0 20%, 10% 0, 100% 70%, 100% 100%, 0 100%);
 }
 footer section article {
