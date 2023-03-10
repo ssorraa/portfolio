@@ -15,19 +15,19 @@ $(document).ready(function(){
   })
   // #main 설정
   // mainBg 효과-css변수 생성 및 랜덤값 생성
-  const COUNT = 5
-let random = (min, max) => Math.random() * (max - min) + min
-let mainBg = document.querySelector('.mainBg')
+//   const COUNT = 5
+// let random = (min, max) => Math.random() * (max - min) + min
+// let mainBg = document.querySelector('.mainBg')
 
-Array(COUNT).fill('').forEach((x, i) => {
-  let span = document.createElement('span')
-  span.style.setProperty('--x', random(1, 99))
-  span.style.setProperty('--y', random(1, 99))
-  span.style.setProperty('--n', i)
-  span.style.setProperty('--dark-color', `hsl(${70 + i * 0.1}, 20%, 70%)`)
-  span.style.setProperty('--bright-color', `hsl(${80 + i * 0.1}, 30%, 80%)`)
-  mainBg.appendChild(span)
-})
+// Array(COUNT).fill('').forEach((x, i) => {
+//   let span = document.createElement('span')
+//   span.style.setProperty('--x', random(1, 99))
+//   span.style.setProperty('--y', random(1, 99))
+//   span.style.setProperty('--n', i)
+//   span.style.setProperty('--dark-color', `hsl(${70 + i * 0.1}, 20%, 70%)`)
+//   span.style.setProperty('--bright-color', `hsl(${80 + i * 0.1}, 30%, 80%)`)
+//   mainBg.appendChild(span)
+// })
 // mainCon 효과-10초 후에 20초마다 타이핑
 let stop = 0;
 setTimeout(function time() {
