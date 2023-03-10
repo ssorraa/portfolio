@@ -15,30 +15,30 @@ $(document).ready(function(){
   })
   // #main 설정
   // mainBg 효과-css변수 생성 및 랜덤값 생성
-//   const COUNT = 5
-// let random = (min, max) => Math.random() * (max - min) + min
-// let mainBg = document.querySelector('.mainBg')
+  const COUNT = 5
+let random = (min, max) => Math.random() * (max - min) + min
+let mainBg = document.querySelector('.mainBg')
 
-// Array(COUNT).fill('').forEach((x, i) => {
-//   let span = document.createElement('span')
-//   span.style.setProperty('--x', random(1, 99))
-//   span.style.setProperty('--y', random(1, 99))
-//   span.style.setProperty('--n', i)
-//   span.style.setProperty('--dark-color', `hsl(${70 + i * 0.1}, 20%, 70%)`)
-//   span.style.setProperty('--bright-color', `hsl(${80 + i * 0.1}, 30%, 80%)`)
-//   mainBg.appendChild(span)
-// })
-// mainCon 효과-10초 후에 20초마다 타이핑
-let stop = 0;
+Array(COUNT).fill('').forEach((x, i) => {
+  let span = document.createElement('span')
+  span.style.setProperty('--x', random(1, 99))
+  span.style.setProperty('--y', random(1, 99))
+  span.style.setProperty('--n', i)
+  span.style.setProperty('--dark-color', `hsl(${70 + i * 0.1}, 20%, 70%)`)
+  span.style.setProperty('--bright-color', `hsl(${80 + i * 0.1}, 30%, 80%)`)
+  mainBg.appendChild(span)
+})
+// mainCon 효과-5초 후에 20초마다 타이핑
+let reset;
 setTimeout(function time() {
-  stop++;
-  if (stop <= 1) {
+  // 이전 작동되던 setInterval 초기화
+  clearInterval(reset);
   console.log('icon')
     TypeHangul.type('.typing', {
     intervalType: 80,
     humanize: 0.4
-  })}
-  setInterval(time, 20000);
+  })
+  reset = setInterval(time, 20000);
 }, 5000);
 let a = 0;
 // article에 있는 동그라미 버튼 클릭하면 이동-왜 trigger인식이 2번되지
@@ -58,13 +58,14 @@ $('.count li').click(function() {
 })
 // article에 있는 좌우버튼 클릭하면 이동
 $('.leftBtn').click(function() {
-  // 왜안되지
+  // 오류! -1이 마지막에 있는 li을 지칭하는걸로 알고 있는데, 마지막 li을 확인하지 못하고 드랍해버린다
+  // 원인을 알았다. 디자인과 퍼블리싱 li가 묶음으로 인식된다. 주말에 할것
   // $('.ex li').eq(a-1).css({'left':'150%'}).animate({'left':'50%'});
-  // $('.ex li').eq(a).css({'left':'50%'}).animate({'left':'-150%'})
-  $('#design .ex li').eq(a-1).css({'left':'-150%'}).animate({'left':'50%'});
-  $('#design .ex li').eq(a).css({'left':'50%'}).animate({'left':'150%'})
-  $('#publishing .ex li').eq(a-1).css({'left':'-150%'}).animate({'left':'50%'});
-  $('#publishing .ex li').eq(a).css({'left':'50%'}).animate({'left':'150%'})
+  // $('.ex li').eq(a).css({'left':'50%'}).animate({'left':'-150%'});
+  $('#design .ex li').eq(a-1).css({'left':'-150%'}).stop().animate({'left':'50%'});
+  $('#design .ex li').eq(a).css({'left':'50%'}).stop().animate({'left':'150%'});
+  $('#publishing .ex li').eq(a-1).css({'left':'-150%'}).stop().animate({'left':'50%'});
+  $('#publishing .ex li').eq(a).css({'left':'50%'}).stop().animate({'left':'150%'});
   console.log('left:'+a)
   let i = 0;
   let iconEdit = function(){
@@ -80,7 +81,8 @@ $('.leftBtn').click(function() {
   }
     i++;
     if(i > 10) {
-      clearInterval(iconTimer)
+      clearInterval(iconTimer);
+      return false;
     }
   }
   let iconTimer = setInterval(iconEdit,10);
@@ -95,10 +97,10 @@ $('.rightBtn').click(function() {
   $('.con').attr('class','con list' + a);
   // $('.ex li').eq(a-1).css({'left':'50%'}).animate({'left':'150%'});
   // $('.ex li').eq(a).css({'left':'-150%'}).animate({'left':'50%'})
-  $('#design .ex li').eq(a-1).css({'left':'50%'}).animate({'left':'-150%'});
-  $('#design .ex li').eq(a).css({'left':'150%'}).animate({'left':'50%'})
-  $('#publishing .ex li').eq(a-1).css({'left':'50%'}).animate({'left':'-150%'});
-  $('#publishing .ex li').eq(a).css({'left':'150%'}).animate({'left':'50%'})
+  $('#design .ex li').eq(a-1).css({'left':'50%'}).stop().animate({'left':'-150%'});
+  $('#design .ex li').eq(a).css({'left':'150%'}).stop().animate({'left':'50%'})
+  $('#publishing .ex li').eq(a-1).css({'left':'50%'}).stop().animate({'left':'-150%'});
+  $('#publishing .ex li').eq(a).css({'left':'150%'}).stop().animate({'left':'50%'})
   let i = 0;
   let iconEdit = function(){
     console.log(1)
@@ -108,7 +110,8 @@ $('.rightBtn').click(function() {
     $('#publishing .count li').eq(a-1).find('img').attr('src','image/i_circle' + (10-i) + '.png')
     i++;
     if(i > 10) {
-      clearInterval(iconTimer)
+      clearInterval(iconTimer);
+      return false;
     }
   }
   let iconTimer = setInterval(iconEdit,10);

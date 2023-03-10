@@ -87,11 +87,11 @@ body {
 /* 컨텐츠-프로필 설정 */
 .profile {
   position: absolute;
-  left: 36.4%;
+  left: 35.7%;
   height: 100%;
   background-color: #fff;
   transition: left 1s;
-  width: 63.6%;
+  width: 64.3%;
   padding-top: 120px;
   padding-left: 100px;
   box-sizing: border-box;
