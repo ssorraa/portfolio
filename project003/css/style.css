@@ -238,5 +238,6 @@ header h1 .a {
   left: 0;
 }
 .bg img {
-  margin-left: 100px;
+width: 100%;
+height: auto;
 }

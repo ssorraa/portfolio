@@ -127,8 +127,8 @@ $('.gnb>li').click(function(){
     $('.slide .imgBox>a').css({'pointer-events':'none'});
     let i = $(this).index()
     if(i == 7) {
-      $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).animate({'left':0});
-      $('.slide .imgBox>a').eq(a).css({'left':0}).animate({'left':'100%'},
+      $('.slide .imgBox>a').eq(a-1).css({'left':'-100%'}).stop().animate({'left':0});
+      $('.slide .imgBox>a').eq(a).css({'left':0}).stop().animate({'left':'100%'},
       function(){
         if(wd > 1440) {
           $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
@@ -141,8 +141,8 @@ $('.gnb>li').click(function(){
     }else if (i == 8) {
       a++;
       if(a > 3) {a = 0;};
-      $('.slide .imgBox>a').eq(a-1).css({'left':0}).animate({'left':'-100%'});
-      $('.slide .imgBox>a').eq(a).css({'left':'100%'}).animate({'left':0},
+      $('.slide .imgBox>a').eq(a-1).css({'left':0}).stop().animate({'left':'-100%'});
+      $('.slide .imgBox>a').eq(a).css({'left':'100%'}).stop().animate({'left':0},
       function(){
         if(wd > 1440) {
         $('.slide .imgBox>a>img').css({'border-radius':'100px 300px 100px 300px'});}
@@ -201,14 +201,14 @@ $('.gnb>li').click(function(){
       b = 8;
       $('.listBox .box ul').eq(newsi).children('li').css({'order':0});
     };
-    $('.listBox .box ul').eq(newsi).css({'left':'-250px'}).animate({'left':0},100,
+    $('.listBox .box ul').eq(newsi).css({'left':'-250px'}).stop().animate({'left':0},100,
     function(){
     }).children('li').eq(b-1).css({'order':-1});
     b--;
   });
   $('.listBox .right i').click(function(){
     b++;
-    $('.listBox .box ul').eq(newsi).css({'left':0}).animate({'left':'-250px'},100,
+    $('.listBox .box ul').eq(newsi).css({'left':0}).stop().animate({'left':'-250px'},100,
     function(){
       $('.listBox .box ul').eq(newsi).css({'left':0}).children('li').eq(b-1).css({'order':1});
       if(b >= 8) {
@@ -223,8 +223,8 @@ $('.gnb>li').click(function(){
   let noticeTimer = function(){
     c++;
     if (c > 4) {c = 0}
-    $('.news .notice ul li').eq(c).css({'top':'100%'}).animate({'top':'20%'});
-    $('.news .notice ul li').eq(c-1).css({'top':'20%'}).animate({'top':'-60%'})
+    $('.news .notice ul li').eq(c).css({'top':'100%'}).stop().animate({'top':'20%'});
+    $('.news .notice ul li').eq(c-1).css({'top':'20%'}).stop().animate({'top':'-60%'})
     
   };
   let noticeSlide = setInterval(noticeTimer,5000);
