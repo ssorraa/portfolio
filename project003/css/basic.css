@@ -276,6 +276,25 @@ header nav li.on p {
   width: 20px;
   margin-right: -25px;
 }
+/* 브라우저 알림 설정 */
+.browser {
+  position: fixed;
+  color: #fff;
+  left: 50%;
+  bottom: 30px;
+  margin-left: -294.5px;
+  animation: infoOpacity 6s;
+  opacity: 0;
+  background-color: #000000aa;
+  padding: 10px;
+  z-index: 30;
+  pointer-events: none;
+}
+@keyframes infoOpacity {
+  0% {opacity: 1;}
+  75% {opacity: 1;}
+  100% {opacity: 0;}
+}
 /* 푸터설정 */
 footer {}
 footer img {

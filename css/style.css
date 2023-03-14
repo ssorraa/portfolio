@@ -74,7 +74,25 @@ h2:hover {
     text-shadow: 2px 2px 4px rgba(46, 51, 41, 0.5);
   }
 }
-
+/* 브라우저 알림 설정 */
+.browser {
+  position: fixed;
+  color: #fff;
+  left: 50%;
+  bottom: 30px;
+  margin-left: -294.5px;
+  animation: infoOpacity 6s;
+  opacity: 0;
+  background-color: #000000aa;
+  padding: 10px;
+  z-index: 30;
+  pointer-events: none;
+}
+@keyframes infoOpacity {
+  0% {opacity: 1;}
+  75% {opacity: 1;}
+  100% {opacity: 0;}
+}
 /* 메인 설정 */
 #main {
   background: linear-gradient(0deg, #C8D2A4 4.17%, #E8F1D3 83.33%);
@@ -92,6 +110,7 @@ body:has(#design.on, #publishing.on) #main h2 {
   margin-left: -75px;
   padding: 50px;
 }
+
 .mainBg {
   width: 100%;
   height: 100%;
@@ -178,13 +197,11 @@ animation: mainMargin1 20s infinite;
   100% {margin-top: 30px;}
 }
 .mainCon .hello li:nth-child(2) {
-  animation: mainOpacity1 20s infinite;
+  animation: mainOpacity1 5s;
 }
 @keyframes mainOpacity1 {
   0% {opacity: 0;}
-  25.1% {opacity: 0;}
-  25.2% {opacity: 1;}
-  100% {opacity: 1;}
+  100% {opacity: 0;}
 }
 .mainCon .text {
   margin-top: 50px;
@@ -233,6 +250,10 @@ body:not(:has(.on)) #design:has(h2:hover), body:not(:has(.on)):has(#publishing h
   left: -webkit-calc(100% + -700px);
   left: -moz-calc(100% + -700px);
 }
+body:has(#main:hover) #design.on, body:has(#main:hover):has(#publishing.on) #design {
+  left: -25px;
+}
+
 #design h2 {
   left: 235px;
   top: 50%;
@@ -398,6 +419,9 @@ display: unset;
   left: -webkit-calc(100% + -500px);
   left: -moz-calc(100% + -500px);
 }
+body:has(#main h2:hover, #design h2:hover) #publishing.on {
+  left: 250px;
+}
 #publishing h2 {
   left: 245px;
   top: 50%;
@@ -503,10 +527,7 @@ box-shadow: 4px 4px 16px rgba(46, 51, 41, 0.25), inset 8px 8px 12px rgba(206, 23
 border-radius: 30px;
 width: 1280px;
 height: 768px;
-padding: 50px;
-box-sizing: border-box;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
+position: relative;
 }
 #popup .popupBox:has([class^='design'].on) {
   overflow-y: scroll;
@@ -518,21 +539,30 @@ padding: 0px;
   display: none;
 }
 #popup .popupBox>li {
-  display: none;
   width: 100%;
+  height: auto;
+display: none;
 }
 #popup .popupBox>li:nth-child(4) {
   overflow: unset;
   height: 100%;
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 50px;
+  box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+
 }
 #popup .popupBox>li.on {
   display: flex;
+  opacity: 1;
 }
 
-.designPopup2 {
-height: auto;
-}
-.designPopup2 img {
+#popup .popupBox>li[class^='design'] img {
   width: 100%;
   height: auto;
   mix-blend-mode: multiply;

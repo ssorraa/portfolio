@@ -28,40 +28,17 @@ Array(COUNT).fill('').forEach((x, i) => {
   span.style.setProperty('--bright-color', `hsl(${80 + i * 0.1}, 30%, 80%)`)
   mainBg.appendChild(span)
 })
-// mainCon 효과-5초 후에 20초마다 타이핑
-let reset;
+// mainCon 효과-5초 후에 타이핑
 setTimeout(function time() {
   // 이전 작동되던 setInterval 초기화
-  clearInterval(reset);
   console.log('icon')
     TypeHangul.type('.typing', {
-    intervalType: 80,
+    intervalType: 150,
     humanize: 0.4
   })
-  reset = setInterval(time, 20000);
 }, 5000);
-let a = 0;
-// article에 있는 동그라미 버튼 클릭하면 이동-왜 trigger인식이 2번되지
-let b = 0;
-$('.count li').click(function() {
-  b = $(this).index()
-  // console.log(b)
-  // console.log(a)
-  if ((b == 2 && a == 0) || (b == 1 && a == 2) || (b == 0 && a == 1)) {
-    console.log('leftTrigger')
-    $('.leftBtn').trigger('click');
-  }
-  else if ((b == 1 && a == 0) || (b == 2 && a == 1) || (b == 0 && a == 2)) {
-    console.log('rightTrigger')
-    $('.rightBtn').trigger('click');
-  }
-})
-// article에 있는 좌우버튼 클릭하면 이동
-$('.leftBtn').click(function() {
-  // 오류! -1이 마지막에 있는 li을 지칭하는걸로 알고 있는데, 마지막 li을 확인하지 못하고 드랍해버린다
-  // 원인을 알았다. 디자인과 퍼블리싱 li가 묶음으로 인식된다. 주말에 할것
-  // $('.ex li').eq(a-1).css({'left':'150%'}).animate({'left':'50%'});
-  // $('.ex li').eq(a).css({'left':'50%'}).animate({'left':'-150%'});
+// 왼쪽 이동 함수
+function left() {
   $('#design .ex li').eq(a-1).css({'left':'-150%'}).stop().animate({'left':'50%'});
   $('#design .ex li').eq(a).css({'left':'50%'}).stop().animate({'left':'150%'});
   $('#publishing .ex li').eq(a-1).css({'left':'-150%'}).stop().animate({'left':'50%'});
@@ -69,7 +46,6 @@ $('.leftBtn').click(function() {
   console.log('left:'+a)
   let i = 0;
   let iconEdit = function(){
-    console.log(1)
     $('#design .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
     $('#publishing .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
     if(a == 2) {
@@ -89,21 +65,19 @@ $('.leftBtn').click(function() {
   a--;
   if(a < 0) {a = 2;};
   $('.con').attr('class','con list' + a);
-})
-$('.rightBtn').click(function() {
+}
+// 오른쪽 이동 함수
+function right() {
   a++;
   console.log('right'+a)
   if(a > 2) {a = 0;};
   $('.con').attr('class','con list' + a);
-  // $('.ex li').eq(a-1).css({'left':'50%'}).animate({'left':'150%'});
-  // $('.ex li').eq(a).css({'left':'-150%'}).animate({'left':'50%'})
   $('#design .ex li').eq(a-1).css({'left':'50%'}).stop().animate({'left':'-150%'});
   $('#design .ex li').eq(a).css({'left':'150%'}).stop().animate({'left':'50%'})
   $('#publishing .ex li').eq(a-1).css({'left':'50%'}).stop().animate({'left':'-150%'});
   $('#publishing .ex li').eq(a).css({'left':'150%'}).stop().animate({'left':'50%'})
   let i = 0;
   let iconEdit = function(){
-    console.log(1)
     $('#design .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
     $('#design .count li').eq(a-1).find('img').attr('src','image/i_circle' + (10-i) + '.png')
     $('#publishing .count li').eq(a).find('img').attr('src','image/i_circle' + i + '.png')
@@ -115,13 +89,34 @@ $('.rightBtn').click(function() {
     }
   }
   let iconTimer = setInterval(iconEdit,10);
+}
+// 원 클릭시 컨텐츠 변경
+let a = 0;
+let b = 0;
+$('.count li').click(function() {
+  b = $(this).index()
+  // console.log(b)
+  // console.log(a)
+  if ((b == 2 && a == 0) || (b == 1 && a == 2) || (b == 0 && a == 1)) {
+    console.log('leftTrigger')
+    left();
+  }
+  else if ((b == 1 && a == 0) || (b == 2 && a == 1) || (b == 0 && a == 2)) {
+    console.log('rightTrigger')
+    right();
+  }
 })
+// 좌우버튼 클릭하면 이동
+$('.leftBtn').click(left)
+$('.rightBtn').click(right)
 // design에 자세히 보기 누르면 팝업 열림
 $('#design .ex .btn').click(function(){
   let i = $(this).parents('li').index()
   console.log(i)
   $('#popup').addClass('on')
   $('.designPopup'+ i).addClass('on')
+
+  $('.popupBox').scrollTop(0);
 })
 
   // popup -배경 클릭하면 꺼짐
