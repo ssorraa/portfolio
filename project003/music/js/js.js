@@ -35,7 +35,6 @@ $(document).ready(function(){
   // 다른 곡 재생
   let current;
   $('.content .list li').click(function(){
-    $('.content .lpBg img.on').css({'animation-play-state': 'running'})
     clearInterval(current);
     middle = $(this).index()
     $('.content .list li').removeClass('middle')
@@ -102,6 +101,7 @@ $(document).ready(function(){
 }
 function onPlayerStateChange(event) {
   if (event.data === YT.PlayerState.PLAYING) {
+    $('.content .lpBg img.on').css({'animation-play-state': 'running'})
     current = setInterval(function() {
       console.log(1)
       let currentVolume = player.getVolume();
@@ -131,18 +131,17 @@ function onPlayerStateChange(event) {
       }, 200);
   } else {
     clearInterval(current);
+    $('.content .lpBg img.on').css({'animation-play-state': 'paused'})
   }
 }
 }
 // 재생클릭
 $('.fa-play').click(function(){
   player.playVideo();
-  $('.content .lpBg img.on').css({'animation-play-state': 'running'})
 })
 // 일시정지클릭
 $('.fa-pause').click(function(){
   player.pauseVideo();
-  $('.content .lpBg img.on').css({'animation-play-state': 'paused'})
 })
 // 볼륨버튼클릭 
 $('.fa-volume-high').click(function(){
