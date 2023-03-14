@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <title>Document</title>
+</head>
+<body>
+  <article>
+    <div id="ved">1</div>
+    <span>#</span>
+    <p>%</p>
+  </article>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #aaa;
+      margin: 0;
+      padding: 0;
+    }
+    span,p {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 50px;
+      color: #888;
+    }
+    p {
+      margin-right: 50px;
+    }
+  </style>
+  <script>
+  // let ht = $(window).height();
+  // let wd = $(window).width();
+  // 0.1초마다 유튜브 플레이어가 준비됐는지 확인
+  let videoFirst = 0,
+  videoID = '58lvDnTbhOI',
+  intervalID = setInterval(function() {
+  if (typeof onYouTubeIframeAPIReady === "function") {
+    console.log(1)
+    clearInterval(intervalID);
+    onYouTubeIframeAPIReady();
+  }
+}, 100);
+  let player;
+  function onYouTubeIframeAPIReady() {
+  player = new YT.Player('ved', {
+  height: '360',
+  width: '480',
+  videoId: videoID,
+  playerVars: {
+    'autoplay': 1,
+    'controls': 1
+  },
+  events: {
+    'onReady': onPlayerReady,
+    'onStateChange': onPlayerStateChange
+  }
+  });
+  let duration;
+  function onPlayerReady(event) {
+  // 플레이어가 준비되면 실행되는 코드
+  if (videoFirst == 1) {
+      $('span').trigger('click')
+    }
+    videoFirst = 1
+  setTimeout(function() {
+  duration = player.getDuration();
+    console.log('Duration:', duration);
+    }, 1000);
+    
+}
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+    let current = setInterval(function() {
+        let currentTime = player.getCurrentTime();
+        console.log('Current time:', currentTime);
+        if (duration == Math.ceil(currentTime)) {
+          player.seekTo(0);
+          clearInterval(current);
+        }
+      }, 300);
+  }
+}
+}
+$('span').click(function(){
+  // 재생/일시정지 버튼
+  let state = player.getPlayerState();
+if (state == YT.PlayerState.PLAYING) {
+  player.pauseVideo();
+} else {
+  player.playVideo();
+}
+})
+$('p').click(function(){
+  videoID = 'VUFbNAv9-DY'
+player.destroy();
+  // 새로운 player 생성
+  intervalID = setInterval(function() {
+    if (typeof onYouTubeIframeAPIReady === "function") {
+      console.log(1)
+      clearInterval(intervalID);
+      onYouTubeIframeAPIReady();
+    }
+  }, 100);
+})
+  </script>
+</body>
+</html>

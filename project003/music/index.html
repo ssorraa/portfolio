@@ -6,10 +6,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 폰트어썸 연결 -->
+    <script src="https://kit.fontawesome.com/e678fddfd9.js" crossorigin="anonymous"></script>
   <!-- 기본 스타일시트 연결 -->
   <link rel="stylesheet" href="../css/basic.css">
   <!-- 메인화면 스타일시트 연결 -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- 유튜브API 연결 -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <!-- 제이쿼리 연결 -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <!-- 제이쿼리 마우스휠 연결 -->
@@ -52,11 +56,155 @@
     <img src="../image/msbsLogo.gif" alt="매직스트로베리사운드 로고">
   </footer>
   <!-- 메인화면 -->
-  <section class="bg">
-    
+  <section class="video">
+    <div id="video">
   </section>
-  <section class="">
-
+  <section class="content">
+    <div class="bg">
+    <article class="lpBg">
+      <img src="image/lp1.png" alt="" class="on">
+      <img src="image/lp2.png" alt="">
+      <img src="image/lp3.png" alt="">
+      <img src="image/lp4.png" alt="">
+      <img src="image/lp5.png" alt="">
+      <img src="image/lp6.png" alt="">
+      <img src="image/lp7.png" alt="">
+      <img src="image/lp8.png" alt="">
+      <img src="image/lp9.png" alt="">
+      <img src="image/lp.png" alt="" class="lpPlayer">
+    </article>
+    <img src="image/shadow.png" alt="" class="shadow">
+    <article class="edit">
+<div class="player">
+        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-pause"></i>
+        <i class="fa-solid fa-volume-high"></i>
+        <input type="range" min="0" max="100" value="50" id="volume">
+</div>
+<div class="time">
+<div class="current"></div>
+<span class="start">0:00</span>
+<span class="end">0:00</span>
+</div>
+    </article>
+    <article class="list">
+      <ul>
+        <li class="middle VUFbNAv9-DY">
+<div class="rotate">
+            <img src="image/cover1.jpg" alt="">
+            <img src="image/cover1.jpg" alt="">
+            <img src="image/cover1.jpg" alt="">
+            <img src="image/cover1.jpg" alt="">
+            <img src="image/cover1.jpg" alt="">
+</div>
+          <p>
+            우리네 봄<br>
+            (Spring Attitude)
+          </p>
+        </li>
+        <li class="SO7L9Lwe8s4">
+<div class="rotate">
+            <img src="image/cover2.jpg" alt="">
+            <img src="image/cover2.jpg" alt="">
+            <img src="image/cover2.jpg" alt="">
+            <img src="image/cover2.jpg" alt="">
+            <img src="image/cover2.jpg" alt="">
+</div>
+          <p>
+            봄처녀<br>
+            (SPRINGIRLS)
+          </p>
+        </li>
+        <li class="yd-evvsOe1I">
+<div class="rotate">
+            <img src="image/cover3.jpg" alt="">
+            <img src="image/cover3.jpg" alt="">
+            <img src="image/cover3.jpg" alt="">
+            <img src="image/cover3.jpg" alt="">
+            <img src="image/cover3.jpg" alt="">
+</div>
+          <p>차트밖에서</p>
+        </li>
+        <li class="aiwBWDELGeg">
+<div class="rotate">
+            <img src="image/cover4.jpg" alt="">
+            <img src="image/cover4.jpg" alt="">
+            <img src="image/cover4.jpg" alt="">
+            <img src="image/cover4.jpg" alt="">
+            <img src="image/cover4.jpg" alt="">
+</div>
+          <p>BUFFALO</p>
+        </li>
+        <li class="AKSpQUPbb74">
+<div class="rotate">
+            <img src="image/cover5.jpg" alt="">
+            <img src="image/cover5.jpg" alt="">
+            <img src="image/cover5.jpg" alt="">
+            <img src="image/cover5.jpg" alt="">
+            <img src="image/cover5.jpg" alt="">
+</div>
+          <p>
+            고양이<br>
+            (Feat.아이유)
+          </p>
+        </li>
+        <li class="Io1AxYa4dLc">
+<div class="rotate">
+            <img src="image/cover6.jpg" alt="">
+            <img src="image/cover6.jpg" alt="">
+            <img src="image/cover6.jpg" alt="">
+            <img src="image/cover6.jpg" alt="">
+            <img src="image/cover6.jpg" alt="">
+</div>
+          <p>
+            멀티플레이어<br>
+            (Multi Player)
+          </p>
+        </li>
+        <li class="3d1AsbcPbWM">
+<div class="rotate">
+            <img src="image/cover7.jpg" alt="">
+            <img src="image/cover7.jpg" alt="">
+            <img src="image/cover7.jpg" alt="">
+            <img src="image/cover7.jpg" alt="">
+            <img src="image/cover7.jpg" alt="">
+</div>
+          <p>
+            쌤쌤<br>
+            (SAM SAM)
+          </p>
+        </li>
+        <li class="58lvDnTbhOI">
+<div class="rotate">
+            <img src="image/cover8.jpg" alt="">
+            <img src="image/cover8.jpg" alt="">
+            <img src="image/cover8.jpg" alt="">
+            <img src="image/cover8.jpg" alt="">
+            <img src="image/cover8.jpg" alt="">
+</div>
+          <p>Invisivle Treasure</p>
+        </li>
+        <li class="kmiwgt7zkk4">
+<div class="rotate">
+            <img src="image/cover9.jpg" alt="">
+            <img src="image/cover9.jpg" alt="">
+            <img src="image/cover9.jpg" alt="">
+            <img src="image/cover9.jpg" alt="">
+            <img src="image/cover9.jpg" alt="">
+</div>
+          <p>
+            뱁새<br>
+            (BAEPSAE)
+          </p>
+        </li>
+      </ul>
+    </article>
+  </div>
+  <span class="mvBtn">
+    &gt;&gt;<br>
+    Music<br>
+    Video
+  </span>
   </section>
 </body>
 
