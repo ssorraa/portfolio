@@ -44,7 +44,6 @@ $(document).ready(function () {
     // 스크롤 설정
 $('section').mousewheel(function(event,delta){
   let i = $(this).index();
-  let throttle;
   event.preventDefault();
   event.stopPropagation();
     throttle = setTimeout(() => {

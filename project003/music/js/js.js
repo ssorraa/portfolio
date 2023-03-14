@@ -131,6 +131,7 @@ function onPlayerStateChange(event) {
       }, 200);
   } else {
     clearInterval(current);
+    $('.ytp-pause-overlay').hide();
     $('.content .lpBg img.on').css({'animation-play-state': 'paused'})
   }
 }

@@ -98,17 +98,19 @@ h2:hover {
   background: linear-gradient(0deg, #C8D2A4 4.17%, #E8F1D3 83.33%);
 }
 #main h2 {
-  left: 200px;
-  top: 50px;
-  width: 300px;
-}
-body:has(#design.on, #publishing.on) #main h2 {
   left: 140px;
   top: 100%;
   width: 50px;
   margin-top: -356px;
   margin-left: -75px;
   padding: 50px;
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+body:has(#design.on, #publishing.on) #main h2 {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .mainBg {
@@ -131,17 +133,20 @@ body:has(#design.on, #publishing.on) #main h2 {
   animation: animate 10s infinite alternate;
   animation-delay: calc(var(--n) * 1.5s);
   color: hsl(hue, saturation, lightness);
-  opacity: 0.07;
+  opacity: 0.15;
   filter: opacity(0);
-  mix-blend-mode: multiply;
+  mix-blend-mode: color-burn;
 }
 @keyframes animate {
+  0% {
+    filter: opacity(0);
+  }
   80% {
       filter: opacity(1);
   }
   100% {
       transform: translateX(calc(var(--x) * 1vw)) translateY(calc(var(--y) * 1vh));
-      filter: opacity(0.5);
+      filter: opacity(1);
   }
 }
 .mainCon {

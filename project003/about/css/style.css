@@ -52,10 +52,10 @@ body {
   left: 0;
   top: 0;
 }
-.bg>img:last-child {
+.bg>img:nth-child(2) {
   opacity: 0;
 }
-.bg:hover>img:first-child {
+.bg:hover>img:nth-child(1) {
   animation: bgAni1 2s;
 }
 @keyframes bgAni1 {
@@ -71,7 +71,7 @@ body {
 56% {opacity: 1;}
 100% {opacity: 1;}
 }
-.bg:hover>img:last-child {
+.bg:hover>img:nth-child(2) {
   animation: bgAni2 2s;
   opacity: 1;
 }
@@ -83,6 +83,20 @@ body {
 55.5% {opacity: 0;}
 56% {opacity: 1;}
 100% {opacity: 1;}
+}
+.bg .scrollBg {
+  position: absolute;
+  color: #fff;
+  font-size: 48px;
+  left: 3%;
+  bottom: 27%;
+  mix-blend-mode: difference;
+  font-family: 'Nanum Myeongjo', serif;
+  transform: rotateZ(-15deg);
+  z-index: -1;
+}
+.bg:hover>.scrollBg {
+  animation: bgAni1 2s;
 }
 /* 컨텐츠-프로필 설정 */
 .profile {
