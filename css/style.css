@@ -401,6 +401,16 @@ display: unset;
   cursor: pointer;
   pointer-events: all;
 }
+.rightBtn, .leftBtn, .con .count li img, .btn {
+  transition: filter 0.3s;
+}
+.rightBtn:hover, .leftBtn:hover, .con .count li:hover img, .btn:hover {
+  filter: brightness(0.8);
+}
+.rightBtn:active, .leftBtn:active, .con .count li:active img, .btn:active {
+  filter: brightness(0.5);
+}
+
 
 
 /* 퍼블리싱 설정 */
