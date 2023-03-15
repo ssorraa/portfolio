@@ -11,7 +11,6 @@ for(var i = 0; i<301; i++){
     imgs+='<img src="image/mainBg' + (i+1) + '.jpg">'
   }
   $('.bg').html(imgs)
-  console.log(imgs)
 }
 $(window).mousemove(function(e){
   let x = e.pageX;
@@ -21,7 +20,6 @@ $(window).mousemove(function(e){
   let num = Math.trunc((x/wd)*301)
   $('.bg img').hide()
   $('.bg img').eq(num).show()
-  console.log(num)
 })
 // 인트로-h1 원래 애니메이션으로 바꾸기
 setTimeout(function() {

@@ -33,47 +33,24 @@ $(document).ready(function () {
   $(window).resize(function () {
     wdset();
   })
-  $(window).scroll(function () {
-    let sc = $(this).scrollTop();
-    // 스크롤 헤더 설정
-    if (sc == 0) {
-      $('#header').css({'background-color': 'unset'})
-    } else {
-      $('#header').css({'background-color': '#FFD02C'})
-    }
+
     // 스크롤 설정
-$('section').mousewheel(function(event,delta){
-  let i = $(this).index();
-  event.preventDefault();
-  event.stopPropagation();
-    throttle = setTimeout(() => {
-      throttle = null;
-      if (i < 3 && delta > 0) {
-        $('html,body').stop().animate({'scrollTop':ht*(i-1)}, 300, function(){$('section').unbind()})
+    let timeout,sc;
+    $('section').mousewheel(function(event,delta) {
+      let i = $(this).index();
+      if (i != 3) {
+        event.preventDefault();
+        event.stopPropagation();
       }
-      if (i < 3 && delta < 0) {
-        $('html,body').stop().animate({'scrollTop':ht*(i+1)}, 300, function(){$('section').unbind()})
-        if (i == 2) {
+      $(window).scroll(function () {
+        sc = $(this).scrollTop();
+        // 스크롤 헤더 설정
+        if (sc == 0) {
+          $('#header').css({'background-color': 'unset'})
+        } else {
+          $('#header').css({'background-color': '#FFD02C'})
         }
-      }
-      if (i == 3 && delta > 0 && sc < ht*(i-1)) {
-          $('html,body').stop().animate({'scrollTop':ht*(i-1)})
-      }
-      if (i == 3 && delta < 0 && sc > ht*(i+2)) {
-          $('html,body').stop().animate({'scrollTop':ht*(i+3)})
-      }
-      if (i > 3 && delta > 0 && $('#map').mouseenter() != true) {
-        $('html,body').stop().animate({'scrollTop':ht*(i+1)})
-        if(i == 4) {
-          console.log(2)
-        }
-      }
-      if (i > 3 && delta < 0) {
-        $('html,body').stop().animate({'scrollTop':ht*(i+4)})
-      }
-    }, 300);
-})
-    // 동영상 flex
+            // 동영상 flex
     if ( sc > $('#info article').eq(0).offset().top && sc < $('#info article').eq(0).offset().top+ht) {
       $('#info article').eq(0).find('.videoWrap').css({'top':sc-$('#info article').eq(0).offset().top})
     } else {
@@ -87,8 +64,36 @@ $('section').mousewheel(function(event,delta){
     } else {
       $('#info article').eq(2).find('.videoWrap').css({'top':0})
     }
+      })
+      clearTimeout(timeout);
+      timeout = setTimeout(function() {
+        console.log(1)
+        if (i < 3 && delta > 0) {
+          // 이전섹션
+          $('html,body').stop().animate({'scrollTop':ht*(i-1)}, 300)
+        }
+        if (i < 3 && delta < 0) {
+          // 다음섹션
+          $('html,body').stop().animate({'scrollTop':ht*(i+1)}, 300)
+        }
+        if (i == 3 && delta > 0 && sc < ht*(i-0.3)) {
+          console.log(2)
+            $('html,body').stop().animate({'scrollTop':ht*(i-1)})
+        }
+        if (i == 3 && delta < 0 && sc > ht*(i+2.3)) {
+            $('html,body').stop().animate({'scrollTop':ht*(i+3)})
+        }
+        if (i > 3 && delta > 0 && !$('#map').is(':hover')) {
+          $('html,body').stop().animate({'scrollTop':ht*(i+1)})
+          if(i == 4) {
+          }
+        }
+        if (i > 3 && delta < 0) {
+          $('html,body').stop().animate({'scrollTop':ht*(i+4)})
+        }
+      }, 300);
+    });
 
-  })
   // 지도 생성
 // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
