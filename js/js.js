@@ -34,9 +34,10 @@ setTimeout(function time() {
   console.log('icon')
     TypeHangul.type('.typing', {
     intervalType: 150,
-    humanize: 0.4
+    humanize: 0.4,
+    text: '안녕하세요'
   })
-}, 5000);
+}, 7050);
 // 왼쪽 이동 함수
 function left() {
   $('#design .ex li').eq(a-1).css({'left':'-150%'}).stop().animate({'left':'50%'});

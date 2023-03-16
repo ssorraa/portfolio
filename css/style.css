@@ -196,18 +196,12 @@ animation: mainMargin1 20s infinite;
 }
 @keyframes mainMargin1 {
   0% {margin-top: 30px;}
-  22.5% {margin-top: 30px;}
-  25% {margin-top: -110px;}
-  97.5% {margin-top: -110px;}
+  34% {margin-top: 30px;}
+  35% {margin-top: -110px;}
+  99% {margin-top: -110px;}
   100% {margin-top: 30px;}
 }
-.mainCon .hello li:nth-child(2) {
-  animation: mainOpacity1 5s;
-}
-@keyframes mainOpacity1 {
-  0% {opacity: 0;}
-  100% {opacity: 0;}
-}
+.mainCon .hello li:nth-child(2) {}
 .mainCon .text {
   margin-top: 50px;
   width: 1100px;
@@ -224,17 +218,17 @@ margin-bottom: 20px;
   animation: mainMargin2 20s infinite;
 }
 @keyframes mainMargin2 {
-  2.5% {margin-top: 0px;}
-  3.75% {margin-top: -100px;}
-  6.25% {margin-top: -100px;}
-  7.5% {margin-top: -200px;}
-  10% {margin-top: -200px;}
-  11.25% {margin-top: -300px;}
-  13.75% {margin-top: -300px;}
-  15% {margin-top: -400px;}
-  22.5% {margin-top: -400px;}
-  25% {margin-top: -500px;}
-  97.5% {margin-top: -500px;}
+  6% {margin-top: 0px;}
+  7% {margin-top: -100px;}
+  13% {margin-top: -100px;}
+  14% {margin-top: -200px;}
+  20% {margin-top: -200px;}
+  21% {margin-top: -300px;}
+  27% {margin-top: -300px;}
+  28% {margin-top: -400px;}
+  34% {margin-top: -400px;}
+  35% {margin-top: -500px;}
+  99% {margin-top: -500px;}
   100% {margin-top: 0px;}
 }
 
