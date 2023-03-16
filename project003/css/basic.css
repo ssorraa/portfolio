@@ -282,13 +282,14 @@ header nav li.on p {
   color: #fff;
   left: 50%;
   bottom: 30px;
-  margin-left: -294.5px;
+  margin-left: -270.281px;
   animation: infoOpacity 6s;
   opacity: 0;
   background-color: #000000aa;
   padding: 10px;
   z-index: 30;
   pointer-events: none;
+  font-family: 'Nanum Myeongjo', serif;
 }
 @keyframes infoOpacity {
   0% {opacity: 1;}

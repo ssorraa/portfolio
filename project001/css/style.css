@@ -102,6 +102,21 @@ h2 img {
   100% { transform: translateY(0); }
 }
 
+/* 링크 차단 설정 */
+.linkBlock {
+  position: fixed;
+  color: #fff;
+  left: 50%;
+  bottom: 30px;
+  margin-left: -275px;
+  opacity: 0;
+  background-color: #000000aa;
+  padding: 10px;
+  z-index: 100;
+  pointer-events: none;
+  text-align: center;
+}
+
 /* 헤더설정 */
 
 .header {

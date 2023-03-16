@@ -11,14 +11,15 @@
   <!-- 외부스타일시트 연결 -->
   <link rel="stylesheet" href="css/style.css">
   <!-- 지도 API 연결 -->
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a863e7006f1331596e43032828af00d0&libraries=services"></script>
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a863e7006f1331596e43032828af00d0&libraries=services"></script>
   <!-- 제이쿼리 연결 -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="js/jquery.mousewheel.js"></script>
   <!-- 외부스크립트 연결 -->
   <script src="js/js.js"></script>
   <title>Lego+Minecraft - 장난감 쇼핑몰 리뉴얼</title>
-    <!-- 아이콘추가 -->
+  <!-- 아이콘추가 -->
   <!-- 안드로이드용 -->
   <link rel="shortcut icon" href="image/pageIcon.png">
   <!-- 아이폰용 -->
@@ -34,6 +35,10 @@
 <body>
   <div class="browser">
     본 페이지는 구글 크롬 브라우저 및 1920x1080 해상도에 최적화 되어 있습니다.
+  </div>
+  <div class="linkBlock">
+    포트폴리오 사이트이기 때문에 로고를 제외하고 링크로 넘어가는 것을 방지했습니다.<br>
+    꼭 넘어가시려 한다면, 우클릭으로 링크를 열어주세요 😅
   </div>
   <section id="intro">
     <div class="box">
@@ -96,43 +101,43 @@
         </div>
       </div>
       <div class="bottom"></div>
-</div>
+    </div>
   </section>
   <header id="header">
     <ul id="gnb">
       <li><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li>
-        <a href="#">
-          <div class="front">신제품</div>
-        </a>
+        <div class="front">제품소개</div>
       </li>
       <li>
-        <a href="#">
-          <div class="front">인기제품</div>
-        </a>
+        <div class="front">인기제품</div>
       </li>
       <li>
-        <a href="#">
-          <div class="front">고객센터</div>
-        </a>
+        <div class="front">브랜드소개</div>
       </li>
       <li>
-        <a href="#">
-          <div class="front">미디어</div>
-        </a>
+        <div class="front">팬모먼트</div>
+      </li>
+      <li>
+        <div class="front">레고스토어</div>
       </li>
     </ul>
-    <h1>
-      <div><a href="#"><img src="image/logo_lego01.png" alt="레고 로고"></a></div>
-      <div><a href="#"><img src="image/logo_mc01.svg" alt="마인크래프트 로고"></a></div>
-      <div><a href="#"><img src="image/logo_lego01.png" alt="레고 로고"> <img src="image/logo_mc01.svg" alt="마인크래프트 로고"></a></div>
-      <div><a href="#"><img src="image/logo_lego01.png" alt="레고 로고"></a></div>
+    <h1 class="intro">
+      <span><a href="#"><img src="image/logo_lego01.png" alt="레고 로고"></a></span>
+      <span><a href="#"><img src="image/logo_mc01.svg" alt="마인크래프트 로고"></a></span>
+      <span><a href="#"><img src="image/logo_lego01.png" alt="레고 로고"> <img src="image/logo_mc01.svg"
+            alt="마인크래프트 로고"></a></span>
+      <span><a href="#"><img src="image/logo_lego01.png" alt="레고 로고"></a></span>
     </h1>
     <ul id="util">
       <li><i class="fa fa-search" aria-hidden="true"></i></li>
       <li><i class="fa fa-globe" aria-hidden="true"></i></li>
-      <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-      <li><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i>
+        <div><span>0</span></div>
+      </li>
+      <li><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <div><span>0</span></div>
+      </li>
     </ul>
   </header>
   <div class="wrap">
@@ -324,7 +329,7 @@
             <p class="price">12,900원</p>
             <i class="fa fa-heart" aria-hidden="true"></i>
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            
+
           </a>
         </div>
         <div>
@@ -360,7 +365,7 @@
             블럭을 직접 조립해서 상상력을 발휘하고 풍부하고 <br>
             창의적인 아이디어가 떠오르도록 학습할 수 있습니다.
           </p>
-          <a href="#" target="_blank">
+          <a href="https://www.lego.com/ko-kr/aboutus" target="_blank">
             사이트로 이동
             <span>→</span>
           </a>
@@ -385,7 +390,7 @@
             네모나고 끝없는 세상에서 정해진 것은 없습니다. <br>
             건축, 사냥, 농사, 채집, 전투, 탐험, 회로 설계, 게임 제작 등 꿈꿔온 모든 것을 체험해보세요!
           </p>
-          <a href="#" target="_blank">
+          <a href="https://www.minecraft.net/ko-kr" target="_blank">
             사이트로 이동
             <span>→</span>
           </a>
@@ -569,7 +574,7 @@
           <p>LEGO System A/S, DK-7190 Billund, Denmark. 만 18세 이상부터 온라인 구매가 가능합니다. 레고, 레고 로고, 미니피겨, 듀플로, 키마의 전설, 닌자고,
             바이오니클, 마인드스톰 및 믹셀은 레고 그룹의 상표 및/또는 저작권입니다. ©2022 The LEGO Group. All rights reserved. 이 사이트를 이용하면 이용약관에 동의하는
             것으로 간주됩니다.</p>
-            <p>본 홈페이지는 개인 PR 및 학습용 포트폴리오이며, 상업적 용도로 사용하지 않습니다.</p>
+          <p>본 홈페이지는 개인 PR 및 학습용 포트폴리오이며, 상업적 용도로 사용하지 않습니다.</p>
         </div>
       </article>
     </section>
